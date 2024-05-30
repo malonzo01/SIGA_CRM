@@ -1,0 +1,114 @@
+* {
+	color: #0F4690;
+}
+.icon-maryland {
+	background-image: url('../img/placas/maryland.png');
+}
+.icon-illinois {
+	background-image: url('../img/placas/ilinois.png');
+}
+.icon-state {
+	background-image: url('../img/placas/statefarm.png');
+}
+.icon-geico {
+	background-image: url('../img/placas/geico.png');
+}
+.icon-texas {
+	background-image: url('../img/placas/state-seal-of-texas.png');
+}
+
+.icon-ny {
+	background-image: url('../img/placas/state-seal-ny.gif');
+}
+
+.icon-nj {
+	background-image: url('../img/placas/state-seal-new-jersey.png');
+}
+
+.icon-co {
+	background-image: url('../img/placas/state-seal-of-colorado.png');
+}
+
+.icon-florida {
+	background-image: url('../img/placas/state-seal-florida.png');
+}
+
+.icon-placa {
+	background-position: 50%;
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: flex;
+	height: 90px;
+	margin: 0 auto 10px;
+	width: 90px;
+	transition: transform ease .3s;
+}
+
+.card:hover .icon-placa {
+	transform: scale(1.15);
+}
+
+.label-placa {
+	color: #0f468c;
+	color: var(--main-color);
+	font-weight: 700;
+	text-align: center;
+}
+
+h4.title-group {
+	border-bottom: 1px dashed;
+	color: #0F4690;
+	font-weight: 600;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+	padding-top: 20px;
+}
+
+.form-control,
+.form-select {
+	border: 1px solid #ced4da;
+	border-radius: 15px;
+	color: #8c8c8c;
+	color: var(--gray-text);
+	font-size: 12px;
+	height: 30px;
+	padding: 2px 10px;
+}
+
+.btn.btn-success,
+.btn.btn-primary {
+	background: #264C90;
+	border: 1px solid #264C90;
+}
+
+.btn.btn-success i,
+.btn.btn-primary i {
+	color: white !important;
+	margin-right: 5px;
+}
+
+.dataTables_length .form-select {
+	padding-right: 25px;
+}
+
+table thead th {
+	font-size: 12px;
+}
+
+.main {
+	min-height: calc(100vh - 60px - 62px);
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+	.row .form-group-design {
+		width: 50%;
+	}
+}
+
+@media (min-width: 1200px) {
+
+	#main,
+	#footer {
+		margin-left: 300px;
+	}
+}

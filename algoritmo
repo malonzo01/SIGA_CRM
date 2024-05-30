@@ -1,0 +1,273 @@
+NAME[ vin, sale_date, days
+      seller, deler_number, make
+      body_style, year, model,
+      major_color, minor_color, name1
+      name2, address, city, 
+      state, zip, email,phone
+      ]
+      
+ILLINOIS[id_illinois, vin, year, 
+         make, model, weight, 
+         placa, date_exp, dealer, 
+         num_dlr, date_issue, name1, 
+         name2, address, id_user]
+MARYLAND[]
+
+
+
+
+<body style="background-color: #f6c50d; padding:0px; ">
+    <div class="div-master" style="width:100%;margin-top:-15px;padding:0px 0px 40px 1px; ">
+        <table style="border-spacing: 0; margin-top:30px;">
+            <tr>
+                <td width="800">
+                    <center>
+                        <h1 style="font-family: 'Roboto', sans-serif;letter-spacing: 0em; font-weight:bold; font-size:3.8em;color:#000;  padding:8px 0px; text-align:center">
+                            ILLINOIS TEMPORARY PERMIT
+                        </h1>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <table style="border-spacing: 0;margin-top: -72px; margin-left:7.5%; padding-bottom:0px">
+        
+            <tr>
+                <td width=" 230.8">
+                    <center>
+                        <h4 style="text-align: left; font-size:1.2em; font-family: 'Roboto', sans-serif;font-weight:700; padding: 0px ;color:#000;"><strong>VIN<strong></h4>
+                    </center>
+                </td>
+                <td width="106.4">
+                    <center>
+                        <h4 style="text-align: left; font-size:1.2em; font-family: 'Roboto', sans-serif;font-weight:700; padding:0px 0px 0px 0px;color:#000;">YEAR</h4>
+                    </center>
+                </td>
+                <td width="106.4">
+                    <center>
+                        <h4 style="text-align: left; font-size:1.2em; font-family: 'Roboto', sans-serif;font-weight:700; margin-left:-50px; padding:0px 0px 0px 0px;color:#000;">MAKE</h4>
+                    </center>
+                </td>
+                <td width="106.4">
+                    <center>
+                        <h4 style="text-align: left; font-size:1.2em; font-family: 'Roboto', sans-serif;font-weight:700;padding:0px 0px 0px 0px;color:#000;">MODEL</h4>
+                    </center>
+                </td>
+                <td width="106.4">
+                    <center>
+                        <h4 style="text-align: left; font-size:1.2em; font-family: 'Roboto', sans-serif;font-weight:700; padding:0px 0px 0px 0px;color:#000;">WEIGHT</h4>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <table style="border-spacing: 0;margin-top: -55px; margin-left:7.5%; padding-bottom:0px">
+            <tr>
+                <td width=" 230.8">
+                    <center>
+                        <h4 style="text-align: left; font-size:1.2em; font-family: 'Roboto', sans-serif;font-weight:700; padding: 0px ;color:#000;">1ZVBP8AN0A5101229</h4>
+                    </center>
+                </td>
+                <td width="106.4">
+                    <center>
+                        <h4 style="text-align: left; font-size:1.2em; font-family: 'Roboto', sans-serif;font-weight:700; padding:0px 0px 0px 0px;color:#000;">2010</h4>
+                    </center>
+                </td>
+                <td width="106.4">
+                    <center>
+                        <h4 style="text-align: left; font-size:1.2em;padding:0px 0px 0px 0px;color:#000; margin-left:-50px;">FORD</h4>
+                    </center>
+                </td>
+                <td width="106.4">
+                    <center>
+                        <h4 style="text-align: left; font-size:1.2em; padding:0px 0px 0px 0px;color:#000;">MUSTANG</h4>
+                    </center>
+                </td>
+                <td width="106.4">
+                    <center>
+                        <h4 style="text-align: left; font-size:1.2em;padding:0px 0px 0px 0px;color:#000;"></h4>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <table style="border-spacing: 0;margin-top: 5px; padding-bottom:0px">
+            <tr>
+                <td width="800">
+                    <center>
+                        <h4 style="font-size:10em;font-family: 'small-caps', sans-serif;letter-spacing: 0em; margin-top:-45px; color:#000; text-align:center">
+                            <strong>244-ZE-9132</strong>
+                        </h4>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <table style="border-spacing: 0; margin-top: 10px; margin-left:7.5%; padding-bottom:0px">
+            <tr>
+                <td width=" 150.8">
+                    <center>
+                        <h4 style="margin-top: -260px;text-align: left; font-family: 'Roboto', sans-serif;letter-spacing: 0em; font-weight:700; font-size:4.2em; padding: 0px ;color:#000;">Exp:</h4>
+                    </center>
+                </td>
+                <td width="106.4">
+                    <center>
+                        <h4 style="margin-top: -260px;text-align: left; font-size:3.8em; padding:0px 0px 0px 0px;color:#000;">04/04/2024</h4>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <table style="border-spacing: 0;margin-top: 11px; margin-left:7.5%; padding-bottom:0px">
+            <tr>
+                <td width=" 212.8">
+                    <center>
+                        <h4 style="margin-top:-200px; text-align: left; font-size:1.2em; font-family: 'Roboto', sans-serif;font-weight:700; padding: 0px ;color:#000;">DEALER</h4>
+                    </center>
+                </td>
+                <td width="106.4">
+                    <center>
+                        <h4 style="margin-top:-200px; text-align: left; font-size:1.2em; font-family: 'Roboto', sans-serif;font-weight:700; padding:0px 0px 0px 0px;color:#000;">DLR #</h4>
+                    </center>
+                </td>
+                <td width="106.4">
+                    <center>
+                        <h4 style="margin-top:-200px;text-align: left; font-size:1.2em; font-family: 'Roboto', sans-serif;font-weight:700; padding:0px 0px 0px 0px;color:#000;">ISSUE DATE</h4>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <table style="border-spacing: 0;margin-top: 12px; margin-left:7.5%; padding-bottom:0px">
+            <tr>
+                <td width=" 212.8">
+                    <center>
+                        <h4 style="margin-top:-190px; text-align: left; font-size:1.2em; font-family: 'Roboto', sans-serif;font-weight:700; padding: 0px ;color:#000;">R&R SALES OH</h4>
+                    </center>
+                </td>
+                <td width="106.4">
+                    <center>
+                        <h4 style="margin-top:-190px;text-align: left; font-size:1.2em; font-family: 'Roboto', sans-serif;font-weight:700; padding:0px 0px 0px 0px;color:#000;">P896252</h4>
+                    </center>
+                </td>
+                <td width="106.4">
+                    <center>
+                        <h4 style="margin-top:-190px;text-align: left; font-size:1.2em; font-family: 'Roboto', sans-serif;font-weight:700; padding:0px 0px 0px 0px;color:#000;">02/04/2024</h4>
+                    </center>
+                </td>
+            </tr>
+        </table> 
+        <table style="border_top: 3px dashed #000;;">
+            <tr>
+                <td style="width:400.8; border-left: 0px dashed #000; ">
+                    <center>
+                        <h4 style="margin-left:25%;  text-align: left; font-size:18px;color:#000;">Agent Copy Remove And Retain</h4>
+                    </center>
+                    <table style="margin-left:25%;">
+                        <tr>
+                            <td style="text-align:left; width:130.9px; font-size:0.8em; font-family: 'Roboto', sans-serif; font-weight:700;">VIN</td>
+                            <td style="text-align:left; width:130.9px; font-size:0.8em; font-family: 'Roboto', sans-serif; font-weight:700;">YEAR</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;">1ZVBP8AN0A5101229</td>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;">2010</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left; width:130.9px; font-size:0.8em; font-family: 'Roboto', sans-serif;font-weight:700;">MAKE</td>
+                            <td style="text-align:left; width:100.9px; font-size:0.8em; font-family: 'Roboto', sans-serif;font-weight:700;">MODEL</td>
+                            <td style="text-align:left; width:100.9px; font-size:0.8em; font-family: 'Roboto', sans-serif;font-weight:700;">WEIGHT</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;">FORD</td>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;">MUSTANG</td>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left; width:130.9; font-size:0.8em; font-family: 'Roboto', sans-serif;font-weight:700;">DEALER</td>
+                            <td style="text-align:left; width:100.9; font-size:0.8em; font-family: 'Roboto', sans-serif;font-weight:700;">DLR #</td>
+                            <td style="text-align:left; width:100.9; font-size:0.8em; font-family: 'Roboto', sans-serif;font-weight:700;">Issue Date</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;">R&R SALES OH</td>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;">P896252</td>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;">02/04/2024</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;font-weight:700;">OWNER</td>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;font-weight:700;">ADDERSS</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;">MAURICIO <br>RUIZ</td>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;">63 ST
+                                <br>WESTMONT, IL 60517
+                            </td>
+                        </tr>
+                    </table>
+                    <table style="margin-left:25%;">
+                        <tr>
+                            <td>
+                                <center>
+                                    <h4 style="margin-left:15px;  font-size:1.2em; font-family: 'Roboto', sans-serif;font-weight:700;">ILLINOIS TEMPORARY PERMIT</h4>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="width:400.8; border-left: 3px dashed #000; margin-top:-1580px;">
+                    <center>
+                        <h4 style="margin-left:8%;  text-align: left; font-size:18px; padding: 0px ;color:#000;">Agent Copy Remove And Retain</h4>
+                    </center>
+                    <table style="margin-left:8%;">
+                        <tr>
+                            <td style="text-align:left; width:130.9px; font-size:0.8em; font-family: 'Roboto', sans-serif; font-weight:700;">VIN</td>
+                            <td style="text-align:left; width:130.9px; font-size:0.8em; font-family: 'Roboto', sans-serif; font-weight:700;">YEAR</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;">1ZVBP8AN0A5101229</td>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;">2010</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left; width:130.9px; font-size:0.8em; font-family: 'Roboto', sans-serif;font-weight:700;">MAKE</td>
+                            <td style="text-align:left; width:100.9px; font-size:0.8em; font-family: 'Roboto', sans-serif;font-weight:700;">MODEL</td>
+                            <td style="text-align:left; width:100.9px; font-size:0.8em; font-family: 'Roboto', sans-serif;font-weight:700;">WEIGHT</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left; text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;">FORD</td>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;">MUSTANG</td>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left; width:130.9; font-size:0.8em; font-family: 'Roboto', sans-serif;font-weight:700;">DEALER</td>
+                            <td style="text-align:left; width:100.9; font-size:0.8em; font-family: 'Roboto', sans-serif;font-weight:700;">DLR #</td>
+                            <td style="text-align:left; width:100.9; font-size:0.8em; font-family: 'Roboto', sans-serif;font-weight:700;">Issue Date</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;">R&R SALES OH</td>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;">P896252</td>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;">02/04/2024</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;font-weight:700;">OWNER</td>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;font-weight:700;">ADDERSS</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;">MAURICIO <br>RUIZ</td>
+                            <td style="text-align:left; font-size:0.8em; font-family: 'Roboto', sans-serif;">63 ST
+                                <br>WESTMONT, IL 60517
+                            </td>
+                        </tr>
+                    </table>
+                    <table style="margin-left:8%;">
+                        <tr>
+                            <td>
+                                <center>
+                                    <h4 style="margin-left:15px;  font-size:1.2em; font-family: 'Roboto', sans-serif;font-weight:700;">ILLINOIS TEMPORARY PERMIT</h4>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>      
+    </div>
+    
+</body>
+
+pruebadevs.rf.gd
+VusVJ5UHdHtMlhL
+
+
