@@ -1,12 +1,20 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GlobalController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\RoleController;
 
 // Rutas cuando el usuario haya iniciado sesión.
 Route::middleware('auth')->group(function () {
 	// Gestión [Dashboard].
 	Route::get('/', [App\Http\Controllers\PanelControlador::class, 'index'])->name('dashboard.index');
+
+    //Rutas Administrativas
+    Route::resource('/admin/users', UserController::class)->except('show')->names('admin.users');
+    Route::resource('/admin/role', RoleController::class)->except('show')->names('admin.roles');
+    Route::resource('/admin/dashboard', DashboardController::class)->except('show')->names('admin.dashboard');
 
 	// Gestión [Placas].
 	Route::controller(GlobalController::class)->group(function () {
@@ -24,7 +32,7 @@ Route::middleware('auth')->group(function () {
 		Route::post('/florida_pdf', 'florida_pdf');
 	});
 
-	// Gestión [Usuarios].
+	// Gestión [Users].
 	Route::controller(App\Http\Controllers\UsuarioControlador::class)->group(function () {
 		Route::get('/usuarios', 'index')->name('users.index');
 		Route::get('/usuarios/registrar', 'create')->name('users.create');
@@ -49,8 +57,6 @@ Route::middleware('guest')->group(function () {
 	Route::controller(App\Http\Controllers\SesionControlador::class)->group(function () {
 		Route::get('/iniciar_sesion', 'mostrar_iniciar_sesion')->name('session.login');
 		Route::post('/iniciar_sesion', 'iniciar_sesion')->name('session.login');
-		//Route::get('/buscar', 'consultar')->name('resultado.busqueda');
-		Route::get('/consultar/{state}/{id}', 'consultar')->name('resultado.busqueda');
 	});
 });
 

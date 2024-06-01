@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Usuario;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 use function Laravel\Prompts\password;
@@ -18,7 +18,7 @@ class UsuarioControlador extends Controller
 	// Display a listing of the resource.
 	public function index()
 	{
-		$usuarios = Usuario::all();
+		$usuarios = User::all();
 		return view('usuarios', [
 			'roles'	=> $this->roles,
 			'usuarios' => $usuarios
@@ -56,8 +56,8 @@ class UsuarioControlador extends Controller
 		}
 
 		// Verificamos si ya se encuentra registrado en la base de datos.
-		$isset = Usuario::select('iduser')
-			->where('name_', '=', $request->nombre)
+		$isset = User::select('iduser')
+			->where('name', '=', $request->nombre)
 			->first();
 		if ($isset) {
 			$response = ["status" => "warning", "response" => ["message" => "¡Este usuario ya se encuentra registrado!", "data" => []]];
@@ -68,8 +68,8 @@ class UsuarioControlador extends Controller
 		$username = explode(' ', $request->nombre)[0] . rand(100000, 999999);
 
 		// Registramos un nuevo usuario.
-		$usuario = new Usuario();
-		$usuario->name_ = $request->nombre;
+		$usuario = new User();
+		$usuario->name = $request->nombre;
 		$usuario->phone_ = $request->telefono;
 		$usuario->email_ = $request->correo;
 		$usuario->rol_ = $request->rol;
@@ -78,7 +78,7 @@ class UsuarioControlador extends Controller
 		$usuario->save();
 
 		// Retornamos el mensaje de exito.
-		$response = ["status" => "success", "response" => ["message" => "¡Usuario registrado exitosamente!", "data" => []]];
+		$response = ["status" => "success", "response" => ["message" => "¡User registrado exitosamente!", "data" => []]];
 		return response($response, 200)->header('Content-Type', 'text/json');
 	}
 
@@ -90,7 +90,7 @@ class UsuarioControlador extends Controller
 	// Show the form for editing the specified resource.
 	public function edit(string $id)
 	{
-		$usuario = Usuario::find($id);
+		$usuario = User::find($id);
 		if (!$usuario) {
 			$response = ["status" => "error", "response" => ["message" => "¡Este usuario no fue encontrada!", "data" => []]];
 			return response($response, 200)->header('Content-Type', 'text/json');
@@ -127,8 +127,8 @@ class UsuarioControlador extends Controller
 		}
 
 		// Verificamos si ya se encuentra registrado en la base de datos.
-		$isset = Usuario::select('iduser')
-			->where('name_', '=', $request->nombre)
+		$isset = User::select('iduser')
+			->where('name', '=', $request->nombre)
 			->where('iduser', '!=', $id)
 			->first();
 		if ($isset) {
@@ -137,15 +137,15 @@ class UsuarioControlador extends Controller
 		}
 
 		// Registramos un nuevo usuario.
-		$usuario = Usuario::find($id);
-		$usuario->name_ = $request->nombre;
+		$usuario = User::find($id);
+		$usuario->name = $request->nombre;
 		$usuario->phone_ = $request->telefono;
 		$usuario->email_ = $request->correo;
 		$usuario->rol_ = $request->rol;
 		$usuario->save();
 
 		// Retornamos el mensaje de exito.
-		$response = ["status" => "success", "response" => ["message" => "¡Usuario modificado exitosamente!", "data" => []]];
+		$response = ["status" => "success", "response" => ["message" => "¡User modificado exitosamente!", "data" => []]];
 		return response($response, 200)->header('Content-Type', 'text/json');
 	}
 
@@ -158,7 +158,7 @@ class UsuarioControlador extends Controller
 	public function status(string $id)
 	{
 		// Consultamos la marca a cambiar de estatus.
-		$marca = Usuario::find($id);
+		$marca = User::find($id);
 		$marca->status = $marca->status != "A" ? "A" : "I";
 		$marca->save();
 

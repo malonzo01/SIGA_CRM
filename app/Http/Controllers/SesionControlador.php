@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Usuario;
+use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -27,21 +27,21 @@ class SesionControlador extends Controller
 	public function iniciar_sesion(Request $request)
 	{
 		// Consultamos si el usuario consultado existe.
-		$usuario = Usuario::select('*')->where('username', '=', $request->username)->first();
-		if (!$usuario) 
+		$usuario = User::select('*')->where('username', '=', $request->username)->first();
+		if (!$usuario)
 			return redirect()->route('session.login')->with('error', '¡El usuario ingresado no se encuentra registrado!');
 
 		// Válidamos que la contraseña sea correcta.
-		if (!password_verify($request->password, $usuario->password)) 
+		if (!password_verify($request->password, $usuario->password))
 			return redirect()->route('session.login')->with('error', '¡La contraseña ingresada es incorrecta!');
 
 		// Válidamos que la contraseña sea correcta.
-		if ($usuario->status != "A") 
+		if ($usuario->status != "A")
 			return redirect()->route('session.login')->with('error', '¡El usuario no se encuentra activo, hable con el administrador!');
 
 		// Guardamos la sesión y limpiamos el token.
 		Auth::login($usuario);
-		$request->session()->regenerate();
+  		$request->session()->regenerate();
 		return redirect()->route('dashboard.index')->with('success', '¡Sesión iniciada exitosamente!');
 	}
 
@@ -103,52 +103,52 @@ class SesionControlador extends Controller
 				return view('resultado/busqueda',['nuevo'=>$nuevo,'dirLogo'=>$dirLogo]);
 			break;
 		}
-		
+
 	}
 
 	public function buscar_geico($id)
 	{
 		$post = geico::select('*')->where('idgeico', '=', $id)->first();
-		return $post;	
+		return $post;
 	}
 	public function buscar_florida($id)
 	{
 		$post = florida::select('*')->where('idflorida', '=', $id)->first();
-		return $post;	
+		return $post;
 	}
 	public function buscar_new_jersey($id)
 	{
 		$post = newjersey::select('*')->where('idnewjersey', '=', $id)->first();
-		return $post;	
+		return $post;
 	}
 	public function buscar_new_york($id)
 	{
 		$post = newyork::select('*')->where('idnewyork', '=', $id)->first();
-		return $post;	
+		return $post;
 	}
 	public function buscar_new_york_insr($id)
 	{
 		$post = insrnewyork::select('*')->where('idinsrny', '=', $id)->first();
-		return $post;	
+		return $post;
 	}
 	public function buscar_texas($id)
 	{
 		$post = texas::select('*')->where('idtexas', '=', $id)->first();
-		return $post;	
+		return $post;
 	}
 	public function buscar_colorado($id)
 	{
 		$post = coloradoModel::select('*')->where('idcolorado', '=', $id)->first();
-		return $post;	
+		return $post;
 	}
 	public function buscar_illinois($id)
 	{
 		$post = IllinoisModel::select('*')->where('id_illinois', '=', $id)->first();
-		return $post;	
+		return $post;
 	}
 	public function buscar_maryland($id)
 	{
 		$post = MarylandModel::select('*')->where('id_maryland', '=', $id)->first();
-		return $post;	
+		return $post;
 	}
 }

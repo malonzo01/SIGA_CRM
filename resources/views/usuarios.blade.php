@@ -3,7 +3,7 @@
 @section('content')
 <div class="row align-items-center mb-3">
 	<div class="col-6 text-start">
-		<h3 class="text-uppercase mb-0"><i class="fas fa-users"></i> Usuarios</h3>
+		<h3 class="text-uppercase mb-0"><i class="fas fa-users"></i> Users</h3>
 	</div>
 	<div class="col-6 text-end">
 		<button class="btn btn-primary" id="btn_nuevo"><i class="fas fa-plus"></i> Registrar</button>
@@ -21,7 +21,7 @@
 								<th><i class="fas fa-id-card"></i> Nombre completo</th>
 								<th><i class="fas fa-phone-alt"></i> Teléfono</th>
 								<th><i class="fas fa-envelope"></i> Correo electrónico</th>
-								<th><i class="fas fa-user"></i> Usuario</th>
+								<th><i class="fas fa-user"></i> User</th>
 								<th><i class="fas fa-id-card-alt"></i> Rol</th>
 								<th><i class="fas fa-toggle-on"></i> Estatus</th>
 								<th><i class="fas fa-cogs"></i></th>
@@ -30,11 +30,17 @@
 						<tbody>
 							@foreach($usuarios as $usuario)
 							<tr>
-								<td>{{$usuario->name_}}</td>
-								<td>{{$usuario->phone_}}</td>
-								<td>{{$usuario->email_}}</td>
+								<td>{{$usuario->name}}</td>
+								<td>{{$usuario->phone}}</td>
+								<td>{{$usuario->email}}</td>
 								<td>{{$usuario->username}}</td>
-								<td>{{$roles[$usuario->rol_]}}</td>
+                                <td>
+                                    @if (!empty($usuario->getRoleNames()))
+                                        @foreach ($usuario->getRoleNames() as $rolName)
+                                            <label class="badge badge-secondary">{{ $rolName }}</label>
+                                        @endforeach
+                                    @endif
+                                </td>
 								<td class="text-center">
 									@if ($usuario->status == "A")
 									<span class="badge bg-success"><i class="fas fa-check"></i> Activo</span>
@@ -45,8 +51,8 @@
 									@endif
 								</td>
 								<td>
-									@if (auth()->user()->iduser != $usuario->iduser)
-									<button type="button" class="btn btn-primary btn-sm btn_editar" data-id="{{$usuario->iduser}}"><i class="fas fa-edit"></i></button>
+									@if (auth()->user()->id != $usuario->id)
+									<button type="button" class="btn btn-primary btn-sm btn_editar" data-id="{{$usuario->id}}"><i class="fas fa-edit"></i></button>
 									@endif
 								</td>
 							</tr>
@@ -261,7 +267,7 @@
 				// Limpiamos el formulario y cargamos los datos consultados.
 				formulario_actualizacion.reset();
 				formulario_actualizacion.setAttribute('action', `${_url_}/usuarios/${id_data}`);
-				document.getElementById('editar_nombre').value = data.response.data.name_;
+				document.getElementById('editar_nombre').value = data.response.data.name;
 				document.getElementById('editar_telefono').value = data.response.data.phone_;
 				document.getElementById('editar_correo').value = data.response.data.email_;
 				document.getElementById('editar_rol').value = data.response.data.rol_;

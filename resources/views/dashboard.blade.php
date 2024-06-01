@@ -34,32 +34,6 @@
 					</a>
 				</div>
 				@endforeach
-
-				<?php /*
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-cali"></span><label class="label-placa">California</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-ct"></span><label class="label-placa">Connecticut</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-florida"></span><label class="label-placa">Florida</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-ga"></span><label class="label-placa">Georgia</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-il"></span><label class="label-placa">Illinois</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-in"></span><label class="label-placa">Indiana</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-inspect"></span><label class="label-placa">Inspect</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-isurance"></span><label class="label-placa">Insurance</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-isurance"></span><label class="label-placa">Insurance Falcon</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-isurance"></span><label class="label-placa">Insurance Geico</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-la"></span><label class="label-placa">Louisiana</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-md"></span><label class="label-placa">Maryland</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-ma"></span><label class="label-placa">Massachusetts</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-mo"></span><label class="label-placa">Missouri</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-nm"></span><label class="label-placa">New Mexico</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-nc"></span><label class="label-placa">North Carolina</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-oh"></span><label class="label-placa">Ohio</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-pa"></span><label class="label-placa">Pennsylvania</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-sc"></span><label class="label-placa">South Carolina</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-tn"></span><label class="label-placa">Tennessee</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-texas"></span><label class="label-placa">Texas Agente</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-texas"></span><label class="label-placa">Texas Vieja</label></div>
-						<div class="card h-100 p-3 m-0"><span class="icon-placa icon-vg"></span><label class="label-placa">Virginia</label></div>
-					*/ ?>
 			</div>
 		</div>
 	</div>

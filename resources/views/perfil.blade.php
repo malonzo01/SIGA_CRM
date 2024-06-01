@@ -14,7 +14,7 @@
 				<img src="{{url('img/user-default.jpg')}}" class="w-50 rounded-circle border mb-4">
 				<div class="info">
 					<div class="title text-uppercase" style="font-size: 1.2rem;">
-						<b>{{auth()->user()->name_}}</b>
+						<b>{{auth()->user()->name}}</b>
 					</div>
 					<div class="desc fw-bold text-uppercase" style="font-size: .7rem;"><i class="fas fa-user"></i> {{auth()->user()->username}}</div>
 					<div class="desc fw-bold text-uppercase" style="font-size: .7rem;"><i class="fas fa-address-card"></i> Rol: {{$roles[auth()->user()->rol_]}}</div>
@@ -48,7 +48,7 @@
 								<div class="col-12 col-md-6">
 									<div class="form-group mb-3">
 										<label for="nombre">Nombre completo</label>
-										<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese el nombre completo" value="{{auth()->user()->name_}}">
+										<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese el nombre completo" value="{{auth()->user()->name}}">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
