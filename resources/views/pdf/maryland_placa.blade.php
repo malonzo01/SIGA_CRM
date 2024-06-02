@@ -1,5 +1,5 @@
 <style>
-	    
+
     @page {
 		margin:0px;
 	}
@@ -84,7 +84,7 @@
             </tr>
             <tr>
                 <td colspan="1"></td>
-                <td colspan="3"><span style="background-color:#000; heigth:95px; margin-left:125px; font-size:50px; font-family: 'Roboto', sans-serif;font-weight:700; color:#fff;" >Exp: {{$initDay_Qr}}</span></td> 
+                <td colspan="3"><span style="background-color:#000; heigth:95px; margin-left:125px; font-size:50px; font-family: 'Roboto', sans-serif;font-weight:700; color:#fff;" >Exp: {{$lateDay_Qr}}</span></td>
                 <td colspan="1"></td>
             </tr>
             <tr>
@@ -103,11 +103,11 @@
                     </span></td>
                 <td style="padding:5px; background-color:#000; width: 180px;">
                     <span style="text-align: left; font-size:15px; font-family: 'Roboto', sans-serif;font-weight:900; color:#fff;" >{{$tag_number}}<br>Exp: {{$initDay_Qr}}</span>
-                    
+
                 </td>
                 <td style="width:100%; heigth:60px; padding:5px; text-align:center">
                     <span style="font-size:11px; font-family: 'Roboto', sans-serif;font-weight:400; color:#000;">
-                        Cut here --Keep this section with vehicule until registered and plated 
+                        Cut here --Keep this section with vehicule until registered and plated
                         <br><strong>Maryland Tempory Registration Certificate (VR-007)</strong>
                         <br>Valid for {{$request->days. ' '}}days.
                     </span>
@@ -151,7 +151,7 @@
                 <td></td>
             </tr>
             <tr style="border:1px solid #000">
-                <td width="100%"><span style="font-size:11px; font-family: 'Roboto', sans-serif;font-weight:400; color:#000;">Address of Purchaser(s) 
+                <td width="100%"><span style="font-size:11px; font-family: 'Roboto', sans-serif;font-weight:400; color:#000;">Address of Purchaser(s)
                 {{ $request->address }} {{ $request->city.',' }} {{ $request->state }}{{ $request->zip }}</span></td>
                 <td></td><td></td>
                 <td></td><td></td>
@@ -168,11 +168,11 @@
                 <td></td>
                 <td></td>
             </tr>
-            
+
          </table>
          <table style=" width:100%; padding:0px 75px 0px 75px; border: 0px solid #000">
             <tr>
-                
+
                 <td colspan="4"; width="100%">
                     <span style="text-align:justify; font-size:11px; font-family: 'Roboto', sans-serif;font-weight:400; color:#000;">
                       I certify under penalty of law that the vehicle noted on the face hereof is covered by at least the minimum amounts of insurance required by the Maryland Motor Vehicle Laws and that I have no
@@ -180,13 +180,13 @@
                           information and belief.
                     </span>
                 </td>
-                
-                
+
+
             </tr>
             <tr style="border:1px solid #000; background:#9C9C9C">
-                
+
                 <td colspan="4"><span style="margin-left:420px; font-size:11px; font-family: 'Roboto', sans-serif;font-weight:bold; color:#000;">Signatures and Date</span></td>
-                
+
             </tr>
             <tr style="border:1px solid #000">
                 <td style="border-left:1px solid #000; width:50%"><span style="font-size:11px; font-family: 'Roboto', sans-serif;font-weight:400; color:#000;">Owner: </span></td>
@@ -199,8 +199,8 @@
                 <td></td><td></td><td></td>
             </tr>
         </table>
-        
-        
+
+
     </div>
-    
+
 </body>

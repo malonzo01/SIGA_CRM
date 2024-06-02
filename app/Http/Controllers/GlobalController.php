@@ -236,12 +236,12 @@ class GlobalController extends Controller
 		$str_encode = base64_encode($data_encode);
 		//BUSCA EL ID DEL USUARIO QUE REALIZA EL REGISTRO DE LA PLACA
 		$usuario = DB::table('users')
-             ->select('iduser')
+             ->select('id')
              ->where('username', '=', $request->iduser)
              ->get();
 		foreach($usuario as $us)
 		{
-			$id=$us->iduser;
+			$id=$us->id;
 		}
 			//SE PREPARAN LOS DATOS PARA INSERTAR A LA BASE DE DATOS
 			$texas= new texas();
@@ -342,12 +342,12 @@ class GlobalController extends Controller
 
 		//BUSCA EL ID DEL USUARIO QUE REALIZA EL REGISTRO DE LA PLACA
 		$usuario = DB::table('users')
-             ->select('iduser')
+             ->select('id')
              ->where('username', '=', $request->iduser)
              ->get();
 		foreach($usuario as $us)
 		{
-			$id=$us->iduser;
+			$id=$us->id;
 		}
 			//SE PREPARAN LOS DATOS PARA INSERTAR A LA BASE DE DATOS
 			$newjersey= new newjersey();
@@ -444,12 +444,12 @@ class GlobalController extends Controller
 		//QrCode::encoding('UTF-8')->generate(public_path("/data/$str_encode"), public_path("/placas/$filename"));
 		//BUSCA EL ID DEL USUARIO QUE REALIZA EL REGISTRO DE LA PLACA
 		$usuario = DB::table('users')
-             ->select('iduser')
+             ->select('id')
              ->where('username', '=', $request->iduser)
              ->get();
 		foreach($usuario as $us)
 		{
-			$id=$us->iduser;
+			$id=$us->id;
 		}
 			//SE PREPARAN LOS DATOS PARA INSERTAR A LA BASE DE DATOS
 			$newyork= new newyork();
@@ -552,12 +552,12 @@ class GlobalController extends Controller
 		// QrCode::encoding('UTF-8')->generate(url('/') . 'public/data/'.$str_encode, $path.$filen);
 		//BUSCA EL ID DEL USUARIO QUE REALIZA EL REGISTRO DE LA PLACA
 		$usuario = DB::table('users')
-             ->select('iduser')
+             ->select('id')
              ->where('username', '=', $request->iduser)
              ->get();
 		foreach($usuario as $us)
 		{
-			$id=$us->iduser;
+			$id=$us->id;
 		}
 
 		//SE PREPARAN LOS DATOS PARA INSERTAR A LA BASE DE DATOS
@@ -662,12 +662,12 @@ class GlobalController extends Controller
 
 				//BUSCA EL ID DEL USUARIO QUE REALIZA EL REGISTRO DE LA PLACA
 		$usuario = DB::table('users')
-			->select('iduser')
+			->select('id')
 			->where('username', '=', $request->iduser)
 			->get();
 		foreach($usuario as $us)
 		{
-			$id=$us->iduser;
+			$id=$us->id;
 		}
 
 		   //SE PREPARAN LOS DATOS PARA INSERTAR A LA BASE DE DATOS
@@ -765,12 +765,12 @@ class GlobalController extends Controller
 
 				//BUSCA EL ID DEL USUARIO QUE REALIZA EL REGISTRO DE LA PLACA
 				$usuario = DB::table('users')
-				->select('iduser')
+				->select('id')
 				->where('username', '=', $request->iduser)
 				->get();
 		   foreach($usuario as $us)
 		   {
-			   $id=$us->iduser;
+			   $id=$us->id;
 		   }
 			   //SE PREPARAN LOS DATOS PARA INSERTAR A LA BASE DE DATOS
 			   $florida= new florida();
@@ -852,12 +852,12 @@ class GlobalController extends Controller
 		}
 		//BUSCA EL ID DEL USUARIO QUE REALIZA EL REGISTRO DE LA PLACA
 		$usuario = DB::table('users')
-             ->select('iduser')
+             ->select('id')
              ->where('username', '=', $request->iduser)
              ->get();
 		foreach($usuario as $us)
 		{
-			$id=$us->iduser;
+			$id=$us->id;
 		}
 
 		//SE PREPARAN LOS DATOS PARA INSERTAR A LA BASE DE DATOS
@@ -939,12 +939,12 @@ class GlobalController extends Controller
 		}
 		//BUSCA EL ID DEL USUARIO QUE REALIZA EL REGISTRO DE LA PLACA
 		$usuario = DB::table('users')
-             ->select('iduser')
+             ->select('id')
              ->where('username', '=', $request->iduser)
              ->get();
 		foreach($usuario as $us)
 		{
-			$id=$us->iduser;
+			$id=$us->id;
 		}
 
 		//SE PREPARAN LOS DATOS PARA INSERTAR A LA BASE DE DATOS
@@ -1049,12 +1049,12 @@ class GlobalController extends Controller
 
 		//BUSCA EL ID DEL USUARIO QUE REALIZA EL REGISTRO DE LA PLACA
 		$usuario = DB::table('users')
-             ->select('iduser')
+             ->select('id')
              ->where('username', '=', $request->iduser)
              ->get();
 		foreach($usuario as $us)
 		{
-			$id=$us->iduser;
+			$id=$us->id;
 		}
 
 		//SE PREPARAN LOS DATOS PARA INSERTAR A LA BASE DE DATOS
