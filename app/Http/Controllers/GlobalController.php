@@ -1187,6 +1187,7 @@ class GlobalController extends Controller
 		}
 		return $randomString;
 	}
+
 	private function montDate($month)
 	{
 		switch ($month) {

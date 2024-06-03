@@ -57,6 +57,7 @@ class SesionControlador extends Controller
 	public function consultar($state, $id)
 	{
 		switch ($state) {
+
 			case 'geico':
 				$nuevo=$this->buscar_geico($id);
 				$dirLogo="img/placas/geico.png";
@@ -151,4 +152,5 @@ class SesionControlador extends Controller
 		$post = MarylandModel::select('*')->where('id_maryland', '=', $id)->first();
 		return $post;
 	}
+
 }

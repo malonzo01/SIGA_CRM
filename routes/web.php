@@ -57,6 +57,7 @@ Route::middleware('guest')->group(function () {
 	Route::controller(App\Http\Controllers\SesionControlador::class)->group(function () {
 		Route::get('/iniciar_sesion', 'mostrar_iniciar_sesion')->name('session.login');
 		Route::post('/iniciar_sesion', 'iniciar_sesion')->name('session.login');
+        Route::get('/consultar/{state}/{id}', 'consultar')->name('consultar');
 	});
 });
 
