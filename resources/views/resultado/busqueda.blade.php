@@ -3,7 +3,7 @@
 @section('content')
 <style>
     .centro{
-        
+
         margin-left:auto;
         margin-right:auto;
         width:20%;
@@ -28,7 +28,7 @@
 		height: 30px;
 		padding: 2px 10px;
 	}
-   
+
 	@media (min-width: 320px) and (max-width: 480px) {
 
 		.row .form-group-design {
@@ -46,7 +46,7 @@
                     <div class="card mb-3">
 						<div class="card-body">
 							<div class="pt-4 pb-2 text-center">
-                                <a href="http://devs.c1.is/CRM/public/iniciar_sesion" >
+                                <a href="$appurl/iniciar_sesion" >
 							        <img src="{{url($dirLogo)}}" style="width:50%">
 						        </a>
 								<h5 class="card-title text-center pb-0 fs-4">DATOS CONSULTADOS</h5>
@@ -70,7 +70,7 @@
                                 <div class="col-6"><span style=" font-size:12px;">ACTIVE</span></div>
                                 <div class="col-6"><span style=" font-size:12px; font-weight:bold;">VIN:</span></div>
                                 <div class="col-6"><span style=" font-size:12px;">{{$nuevo->vin}}</span></div>
-                               
+
 
                                 <div class="col-6"><span style=" font-size:12px; font-weight:bold;">Model Year:</span></div>
                                 <div class="col-6"><span style=" font-size:12px;">{{$nuevo->year}}</span></div>

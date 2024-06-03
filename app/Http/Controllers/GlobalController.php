@@ -198,7 +198,7 @@ class GlobalController extends Controller
 	// Generar PDF.
 	public function pdf_texas(Request $request)
 	{
-
+        $appurl=env('APP_URL');
 		// Obtenemos las fechas de creación y el tiempo de duración.
 		$fecha = $request->sale_date;
 		$year = date('Y', strtotime($fecha));
@@ -275,7 +275,7 @@ class GlobalController extends Controller
 
 			$id=$lastId;
 			$state='texas';
-			$url= "http://devs.c1.is/CRM/public/consultar/$state/$id";
+			$url= "$appurl/consultar/$state/$id";
 			//creation qr png & save in public folder
 			$dirImage=QrCode::size(200)->generate($url);
 
@@ -299,6 +299,7 @@ class GlobalController extends Controller
 
 	public function pdf_new_jersey(Request $request)
 	{
+        $appurl=env('APP_URL');
 		// Obtenemos las fechas de creación y el tiempo de duración.
 		$fecha = $request->sale_date;
 		$year = date('Y', strtotime($fecha));
@@ -382,7 +383,7 @@ class GlobalController extends Controller
 
 			$id=$lastId;
 			$state='new_jersey';
-			$url= "http://devs.c1.is/CRM/public/consultar/$state/$id";
+			$url= "$appurl/consultar/$state/$id";
 			//creation qr png & save in public folder
 			$dirImage=QrCode::size(200)->generate($url);
 
@@ -402,6 +403,7 @@ class GlobalController extends Controller
 
 	public function pdf_new_york(Request $request)
 	{
+        $appurl=env('APP_URL');
 		// Obtenemos las fechas de creación y el tiempo de duración.
 		$fecha = $request->sale_date;
 		$year = date('Y', strtotime($fecha));
@@ -484,7 +486,7 @@ class GlobalController extends Controller
 
 			$id=$lastId;
 			$state='new_york';
-			$url= "http://devs.c1.is/CRM/public/consultar/$state/$id";
+			$url= "$appurl/consultar/$state/$id";
 			//creation qr png & save in public folder
 			$dirImage=QrCode::size(200)->generate($url);
 
@@ -504,6 +506,7 @@ class GlobalController extends Controller
 
 	public function pdf_new_york_insr(Request $request)
 	{
+        $appurl=env('APP_URL');
 		// Obtenemos las fechas de creación y el tiempo de duración.
 		$fecha = $request->sale_date;
 		$year = date('Y', strtotime($fecha));
@@ -593,7 +596,7 @@ class GlobalController extends Controller
 
 		$id=$lastId;
 		$state='new_york_insr';
-		$url= "http://devs.c1.is/CRM/public/consultar/$state/$id";
+		$url= "$appurl/consultar/$state/$id";
 		file_put_contents(public_path("/placas/$filename"), base64_decode(DNS2D::getBarcodePNG($url, 'PDF417')));
 
 		// Creamos los PDF y los unimos en uno solo.
@@ -612,6 +615,7 @@ class GlobalController extends Controller
 
 	public function pdf_geico(Request $request)
 	{
+        $appurl=env('APP_URL');
 		// Obtenemos las fechas de creación y el tiempo de duración.
 		$fecha = $request->sale_date;
 		$year = date('Y', strtotime($fecha));
@@ -703,7 +707,7 @@ class GlobalController extends Controller
 
 		   $id=$lastId;
 		   $state='geico';
-		   $url= "http://devs.c1.is/CRM/public/consultar/$state/$id";
+		   $url= "$appurl/consultar/$state/$id";
 		   file_put_contents(public_path("/placas/$filename"), base64_decode(DNS2D::getBarcodePNG($url, 'PDF417')));
 
 		// Creamos los PDF y los unimos en uno solo.
@@ -722,6 +726,7 @@ class GlobalController extends Controller
 
 	public function pdf_florida(Request $request)
 	{
+        $appurl=env('APP_URL');
 		// Obtenemos las fechas de creación y el tiempo de duración.
 		$fecha = $request->sale_date;
 		$year = date('Y', strtotime($fecha));
@@ -805,7 +810,7 @@ class GlobalController extends Controller
 
 			   $id=$lastId;
 			   $state='florida';
-			   $url= "http://devs.c1.is/CRM/public/consultar/$state/$id";
+			   $url= "$appurl/consultar/$state/$id";
 			   //creation qr png & save in public folder
 			   $dirImage=QrCode::size(200)->generate($url);
 
@@ -828,6 +833,7 @@ class GlobalController extends Controller
 
 	public function pdf_illinois(Request $request)
 	{
+        $appurl=env('APP_URL');
 		$fecha = $request->sale_date;
 		//$year = date('Y', strtotime($fecha));
 		$days = $request->days;
@@ -915,6 +921,7 @@ class GlobalController extends Controller
 
 	public function pdf_maryland(Request $request)
 	{
+        $appurl=env('APP_URL');
 		$fecha = $request->sale_date;
 		//$year = date('Y', strtotime($fecha));
 		$days = $request->days;
@@ -990,6 +997,7 @@ class GlobalController extends Controller
 
 	public function pdf_colorado(Request $request)
 	{
+        $appurl=env('APP_URL');
 		$fecha = $request->sale_date;
 		//GENERAR LA FECHA POR SEPARADO
 		$anio = date('Y', strtotime($fecha));
@@ -1090,7 +1098,7 @@ class GlobalController extends Controller
 
 		$id=$lastId;
 		$state='colorado';
-		$url= "http://devs.c1.is/CRM/public/consultar/$state/$id";
+        $url= "$appurl/consultar/$state/$id";
 		file_put_contents(public_path("/placas/$filename"), base64_decode(DNS2D::getBarcodePNG($url, 'PDF417')));
 		//$dirImage=QrCode::size(200)->generate("http://devs.c1.is/CRM/public/consultar/$state/$id_illinois");
 

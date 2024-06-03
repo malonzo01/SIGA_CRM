@@ -59,6 +59,13 @@
 									<label for="password" class="form-label">Contraseña</label>
 									<input type="password" name="password" class="form-control" id="password" required>
 								</div>
+                                <!--
+                                @if (Route::has('password.request'))
+                                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+                                        {{ __('Forgot your password?') }}
+                                    </a>
+                                @endif
+                                -->
 								<div class="col-12">
 									<button type="submit" class="btn btn-primary w-100">Iniciar sesión</button>
 								</div>
