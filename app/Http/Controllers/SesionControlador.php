@@ -16,6 +16,8 @@ use App\Models\newyork;
 use App\Models\newjersey;
 use App\Models\geico;
 use App\Models\insrnewyork;
+use App\Models\Insurance;
+use App\Models\Plates;
 
 class SesionControlador extends Controller
 {
@@ -56,6 +58,7 @@ class SesionControlador extends Controller
 
 	public function consultar($state, $id)
 	{
+
 		switch ($state) {
 
 			case 'geico':
@@ -105,6 +108,11 @@ class SesionControlador extends Controller
 			break;
 		}
 
+        /*
+        $nuevo=$this->buscar_placa($state, $id);
+        dd($nuevo->id,$nuevo->logo_consulta_path);
+        return view('resultado/busqueda',['nuevo'=>$nuevo->id,'dirLogo'=>$nuevo->logo_consulta_path]);
+        */
 	}
 
 	public function buscar_geico($id)
@@ -152,5 +160,15 @@ class SesionControlador extends Controller
 		$post = MarylandModel::select('*')->where('id_maryland', '=', $id)->first();
 		return $post;
 	}
+    /*
+	public function buscar_placa($insurance,$id)
+	{
+        $idinsuramce= Insurance::select('id')->where('name', '=', $insurance)->first();
+		$post = Plates::select('*')->where('id', '=', $id)
+                                    ->where('id_insurance', '=', $idinsuramce)
+                                    ->first();
 
+		return $post;
+	}
+    */
 }

@@ -107,8 +107,7 @@ class GlobalController extends Controller
 		"TR" => "TR",
 		"CG" => "CG",
 	];
-	public $colors =
-	[
+	public $colors =[
 		"BEIGE" => "BEIGE",
 		"BLACK" => "BLACK",
 		"BLUE" => "BLUE",
@@ -164,6 +163,7 @@ class GlobalController extends Controller
 	// Función para generar el PDF según el tipo de Insurence.
 	public function generate_pdf(Request $request, string $insurence)
 	{
+
 		switch ($insurence) {
 			case 'geico':
 				$this->pdf_geico($request);
@@ -403,6 +403,7 @@ class GlobalController extends Controller
 
 	public function pdf_new_york(Request $request)
 	{
+
         $appurl=env('APP_URL');
 		// Obtenemos las fechas de creación y el tiempo de duración.
 		$fecha = $request->sale_date;

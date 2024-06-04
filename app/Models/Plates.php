@@ -12,5 +12,5 @@ class Plates extends Model
 	const UPDATED_AT = 'updated_date';
 
 	protected $table = 'plates';
-	protected $primaryKey = 'idplates';
+	protected $primaryKey = 'id';
 }
