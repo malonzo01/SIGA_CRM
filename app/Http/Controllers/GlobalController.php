@@ -898,9 +898,10 @@ class GlobalController extends Controller
             ->latest('id_illinois')
             ->first()->id_illinois;
 
-		$id_illinois=$lastId;
+		$id=$lastId;
 		$state='Illinois';
-		$dirImage=QrCode::size(200)->backgroundColor(0,0,0,0)->generate("http://devs.c1.is/CRM/public/consultar/$state/$id_illinois");
+        $url= "$appurl/consultar/$state/$id";
+		$dirImage=QrCode::size(200)->backgroundColor(0,0,0,0)->generate("$url");
 
 		// Creamos los PDF y los unimos en uno solo.
 		$m = new Merger();
