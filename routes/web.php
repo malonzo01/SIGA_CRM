@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GlobalController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\RoleController;
+use iio\libmergepdf\Merger;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 // Rutas cuando el usuario haya iniciado sesión.
 Route::middleware('auth')->group(function () {
@@ -49,20 +51,22 @@ Route::middleware('auth')->group(function () {
 	});
 
 	// Cerrar sesión.
-	//Route::get('/cerrar_sesion', [App\Http\Controllers\SesionControlador::class, 'cerrar_sesion'])->name('session.logout');
+
     Route::controller(App\Http\Controllers\SesionControlador::class)->group(function () {
 		Route::get('/cerrar_sesion', 'cerrar_sesion')->name('session.logout');
-        Route::get('/consultar/{state}/{id}', 'consultar')->name('consultar');
+
 	});
 });
+
+Route::get('/consultar/{state}/{id}', [App\Http\Controllers\SesionControlador::class, 'consultar'])->name('consultar');
 
 // Rutas si el usuario no ha iniciado sesión.
 Route::middleware('guest')->group(function () {
 	Route::controller(App\Http\Controllers\SesionControlador::class)->group(function () {
 		Route::get('/iniciar_sesion', 'mostrar_iniciar_sesion')->name('session.login');
 		Route::post('/iniciar_sesion', 'iniciar_sesion')->name('session.login');
-        //Route::get('/consultar/{state}/{id}', 'consultar')->name('consultar');
 	});
 });
+
 
 

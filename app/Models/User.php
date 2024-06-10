@@ -63,4 +63,10 @@ class User extends Authenticatable
     'profile_photo_url',
   ];
 
+  //Relacion uno a muchos
+  public function plates()
+  {
+        return $this->hasMany(Plates::class);
+  }
+
 }

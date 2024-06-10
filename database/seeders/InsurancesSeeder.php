@@ -24,52 +24,52 @@ class InsurancesSeeder extends Seeder
             'logo_consulta_path' => 'img/placas/floridaConsulta.jpg',
         ]);
         Insurance::create([
-            'name' => 'New Jersey',
+            'name' => 'new_jersey',
             'states_ab' => 'NJ',
             'logo_consulta_path' => 'img/placas/newjerseyConsulta.jpg',
         ]);
         Insurance::create([
-            'name' => 'New York',
+            'name' => 'new_york',
             'states_ab' => 'NY',
             'logo_consulta_path' => 'img/placas/newyorkConsulta.jpg',
         ]);
         Insurance::create([
-            'name' => 'New York Insr',
+            'name' => 'new_york_insr',
             'states_ab' => 'IL',
             'logo_consulta_path' => 'img/placas/illinoisConsulta.jpg',
         ]);
         Insurance::create([
-            'name' => 'Texas',
+            'name' => 'texas',
             'states_ab' => 'TX',
             'logo_consulta_path' => 'img/placas/texasConsulta.jpg',
         ]);
         Insurance::create([
-            'name' => 'Colorado',
+            'name' => 'colorado',
             'states_ab' => 'CO',
             'logo_consulta_path' => 'img/placas/coloradoConsulta.jpg',
         ]);
         Insurance::create([
-            'name' => 'Illinois',
+            'name' => 'illinois',
             'states_ab' => 'IL',
             'logo_consulta_path' => 'img/placas/illinoisConsulta.jpg',
         ]);
         Insurance::create([
-            'name' => 'Maryland',
+            'name' => 'maryland',
             'states_ab' => 'MD',
             'logo_consulta_path' => 'img/placas/marylandConsulta.jpg',
         ]);
         Insurance::create([
-            'name' => 'Indiana',
+            'name' => 'indiana',
             'states_ab' => 'IN',
             'logo_consulta_path' => 'img/placas/indianaConsulta.jpg',
         ]);
         Insurance::create([
-            'name' => 'Misuri',
+            'name' => 'misuri',
             'states_ab' => 'MO',
             'logo_consulta_path' => 'img/placas/misuriConsulta.jpg',
         ]);
         Insurance::create([
-            'name' => 'Tennessee',
+            'name' => 'tennessee',
             'states_ab' => 'TN',
             'logo_consulta_path' => 'img/placas/tennesseeConsulta.jpg',
         ]);
