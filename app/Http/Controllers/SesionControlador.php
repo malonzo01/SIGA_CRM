@@ -58,63 +58,63 @@ class SesionControlador extends Controller
 
 	public function consultar($state, $id)
 	{
-
+/*
 		switch ($state) {
 
-			case 'geico':
+			1case 'geico':
 				$nuevo=$this->buscar_geico($id);
 				$dirLogo="img/placas/geico.png";
 				return view('resultado/busqueda',['nuevo'=>$nuevo,'dirLogo'=>$dirLogo]);
 				break;
-			case 'florida':
+			2case 'florida':
 				$nuevo=$this->buscar_florida($id);
 				$dirLogo="img/placas/floridaConsulta.jpg";
 				return view('resultado/busqueda',['nuevo'=>$nuevo,'dirLogo'=>$dirLogo]);
 				break;
-			case 'new_jersey':
+			3case 'new_jersey':
 				$nuevo=$this->buscar_new_jersey($id);
 				$dirLogo="img/placas/newjerseyConsulta.jpg";
 				return view('resultado/busqueda',['nuevo'=>$nuevo,'dirLogo'=>$dirLogo]);
 				break;
-			case 'new_york':
+			4case 'new_york':
 				$nuevo=$this->buscar_new_york($id);
 				$dirLogo="img/placas/newyorkConsulta.jpg";
 				return view('resultado/busqueda',['nuevo'=>$nuevo,'dirLogo'=>$dirLogo]);
 				break;
-			case 'new_york_insr':
+			5case 'new_york_insr':
 				$nuevo=$this->buscar_new_york_insr($id);
 				$dirLogo="img/placas/illinoisConsulta.jpg";
 				return view('resultado/busqueda',['nuevo'=>$nuevo,'dirLogo'=>$dirLogo]);
 				break;
-			case 'texas':
+			6case 'texas':
 				$nuevo=$this->buscar_texas($id);
 				$dirLogo="img/placas/texasConsulta.jpg";
 				return view('resultado/busqueda',['nuevo'=>$nuevo,'dirLogo'=>$dirLogo]);
 				break;
-			case 'colorado':
+			7case 'colorado':
 				$nuevo=$this->buscar_colorado($id);
 				$dirLogo="img/placas/coloradoConsulta.jpg";
 				return view('resultado/busqueda',['nuevo'=>$nuevo,'dirLogo'=>$dirLogo]);
 			break;
-			case 'Illinois':
+			8case 'Illinois':
 				$nuevo=$this->buscar_illinois($id);
 				$dirLogo="img/placas/illinoisConsulta.jpg";
 				return view('resultado/busqueda',['nuevo'=>$nuevo,'dirLogo'=>$dirLogo]);
 			break;
-			case 'maryland':
+			9case 'maryland':
 				$nuevo=$this->buscar_maryland($id);
 				$dirLogo="img/placas/marylandConsulta.jpg";
 				return view('resultado/busqueda',['nuevo'=>$nuevo,'dirLogo'=>$dirLogo]);
 			break;
 		}
+*/
 
-        /*
         $nuevo=$this->buscar_placa($state, $id);
-        dd($nuevo->id,$nuevo->logo_consulta_path);
-        return view('resultado/busqueda',['nuevo'=>$nuevo->id,'dirLogo'=>$nuevo->logo_consulta_path]);
-        */
-	}
 
+        return view('resultado/busqueda',['nuevo'=>$nuevo,'dirLogo'=>$nuevo->insurance->logo_consulta_path]);
+
+	}
+/*
 	public function buscar_geico($id)
 	{
 		$post = geico::select('*')->where('idgeico', '=', $id)->first();
@@ -160,15 +160,15 @@ class SesionControlador extends Controller
 		$post = MarylandModel::select('*')->where('id_maryland', '=', $id)->first();
 		return $post;
 	}
-    /*
+*/
 	public function buscar_placa($insurance,$id)
 	{
-        $idinsuramce= Insurance::select('id')->where('name', '=', $insurance)->first();
-		$post = Plates::select('*')->where('id', '=', $id)
-                                    ->where('id_insurance', '=', $idinsuramce)
-                                    ->first();
 
+        $idinsuramce= Insurance::Where('name',$insurance)->first();
+
+		$post = Plates::Where('id', $id)->where('insurance_id', $idinsuramce->id)->first();
+        $post->insurance;
 		return $post;
 	}
-    */
+
 }

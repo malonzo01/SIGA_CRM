@@ -16,9 +16,12 @@ class PanelControlador extends Controller
 		"illinois"		=> ["active" => true, "icon" => "icon-illinois", "name" => "Illinois"],
 		"colorado"		=> ["active" => true, "icon" => "icon-co", "name" => "Colorado"],
 		"maryland"		=> ["active" => true, "icon" => "icon-maryland", "name" => "Maryland"],
-		"nuevo1"		=> ["active" => true, "icon" => "icon-texas", "name" => "Nuevo1"],
-		"nuevo2"		=> ["active" => true, "icon" => "icon-texas", "name" => "Nuevo2"],
-		"nuevo3"		=> ["active" => true, "icon" => "icon-texas", "name" => "Nuevo3"],
+		"indiana"		=> ["active" => true, "icon" => "icon-indiana", "name" => "Indiana"],
+		"tennessee"		=> ["active" => true, "icon" => "icon-tennessee", "name" => "Tennessee"],
+        //"missouri"		=> ["active" => true, "icon" => "icon-missouri", "name" => "Missouri"],
+        "nuevo1"		=> ["active" => true, "icon" => "icon-texas", "name" => "Nuevo1"],
+        "nuevo2"		=> ["active" => true, "icon" => "icon-texas", "name" => "Nuevo2"],
+        //"placa"		=> ["active" => true, "icon" => "icon-texas", "name" => "Placa"],
 	];
 
 	public function index()

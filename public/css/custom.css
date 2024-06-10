@@ -33,6 +33,19 @@
 	background-image: url('../img/placas/state-seal-florida.png');
 }
 
+.icon-indiana {
+	background-image: url('../img/placas/state-seal-indiana.png');
+}
+
+.icon-missouri {
+	background-image: url('../img/placas/state-seal-missouri.png');
+}
+
+.icon-tennessee {
+	background-image: url('../img/placas/state-seal-tennessee.png');
+}
+
+
 .icon-placa {
 	background-position: 50%;
 	background-repeat: no-repeat;

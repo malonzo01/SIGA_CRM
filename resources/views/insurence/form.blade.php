@@ -141,7 +141,7 @@
                                 <div class="col-sm-12">
                                     <h4 class="title-group">Información comprador *</h4>
                                 </div>
-                                <input type="hidden" name="iduser" value="{{ auth()->user()->username }}">
+                                <input type="hidden" name="iduser" value="{{ auth()->user()->id }}">
                                 <div class="form-group form-group-design col-md-4 col-sm-12 mt-4">
                                     <label>Name 1 *: </label>
                                     <input type="text" name="name1" class="form-control" placeholder="NAME 1" maxlength="45"

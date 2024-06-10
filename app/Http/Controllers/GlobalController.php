@@ -11,6 +11,8 @@ use App\Models\newyork;
 use App\Models\newjersey;
 use App\Models\geico;
 use App\Models\insrnewyork;
+use App\Models\Insurance;
+use App\Models\User;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -125,6 +127,7 @@ class GlobalController extends Controller
 		"YELLOW" => "YELLOW",
 	];
 	//Buscar VIN
+    /*
 	public function search_vin(Request $request)
 	{
 		$estado= $request->state;
@@ -137,6 +140,8 @@ class GlobalController extends Controller
 		//print_r($consulta);
 		return view('insurence.formsearch',['consulta'=>$consulta]);
 	}
+    */
+
 	// Mostrar el formulario para generar el PDF.
 	public function generate_plate(string $insurence)
 	{
@@ -160,39 +165,338 @@ class GlobalController extends Controller
 			'insurences' => $insurences,	// Listado de aseguranzas.
 		]);
 	}
+
 	// Función para generar el PDF según el tipo de Insurence.
 	public function generate_pdf(Request $request, string $insurence)
 	{
 
-		switch ($insurence) {
-			case 'geico':
-				$this->pdf_geico($request);
-				break;
-			case 'florida':
-				$this->pdf_florida($request);
-				break;
-			case 'new_jersey':
-				$this->pdf_new_jersey($request);
-				break;
-			case 'new_york':
-				$this->pdf_new_york($request);
-				break;
-			case 'new_york_insr':
-				$this->pdf_new_york_insr($request);
-				break;
-			case 'texas':
-				$this->pdf_texas($request);
-				break;
-			case 'colorado':
-				$this->pdf_colorado($request);
-			break;
-			case 'illinois':
-				$this->pdf_illinois($request);
-			break;
-			case 'maryland':
-				$this->pdf_maryland($request);
-			break;
+		$appurl=env('APP_URL');
+        $state=$insurence;
+
+        // OBTENEMOS LAS FECHAS DE CREACION Y EL TIEMPO DE DURACION
+		$fecha = $request->sale_date;
+		$year = date('Y', strtotime($fecha));
+		$days = $request->days;
+
+		// CAMBIAMOS EL FORMATO DE LAS FECHAS
+		$createdDay = Carbon::now();
+		$initDay = date('M d, Y', strtotime($fecha));
+		$initDaySt = date('d-m-y', strtotime($fecha));
+		$initDay_Qr = date('m/d/Y', strtotime($fecha));
+		$initDay_Qr_time = date('m/d/Y H:i:s', strtotime($createdDay));
+		$current_time = date('h:i:s a', strtotime($createdDay));
+
+		// DEFINIMOS LA FECHA DE CULMINACION SUMANDO LA FECHA ACTUAL CON LOS DIAS SELECCIONADOS POR EL USUARIO
+        $lateDay = date('M d, Y', strtotime($fecha . ' + ' . $days . ' days'));
+		$lateDaySt = date('d-m-y', strtotime($fecha . ' + ' . $days . ' days'));
+		$lateDay_Qr = date('m/d/Y', strtotime($fecha . ' + ' . $days . ' days'));
+
+        //GENERAR LA FECHA POR SEPARADO
+		$anio = date('Y', strtotime($fecha));
+		$dia = date('d', strtotime($fecha));
+		$mes = date('m', strtotime($fecha));
+		$monthLetter= $this->montDate($mes);
+        $initAnio = date('Y', strtotime($fecha));
+		$initMonth = date('m', strtotime($fecha));
+		$initDate= $this->montDate($initMonth).' '.$initDay.','.$initAnio;
+		$lateAnio = date('Y', strtotime($fecha . ' + ' . $days . ' days'));
+		$lateMonth= date('m', strtotime($fecha . ' + ' . $days . ' days'));
+		$lateDate= $this->montDate($lateMonth).' '.$lateDay.','.$lateAnio;
+		$monthDateLast=$this->montDate($lateMonth);
+
+		// GENERAMOS LOS CODIGOS ALEATORIOS.
+        $tag_number = $this->generateRandomStringTagNumber('6'); //code placa
+        $str = date('mYd', strtotime($fecha)) . 'JI';
+		$vin = $this->generateRandomString('17'); //code vin
+        switch ($state) {
+            case 'florida':
+                $tag_number = $this->generateRandomLetters('3') . $this->generateRandomNumbers('4'); //code placa
+                $str = 'EXPIRES';
+                $date_header = str_split(date('mdy', strtotime($fecha . ' + ' . $days . ' days')));
+            break;
+            case 'maryland':
+                $tag_number =$this->generateRandomLetters('1').$this->generateRandomNumbers('5').$this->generateRandomLetters('1').$this->generateRandomNumbers('1'); //code placa
+            break;
+            case 'tennessee':
+                $tag_number =$this->generateRandomLetters('7'); //code placa
+            break;
+            case 'colorado':
+                $tag_number =$this->generateRandomNumbers('7'); //code placa
+                $str = 'EXPIRES';
+            break;
+        }
+		$chars = str_split($str);
+
+		// CREAMOS LA CARPETA NUEVA
+		$path		= public_path("/placas/$tag_number/");
+		$path_web	= $tag_number . '/';
+		if (!file_exists($path)) {
+			File::makeDirectory($path, $mode = 0777, true, true);
 		}
+
+		// GENERAMOS UN NOMBRE DE ARCHIVO UNICO
+		$dat_name = md5(date('Y-m-d H:i:s:u'));
+		$filename = "$tag_number/$dat_name.png";
+
+		$randnum_init = rand(0000000000, 9999999999);
+		$randnum_last = rand(0, 9);
+		$policy = $randnum_init . '-' . $randnum_last;
+
+		// ENCODE DATA
+        $data_encode = $tag_number . '|' .
+                       $initDay_Qr . '|' .
+                       $str . '|' .
+                       $initDay_Qr_time . '|' .
+                       $lateDay_Qr . '|' .
+                       $request->vin . '|' .
+                       $request->year . '|' .
+                       $request->make . '|' .
+                       $request->body_style . '|' .
+                       $request->major_color . '|' .
+                       $request->deler_number . '|' .
+                       $request->seller . '|' .
+                       $state;
+
+        switch ($state) {
+            case 'geico':
+                $data_encode = $policy . '|' .
+                            $initDay_Qr . '|' .
+                            $str . '|' .
+                            $initDay_Qr_time . '|' .
+                            $lateDay_Qr . '|' .
+                            $request->vin . '|' .
+                            $request->year . '|' .
+                            $request->make . '|' .
+                            $request->body_style . '|' .
+                            $request->major_color . '|' .
+                            $request->deler_number . '|' .
+                            $request->seller . '|' .
+                            'insr_geico';
+            break;
+            case 'new_york_insr':
+                $data_encode = $policy . '|' .
+                            $initDay_Qr . '|' .
+                            $str . '|' .
+                            $initDay_Qr_time . '|' .
+                            $lateDay_Qr . '|' .
+                            $request->vin . '|' .
+                            $request->year . '|' .
+                            $request->make . '|' .
+                            $request->body_style . '|' .
+                            $request->major_color . '|' .
+                            $request->deler_number . '|' .
+                            $request->seller . '|' .
+                            'insr_geico';
+            break;
+            case 'colorado':
+                $data_encode = $policy . '|' .
+                            $initDay_Qr . '|' .
+                            $str . '|' .
+                            $initDay_Qr_time . '|' .
+                            $lateDay_Qr . '|' .
+                            $request->vin . '|' .
+                            $request->year . '|' .
+                            $request->make . '|' .
+                            $request->body_style . '|' .
+                            $request->major_color . '|' .
+                            $request->deler_number . '|' .
+                            $request->seller . '|' .
+                            'insr_geico';
+            break;
+        }
+
+		$str_encode = base64_encode($data_encode);
+
+		//BUSCA EL ID DEL USUARIO QUE REALIZA EL REGISTRO DE LA PLACA
+		$usuarioid = $request->iduser;
+        $insuramcebase= Insurance::Where('name',$insurence)->first();
+
+		//SE PREPARAN LOS DATOS PARA INSERTAR A LA BASE DE DATOS
+		$plate= new Plates();
+		$plate->vin= $request->vin;
+        $plate->plate=$tag_number;
+        $plate->date_issue=$initDay_Qr;
+		$plate->date_exp= $lateDay_Qr;
+        $plate->days=$request->days;
+		$plate->seller= $request->seller;
+		$plate->dealer_number=$request->deler_number;
+		$plate->make= $request->make;
+		$plate->model= $request->model;
+		$plate->year=$request->year;
+		$plate->body_style=$request->body_style;
+		$plate->major_color=$request->major_color;
+		$plate->minor_color=$request->minor_color;
+		$plate->name1= $request->name1;
+		$plate->name2= $request->name2;
+		$plate->address= $request->address;
+		$plate->city= $request->city;
+		$plate->state= $request->state;
+		$plate->zip= $request->zip;
+		$plate->email= $request->email;
+		$plate->phone= $request->phone;
+		$plate->user_id= $usuarioid;
+        $plate->insurance_id= $insuramcebase->id;
+		$plate->save();
+
+		//SE CREA LA URL Y QR DE LA PLACA, SE BUSCA EL ULTIMO ID_ILINOIS  DE LA BD
+		$lastId = $plate->id;
+		$id=$lastId;
+        $state=$insurence;
+		$url= "$appurl/consultar/$state/$id";
+
+        //CREACION DE QR PNG & GUARDADO EN LA CARPETA PUBLIC
+        $dirImage=QrCode::size(200)->generate($url);
+        switch ($state){
+            case 'new_york_insr':
+                file_put_contents(public_path("/placas/$filename"), base64_decode(DNS2D::getBarcodePNG($url, 'PDF417')));
+            break;
+            case 'geico':
+                file_put_contents(public_path("/placas/$filename"), base64_decode(DNS2D::getBarcodePNG($url, 'PDF417')));
+            break;
+            case 'colorado':
+                file_put_contents(public_path("/placas/$filename"), base64_decode(DNS2D::getBarcodePNG($url, 'PDF417')));
+            break;
+            case 'tennessee':
+                file_put_contents(public_path("/placas/$filename"), base64_decode(DNS2D::getBarcodePNG($url, 'PDF417')));
+            break;
+            case 'illinois':
+                $dirImage=QrCode::size(200)->backgroundColor(0,0,0,0)->generate("$url");
+            break;
+        }
+
+            //SE GENERAN LOS PDF
+            switch ($insurence) {
+                case 'geico':
+                    // Creamos los PDF y los unimos en uno solo.
+                    $m		= new Merger();
+                    $pdf	= Pdf::loadView('pdf.colorado', compact('request', 'initDay', 'initDaySt', 'lateDay', 'lateDaySt', 'year', 'vin', 'tag_number', 'chars', 'filename', 'policy', 'current_time'));
+                    $pdf->render();
+                    $m->addRaw($pdf->output());
+                    $pdf->render();
+                    $finalPDF = $m->merge();
+                break;
+                case 'florida':
+                    // Creamos los PDF y los unimos en uno solo.
+                    $m = new Merger();
+                    $pdf = Pdf::loadView('pdf.florida_placa', compact('request','dirImage', 'initDay', 'lateDay', 'year', 'vin', 'tag_number', 'chars', 'filename', 'date_header'))->setPaper('a4', 'landscape');
+                    $pdf->render();
+                    $m->addRaw($pdf->output());
+                    unset($pdf);
+                    $pdf = Pdf::loadView('pdf.florida', compact('request','dirImage', 'initDay', 'lateDay', 'year', 'vin', 'tag_number', 'chars', 'filename'));
+                    $m->addRaw($pdf->output());
+                    $pdf->render();
+                    $finalPDF = $m->merge();
+                break;
+                case 'new_jersey':
+                    // Creamos los PDF y los unimos en uno solo.
+                    $m = new Merger();
+                    $pdf = Pdf::loadView('pdf.njersey_nuevo_placa', compact('dirImage','request', 'initDay', 'initDaySt', 'lateDay', 'lateDaySt', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $pdf->render();
+                    $m->addRaw($pdf->output());
+                    $pdf->render();
+                    $finalPDF = $m->merge();
+                break;
+                case 'new_york':
+                    // Creamos los PDF y los unimos en uno solo.
+                    $m = new Merger();
+                    $pdf = Pdf::loadView('pdf.nyork_nuevo_placa', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay', 'lateDaySt', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $pdf->render();
+                    $m->addRaw($pdf->output());
+                    $pdf->render();
+                    $finalPDF = $m->merge();
+                break;
+                case 'new_york_insr':
+                    // Creamos los PDF y los unimos en uno solo.
+                    $m = new Merger();
+                    $pdf = Pdf::loadView('pdf.temp_ny_ins', compact('request', 'initDay', 'initDaySt', 'lateDay', 'lateDaySt', 'year', 'vin', 'tag_number', 'chars', 'filename', 'policy'));
+                    $pdf->render();
+                    $m->addRaw($pdf->output());
+                    $pdf->render();
+                    $finalPDF = $m->merge();
+                break;
+                case 'texas':
+                    // Creamos los PDF y los unimos en uno solo.
+                    $m = new Merger();
+                    $pdf = Pdf::loadView('pdf.texas_nuevo_placa', compact('request','dirImage', 'initDay', 'lateDay', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $pdf->render();
+                    $m->addRaw($pdf->output());
+                    unset($pdf);
+                    $pdf = Pdf::loadView('pdf.texas_nuevo', compact('request', 'dirImage', 'initDay', 'lateDay', 'year', 'vin', 'tag_number', 'chars', 'filename'));
+                    $m->addRaw($pdf->output());
+                    $pdf->render();
+                    $finalPDF = $m->merge();
+                break;
+                case 'colorado':
+                    $m = new Merger();
+                    $pdf = Pdf::loadView('pdf.coloradoverdad', compact('request','tag_number','lateAnio','monthDateLast','lateDay'))->setPaper('a4', 'landscape');
+                    $pdf->render();
+                    $m->addRaw($pdf->output());
+                    unset($pdf);
+                    $pdf = Pdf::loadView('pdf.colorado2', compact('request', 'tag_number'))->setPaper('a4', 'landscape');
+                    $m->addRaw($pdf->output());
+                    unset($pdf);
+                    $pdf = Pdf::loadView('pdf.colorado3', compact('request','initDate','lateDate','filename','chars', 'tag_number'))->setPaper('legal', 'portrait');
+                    $m->addRaw($pdf->output());
+                    $pdf->render();
+                    $finalPDF = $m->merge();
+                break;
+                case 'illinois':
+                    // Creamos los PDF y los unimos en uno solo.
+                    $m = new Merger();
+                    $pdf = Pdf::loadView('pdf.illinois_placa',compact('request','initDay_Qr','lateDay_Qr','tag_number','dirImage'))->setPaper('a4', 'landscape');
+                    $pdf->render();
+                    $m->addRaw($pdf->output());
+                    unset($pdf);
+                    $finalPDF = $m->merge();
+                break;
+                case 'maryland':
+                    // Creamos los PDF y los unimos en uno solo.
+                    $m = new Merger();
+                    $pdf = Pdf::loadView('pdf.maryland_placa',compact('request','initDay_Qr','lateDay_Qr','tag_number'))->setPaper('a4', 'landscape');
+                    $pdf->render();
+                    $m->addRaw($pdf->output());
+                    unset($pdf);
+                    $finalPDF = $m->merge();
+                break;
+                case 'tennessee':
+                    // Creamos los PDF y los unimos en uno solo.
+                    $m = new Merger();
+                    $pdf = Pdf::loadView('pdf.tennessee_placa', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay', 'lateDaySt','lateDay_Qr', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $pdf->render();
+                    $m->addRaw($pdf->output());
+                    unset($pdf);
+                    $pdf = Pdf::loadView('pdf.tennessee_detalle', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay', 'lateDaySt','lateDay_Qr', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $m->addRaw($pdf->output());
+                    $pdf->render();
+                    $finalPDF = $m->merge();
+                break;
+                case 'indiana':
+                    // Creamos los PDF y los unimos en uno solo.
+                    $m = new Merger();
+                    $pdf = Pdf::loadView('pdf.indiana_placa', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay','lateDay_Qr', 'lateDaySt', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $pdf->render();
+                    $m->addRaw($pdf->output());
+                    unset($pdf);
+                    $pdf = Pdf::loadView('pdf.indiana_detalle', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay', 'lateDay_Qr','lateDaySt','initDay_Qr', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $m->addRaw($pdf->output());
+                    $pdf->render();
+                    $finalPDF = $m->merge();
+                break;
+
+                case 'placa':
+                    // Creamos los PDF y los unimos en uno solo.
+                    $m = new Merger();
+                    $pdf = Pdf::loadView('pdf.placa', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay', 'lateDaySt','initDay_Qr', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $m->addRaw($pdf->output());
+                    $pdf->render();
+                    $finalPDF = $m->merge();
+                break;
+            }
+
+        // Cargamos toda la aplicación.
+		header("Content-Type: application/pdf");
+        header("Content-Disposition: inline;filename=tag_". $insurence ."_" . $tag_number . ".pdf");
+		echo $finalPDF;
 	}
 
 	// Generar PDF.
@@ -298,7 +602,7 @@ class GlobalController extends Controller
 	}
 
 	public function pdf_new_jersey(Request $request)
-	{
+    {
         $appurl=env('APP_URL');
 		// Obtenemos las fechas de creación y el tiempo de duración.
 		$fecha = $request->sale_date;
@@ -335,7 +639,19 @@ class GlobalController extends Controller
 		$filename = "$tag_number/$dat_name.png";
 
 		//encode data
-		$data_encode = $tag_number . '|' . $initDay_Qr . '|' . $str . '|' . $initDay_Qr_time . '|' . $lateDay_Qr . '|' . $request->vin . '|' . $request->year . '|' . $request->make . '|' . $request->body_style . '|' . $request->major_color . '|' . $request->deler_number . '|' . $request->seller . '|' . 'jersey';
+		$data_encode = $tag_number . '|' .
+                       $initDay_Qr . '|' .
+                       $str . '|' .
+                       $initDay_Qr_time . '|' .
+                       $lateDay_Qr . '|' .
+                       $request->vin . '|' .
+                       $request->year . '|' .
+                       $request->make . '|' .
+                       $request->body_style . '|' .
+                       $request->major_color . '|' .
+                       $request->deler_number . '|' .
+                       $request->seller . '|' .
+                       'jersey';
 		$str_encode = base64_encode($data_encode);
 
 		//creation qr png & save in public folder
@@ -399,11 +715,10 @@ class GlobalController extends Controller
 		header("Content-Type: application/pdf");
 		header("Content-Disposition: inline;filename=NJTAG_" . $tag_number . ".pdf");
 		echo $finalPDF;
-	}
+    }
 
 	public function pdf_new_york(Request $request)
 	{
-
         $appurl=env('APP_URL');
 		// Obtenemos las fechas de creación y el tiempo de duración.
 		$fecha = $request->sale_date;
@@ -440,7 +755,19 @@ class GlobalController extends Controller
 		$filename = "$tag_number/$dat_name.png";
 
 		//encode data
-		$data_encode = $tag_number . '|' . $initDay_Qr . '|' . $str . '|' . $initDay_Qr_time . '|' . $lateDay_Qr . '|' . $request->vin . '|' . $request->year . '|' . $request->make . '|' . $request->body_style . '|' . $request->major_color . '|' . $request->deler_number . '|' . $request->seller . '|' . 'nyork';
+		$data_encode = $tag_number . '|' .
+        $initDay_Qr . '|' .
+        $str . '|' .
+        $initDay_Qr_time . '|' .
+        $lateDay_Qr . '|' .
+        $request->vin . '|' .
+        $request->year . '|' .
+        $request->make . '|' .
+        $request->body_style . '|' .
+        $request->major_color . '|' .
+        $request->deler_number . '|' .
+        $request->seller . '|' .
+        'nyork';
 		$str_encode = base64_encode($data_encode);
 
 		//creation qr png & save in public folder
@@ -547,7 +874,19 @@ class GlobalController extends Controller
 		$policy = $randnum_init . '-' . $randnum_last;
 
 		//encode data
-		$data_encode = $policy . '|' . $initDay_Qr . '|' . $str . '|' . $initDay_Qr_time . '|' . $lateDay_Qr . '|' . $request->vin . '|' . $request->year . '|' . $request->make . '|' . $request->body_style . '|' . $request->major_color . '|' . $request->deler_number . '|' . $request->seller . '|' . 'insr_ny';
+		$data_encode = $policy . '|' .
+        $initDay_Qr . '|' .
+        $str . '|' .
+        $initDay_Qr_time . '|' .
+        $lateDay_Qr . '|' .
+        $request->vin . '|' .
+        $request->year . '|' .
+        $request->make . '|' .
+        $request->body_style . '|' .
+        $request->major_color . '|' .
+        $request->deler_number . '|' .
+        $request->seller . '|' .
+        'insr_ny';
 		$str_encode = base64_encode($data_encode);
 
 		//creation qr png & save in public folder
@@ -657,7 +996,19 @@ class GlobalController extends Controller
 		$policy = $randnum_init . '-' . $randnum_last;
 
 		//encode data
-		$data_encode = $policy . '|' . $initDay_Qr . '|' . $str . '|' . $initDay_Qr_time . '|' . $lateDay_Qr . '|' . $request->vin . '|' . $request->year . '|' . $request->make . '|' . $request->body_style . '|' . $request->major_color . '|' . $request->deler_number . '|' . $request->seller . '|' . 'insr_geico';
+		$data_encode = $policy . '|' .
+                    $initDay_Qr . '|' .
+                    $str . '|' .
+                    $initDay_Qr_time . '|' .
+                    $lateDay_Qr . '|' .
+                    $request->vin . '|' .
+                    $request->year . '|' .
+                    $request->make . '|' .
+                    $request->body_style . '|' .
+                    $request->major_color . '|' .
+                    $request->deler_number . '|' .
+                    $request->seller . '|' .
+                    'insr_geico';
 		$str_encode = base64_encode($data_encode);
 
 		//creation qr png & save in public folder.
@@ -747,8 +1098,10 @@ class GlobalController extends Controller
 		$vin = $this->generateRandomString('17'); //code vin
 		$tag_number = $this->generateRandomLetters('3') . $this->generateRandomNumbers('4'); //code placa
 		$str = 'EXPIRES';
-		$chars = str_split($str);
-		$date_header = str_split(date('mdy', strtotime($fecha . ' + ' . $days . ' days')));
+        $date_header = str_split(date('mdy', strtotime($fecha . ' + ' . $days . ' days')));
+
+        $chars = str_split($str);
+
 
 		// Creamos una carpeta nueva.
 		$path			= public_path("/placas/$tag_number/");
@@ -762,7 +1115,19 @@ class GlobalController extends Controller
 		$filename = "$tag_number/$dat_name.png";
 
 		//encode data
-		$data_encode = $tag_number . '|' . $initDay_Qr . '|' . $str . '|' . $initDay_Qr_time . '|' . $lateDay_Qr . '|' . $request->vin . '|' . $request->year . '|' . $request->make . '|' . $request->body_style . '|' . $request->major_color . '|' . $request->deler_number . '|' . $request->seller . '|' . 'florida';
+		$data_encode = $tag_number . '|' .
+                       $initDay_Qr . '|' .
+                       $str . '|' .
+                       $initDay_Qr_time . '|' .
+                       $lateDay_Qr . '|' .
+                       $request->vin . '|' .
+                       $request->year . '|' .
+                       $request->make . '|' .
+                       $request->body_style . '|' .
+                       $request->major_color . '|' .
+                       $request->deler_number . '|' .
+                       $request->seller . '|' .
+                       'florida';
 		$str_encode = base64_encode($data_encode);
 
 		//creation qr png & save in public folder
@@ -898,7 +1263,7 @@ class GlobalController extends Controller
             ->latest('id_illinois')
             ->first()->id_illinois;
 
-		$id=$lastId;
+	    $id=$lastId;
 		$state='Illinois';
         $url= "$appurl/consultar/$state/$id";
 		$dirImage=QrCode::size(200)->backgroundColor(0,0,0,0)->generate("$url");
@@ -1049,7 +1414,19 @@ class GlobalController extends Controller
 		$randnum_last = rand(0, 9);
 		$policy = $randnum_init . '-' . $randnum_last;
 		//encode data
-		$data_encode = $policy . '|' . $initDay_Qr . '|' . $str . '|' . $initDay_Qr. '|' . $lateDay_Qr . '|' . $request->vin . '|' . $request->year . '|' . $request->make . '|' . $request->body_style . '|' . $request->major_color . '|' . $request->deler_number . '|' . $request->seller . '|' . 'insr_geico';
+		$data_encode = $policy . '|' .
+                       $initDay_Qr . '|' .
+                       $str . '|' .
+                       $initDay_Qr. '|' .
+                       $lateDay_Qr . '|' .
+                       $request->vin . '|' .
+                       $request->year . '|' .
+                       $request->make . '|' .
+                       $request->body_style . '|' .
+                       $request->major_color . '|' .
+                       $request->deler_number . '|' .
+                       $request->seller . '|' .
+                       'insr_geico';
 		$str_encode = base64_encode($data_encode);
 
 		//creation qr png & save in public folder.
@@ -1132,6 +1509,7 @@ class GlobalController extends Controller
 		echo $finalPDF;
 		return $request;
 	}
+
 	// Funciones complementarias.
 	public function showqr($id)
 	{
