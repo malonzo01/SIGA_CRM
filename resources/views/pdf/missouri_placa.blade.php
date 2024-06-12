@@ -59,22 +59,24 @@
         }
 
         .div-master {
-            background-image: url('img/placas/missouri.png');
+            background-image: url('img/placas/missouri-2-2.png');
             /* The image used */
-            background-size: 862px 500px;
+            background-size: 300px 300px;
             /* You must set a specified height */
-            background-position: center;
+            background-attachment: fixed;
+            background-position: 400px 150px;
             /* Center the image */
             background-repeat: no-repeat;
             /* Do not repeat the image */
 
         }
         .div-master-2 {
-            background-image: url('img/placas/missouri-state-seal22.png');
+            background-image: url('img/placas/missouri-2-1.png');
             /* The image used */
-            background-size: 230px 134px;
+            background-size: 220px 110px;
             /* You must set a specified height */
-            background-position: left center;
+            background-attachment: fixed;
+            background-position: -25px 25px;
             /* Center the image */
             background-repeat: repeat-x;
             /* Do not repeat the image */
@@ -251,7 +253,7 @@
             </tr>
         </table>
         <!--NUMERO DE PLACA -->
-        <table style="border-spacing: 0;text-align:center;margin-top:-45px;margin-left:360px;">
+        <table style="border-spacing: 0;text-align:center;margin-top:-45px;margin-left:380px;">
             <tr>
                 <td width="130">
                     <h4

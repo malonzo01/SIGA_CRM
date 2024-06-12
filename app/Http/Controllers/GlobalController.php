@@ -202,6 +202,7 @@ class GlobalController extends Controller
 		$initDate= $this->montDate($initMonth).' '.$initDay.','.$initAnio;
 		$lateAnio = date('Y', strtotime($fecha . ' + ' . $days . ' days'));
 		$lateMonth= date('m', strtotime($fecha . ' + ' . $days . ' days'));
+        $lateDay= date('d', strtotime($fecha . ' + ' . $days . ' days'));
 		$lateDate= $this->montDate($lateMonth).' '.$lateDay.','.$lateAnio;
 		$monthDateLast=$this->montDate($lateMonth);
 
@@ -224,6 +225,9 @@ class GlobalController extends Controller
             case 'colorado':
                 $tag_number =$this->generateRandomNumbers('7'); //code placa
                 $str = 'EXPIRES';
+            break;
+            case 'missouri':
+                $tag_number = $this->generateRandomString('6'); //code placa
             break;
         }
 		$chars = str_split($str);
@@ -1546,7 +1550,7 @@ class GlobalController extends Controller
 
 		$a = mt_rand(100000, 999999);
 		$randomletter = substr(str_shuffle("ABCDEFGHIJKLMNPQRSTUVWXYZ"), 0, 1);
-		$lent_stat = $randomletter . $a;
+ 		$lent_stat = $randomletter . $a;
 		$my_array1 = str_split($lent_stat);
 
 		//desordeno el array y lo muestro
