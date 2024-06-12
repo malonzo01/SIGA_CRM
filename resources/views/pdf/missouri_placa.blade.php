@@ -59,10 +59,9 @@
         }
 
         .div-master {
-
             background-image: url('img/placas/missouri.png');
             /* The image used */
-            background-size: 900px 580px;
+            background-size: 862px 500px;
             /* You must set a specified height */
             background-position: center;
             /* Center the image */
@@ -71,7 +70,7 @@
 
         }
         .div-master-2 {
-            background-image: url('img/placas/missouri.png');
+            background-image: url('img/placas/missouri-state-seal22.png');
             /* The image used */
             background-size: 230px 134px;
             /* You must set a specified height */
@@ -88,138 +87,140 @@
             font-weight: bold;
         }
     </style>
-<div class="div-master-2" style="width:100%;padding:0px 0px 0px 40px;border: 1px solid black;">
-    <table style="margin-top: 0px;margin-bottom:-0px;">
-        <tr style="padding: 2px 0px 2px 0px;background-color: black;">
-            <th width="760">
-                <h4 style="font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:700;color:white ;margin-top:0px;margin-bottom:0px;;">TEMPORARY PERMIT RECEIPT - MUST BE KEPT WITH VEHICLE</h4>
-            </th>
-        </tr>
-    </table>
-    <table style="margin-top: 0px;margin-bottom:-0px;">
-        <tr style="padding: 2px 0px 2px 0px;">
-            <th width="100">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;">Year</h4>
-            </th>
-            <th width="150">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;">{{ $request->year }}</h4>
-            </th>
-            <th width="50">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;">Make</h4>
-            </th>
-            <th width="80">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;">{{ $request->make }}</h4>
-            </th>
-            <th width="100">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;">Name</h4>
-            </th>
-            <th width="280">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;">{{ $request->name1 }} {{ $request->name2 }}</h4>
-            </th>
-        </tr>
-    </table>
-    <table style="margin-top: 0px;margin-bottom:-0px;">
-        <tr style="padding: 2px 0px 2px 0px;">
-            <th width="100">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">VIN #</h4>
-            </th>
-            <th width="280">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">{{ $request->vin }}</h4>
-            </th>
-            <th width="100">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">Address</h4>
-            </th>
-            <th width="280">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">{{ $request->address }}</h4>
-            </th>
-        </tr>
-    </table>
-    <table style="margin-top: 0px;margin-bottom:-0px;">
-        <tr style="padding: 2px 0px 2px 0px;">
-            <th width="100">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">Permit Number</h4>
-            </th>
-            <th width="660">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">{{ $tag_number }}</h4>
-            </th>
-        </tr>
-    </table>
-    <table style="margin-top: 0px;margin-bottom:-0px;">
-        <tr style="padding: 2px 0px 2px 0px;">
-            <th width="100">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">Date Permit Issued</h4>
-            </th>
-            <th width="280">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">{{ $initDaySt }}</h4>
-            </th>
-            <th width="100">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">Telephone Number</h4>
-            </th>
-            <th width="280">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">{{ $request->phone }}</h4>
-            </th>
-        </tr>
-    </table>
-    <table style="margin-top: 0px;margin-bottom:-0px;">
-        <tr style="padding: 2px 0px 2px 0px;">
-            <th width="100">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">Date Permit Expires</h4>
-            </th>
-            <th width="160">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">{{ $lateDaySt }}</h4>
-            </th>
-            <th width="500" >
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">Ihereby certify that the statement(s) herein are true to the bert of my knowledge. Falso Certify that I have a</h4>
-            </th>
-        </tr>
-    </table>
-    <table style="margin-top: 0px;margin-bottom:-0px;">
-        <tr style="padding: 2px 0px 2px 0px;">
-            <th width="100">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">Issuer Name</h4>
-            </th>
-            <th width="160">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">{{$request->seller}}</h4>
-            </th>
-            <th width="500">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">will mantain, during the period of registration financial responsability with respect to each motor vehicle that </h4>
-            </th>
-        </tr>
-    </table>
-    <table style="margin-top: 0px;margin-bottom:-0px;">
-        <tr style="padding: 2px 0px 2px 0px;">
-            <th width="100">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;">Issuer Number</h4>
-            </th>
-            <th width="160">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;">{{ $request->deler_number }}</h4>
-            </th>
-            <th width="500">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;">own, license or operate on the streets or highways. Temporary permit shail be retuned to the Departament.</h4>
-            </th>
-        </tr>
-    </table>
-    <table style="margin-top: 0px;margin-bottom:-0px;">
-        <tr style="padding: 2px 0px 2px 0px;">
-            <th width="100">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;"></h4>
-            </th>
-            <th width="660">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:400;margin-top:0px;margin-bottom:0px;">Purchaser`s Signature</h4>
-            </th>
-        </tr>
-    </table>
-    <table style="margin-top: 0px;margin-bottom:-0px;">
-        <tr style="padding: 2px 0px 2px 0px;">
-            <th width="762">
-                <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;">Receip Slowly Perforation</h4>
-            </th>
-        </tr>
-    </table>
-</div>
+<!--CABECERA DETALLE-->
+    <div class="div-master-2" style="width:100%;padding:0px 0px 0px 40px;border: 1px solid black;">
+        <table style="margin-top: 0px;margin-bottom:-0px;">
+            <tr style="padding: 2px 0px 2px 0px;background-color: black;">
+                <th width="760">
+                    <h4 style="font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:700;color:white ;margin-top:0px;margin-bottom:0px;;">TEMPORARY PERMIT RECEIPT - MUST BE KEPT WITH VEHICLE</h4>
+                </th>
+            </tr>
+        </table>
+        <table style="margin-top: 0px;margin-bottom:-0px;">
+            <tr style="padding: 2px 0px 2px 0px;">
+                <th width="100">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;">Year</h4>
+                </th>
+                <th width="150">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;">{{ $request->year }}</h4>
+                </th>
+                <th width="50">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;">Make</h4>
+                </th>
+                <th width="80">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;">{{ $request->make }}</h4>
+                </th>
+                <th width="100">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;">Name</h4>
+                </th>
+                <th width="280">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;">{{ $request->name1 }} {{ $request->name2 }}</h4>
+                </th>
+            </tr>
+        </table>
+        <table style="margin-top: 0px;margin-bottom:-0px;">
+            <tr style="padding: 2px 0px 2px 0px;">
+                <th width="100">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">VIN #</h4>
+                </th>
+                <th width="280">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">{{ $request->vin }}</h4>
+                </th>
+                <th width="100">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">Address</h4>
+                </th>
+                <th width="280">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">{{ $request->address }}</h4>
+                </th>
+            </tr>
+        </table>
+        <table style="margin-top: 0px;margin-bottom:-0px;">
+            <tr style="padding: 2px 0px 2px 0px;">
+                <th width="100">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">Permit Number</h4>
+                </th>
+                <th width="660">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">{{ $tag_number }}</h4>
+                </th>
+            </tr>
+        </table>
+        <table style="margin-top: 0px;margin-bottom:-0px;">
+            <tr style="padding: 2px 0px 2px 0px;">
+                <th width="100">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">Date Permit Issued</h4>
+                </th>
+                <th width="280">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">{{ $initDaySt }}</h4>
+                </th>
+                <th width="100">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">Telephone Number</h4>
+                </th>
+                <th width="280">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">{{ $request->phone }}</h4>
+                </th>
+            </tr>
+        </table>
+        <table style="margin-top: 0px;margin-bottom:-0px;">
+            <tr style="padding: 2px 0px 2px 0px;">
+                <th width="100">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">Date Permit Expires</h4>
+                </th>
+                <th width="160">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">{{ $lateDaySt }}</h4>
+                </th>
+                <th width="500" >
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">Ihereby certify that the statement(s) herein are true to the bert of my knowledge. Falso Certify that I have a</h4>
+                </th>
+            </tr>
+        </table>
+        <table style="margin-top: 0px;margin-bottom:-0px;">
+            <tr style="padding: 2px 0px 2px 0px;">
+                <th width="100">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">Issuer Name</h4>
+                </th>
+                <th width="160">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">{{$request->seller}}</h4>
+                </th>
+                <th width="500">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">will mantain, during the period of registration financial responsability with respect to each motor vehicle that </h4>
+                </th>
+            </tr>
+        </table>
+        <table style="margin-top: 0px;margin-bottom:-0px;">
+            <tr style="padding: 2px 0px 2px 0px;">
+                <th width="100">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;">Issuer Number</h4>
+                </th>
+                <th width="160">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;">{{ $request->deler_number }}</h4>
+                </th>
+                <th width="500">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;">own, license or operate on the streets or highways. Temporary permit shail be retuned to the Departament.</h4>
+                </th>
+            </tr>
+        </table>
+        <table style="margin-top: 0px;margin-bottom:-0px;">
+            <tr style="padding: 2px 0px 2px 0px;">
+                <th width="100">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;"></h4>
+                </th>
+                <th width="660">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:400;margin-top:0px;margin-bottom:0px;">Purchaser`s Signature</h4>
+                </th>
+            </tr>
+        </table>
+        <table style="margin-top: 0px;margin-bottom:-0px;">
+            <tr style="padding: 2px 0px 2px 0px;">
+                <th width="762">
+                    <h4 style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;">Receip Slowly Perforation</h4>
+                </th>
+            </tr>
+        </table>
+    </div>
+<!--PLACA -->
     <div class="div-master" style="width:100%; margin-bottom:20px;padding:0px 0px 0px 80px;">
-        <!--CABECERA 1 -->
-        <table style="border-spacing: 0;margin-bottom:-0px;text-align:center;margin-top:5px;">
+        <!--CABECERA PLACA -->
+        <table style="border-spacing: 0;text-align:center;margin-top:5px;margin-bottom:-0px;">
             <tr>
                 <td width="700">
                     <h4
@@ -235,7 +236,6 @@
         <table style="border-spacing: 0;margin-bottom:-0px;margin-top:-60px;">
             <tr style="padding: 2px 0px 2px 0px;">
                 <th width="40">
-
                 </th>
                 <th width="100">
                     <h4 style="font-size:1.5em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;">YEAR</h4>
@@ -251,7 +251,7 @@
             </tr>
         </table>
         <!--NUMERO DE PLACA -->
-        <table style="border-spacing: 0;margin-top:-110px;margin-left:360px;text-align:center;margin-top:-45px;">
+        <table style="border-spacing: 0;text-align:center;margin-top:-45px;margin-left:360px;">
             <tr>
                 <td width="130">
                     <h4
@@ -260,8 +260,17 @@
                 </td>
             </tr>
         </table>
+        <table style="border-spacing: 0;text-align:center;margin-top:-45px;margin-left:0px;">
+            <tr>
+                <td >
+                    <p style="margin-top:-30px">
+                        <img src="{{public_path('img/placas/Hologsello-w.png')}}" style="margin-right:-125px" width="115" height="115" />
+                    </p>
+                </td>
+            </tr>
+        </table>
         <!--FECHA DE EXPIRACION -->
-        <table style="border-spacing: 0;margin-top:-10px;margin-left:0px;text-align:center;background-color: #abe7da50;">
+        <table style="border-spacing: 0;margin-top:-45px;margin-left:0px;text-align:center;background-color: #abd9e750;">
             <tr>
                 <th width="80" >
                     <h4
@@ -270,7 +279,7 @@
                 </th>
                 <th width="630" >
                     <h4
-                        style="font-size:3em;font-family:Arial, Helvetica,sans-serif;font-weight:normal;letter-spacing: 0.1em;transform:scale(3, 4);margin-left:-100px;">
+                        style="font-size:2.8em;font-family:Arial, Helvetica,sans-serif;font-weight:normal;letter-spacing: 0.1em;transform:scale(3, 4);margin-left:-100px;">
                         {{ $lateDay_Qr_St }}</h4>
                 </th>
             </tr>
