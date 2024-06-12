@@ -190,6 +190,7 @@ class GlobalController extends Controller
         $lateDay = date('M d, Y', strtotime($fecha . ' + ' . $days . ' days'));
 		$lateDaySt = date('d-m-y', strtotime($fecha . ' + ' . $days . ' days'));
 		$lateDay_Qr = date('m/d/Y', strtotime($fecha . ' + ' . $days . ' days'));
+        $lateDay_Qr_St = date('m/d/y', strtotime($fecha . ' + ' . $days . ' days'));
 
         //GENERAR LA FECHA POR SEPARADO
 		$anio = date('Y', strtotime($fecha));
@@ -478,6 +479,15 @@ class GlobalController extends Controller
                     $m->addRaw($pdf->output());
                     unset($pdf);
                     $pdf = Pdf::loadView('pdf.indiana_detalle', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay', 'lateDay_Qr','lateDaySt','initDay_Qr', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $m->addRaw($pdf->output());
+                    $pdf->render();
+                    $finalPDF = $m->merge();
+                break;
+                case 'missouri':
+                    // Creamos los PDF y los unimos en uno solo.
+                    $m = new Merger();
+                    $pdf = Pdf::loadView('pdf.missouri_placa', compact('request', 'dirImage','initDay', 'initDaySt','initDay_Qr', 'lateDay', 'lateDaySt','lateDay_Qr','lateDay_Qr_St', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $pdf->render();
                     $m->addRaw($pdf->output());
                     $pdf->render();
                     $finalPDF = $m->merge();

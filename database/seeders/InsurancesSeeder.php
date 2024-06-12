@@ -64,9 +64,9 @@ class InsurancesSeeder extends Seeder
             'logo_consulta_path' => 'img/placas/indianaConsulta.jpg',
         ]);
         Insurance::create([
-            'name' => 'misuri',
+            'name' => 'missouri',
             'states_ab' => 'MO',
-            'logo_consulta_path' => 'img/placas/misuriConsulta.jpg',
+            'logo_consulta_path' => 'img/placas/missouriConsulta.jpg',
         ]);
         Insurance::create([
             'name' => 'tennessee',

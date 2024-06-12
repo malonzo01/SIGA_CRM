@@ -18,7 +18,7 @@ class PanelControlador extends Controller
 		"maryland"		=> ["active" => true, "icon" => "icon-maryland", "name" => "Maryland"],
 		"indiana"		=> ["active" => true, "icon" => "icon-indiana", "name" => "Indiana"],
 		"tennessee"		=> ["active" => true, "icon" => "icon-tennessee", "name" => "Tennessee"],
-        //"missouri"		=> ["active" => true, "icon" => "icon-missouri", "name" => "Missouri"],
+        "missouri"		=> ["active" => true, "icon" => "icon-missouri", "name" => "Missouri"],
         "nuevo1"		=> ["active" => true, "icon" => "icon-texas", "name" => "Nuevo1"],
         "nuevo2"		=> ["active" => true, "icon" => "icon-texas", "name" => "Nuevo2"],
         //"placa"		=> ["active" => true, "icon" => "icon-texas", "name" => "Placa"],
