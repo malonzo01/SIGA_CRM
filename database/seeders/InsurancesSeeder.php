@@ -73,5 +73,15 @@ class InsurancesSeeder extends Seeder
             'states_ab' => 'TN',
             'logo_consulta_path' => 'img/placas/tennesseeConsulta.jpg',
         ]);
+        Insurance::create([
+            'name' => 'georgia',
+            'states_ab' => 'GA',
+            'logo_consulta_path' => 'img/placas/georgiaConsulta.jpg',
+        ]);
+        Insurance::create([
+            'name' => 'north_carolina',
+            'states_ab' => 'NC',
+            'logo_consulta_path' => 'img/placas/northcarolinaConsulta.jpg',
+        ]);
     }
 }

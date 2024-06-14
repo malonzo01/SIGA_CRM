@@ -189,6 +189,7 @@ class GlobalController extends Controller
 		// DEFINIMOS LA FECHA DE CULMINACION SUMANDO LA FECHA ACTUAL CON LOS DIAS SELECCIONADOS POR EL USUARIO
         $lateDay = date('M d, Y', strtotime($fecha . ' + ' . $days . ' days'));
 		$lateDaySt = date('d-m-y', strtotime($fecha . ' + ' . $days . ' days'));
+        $lateDayMe = date('d-M-Y', strtotime($fecha . ' + ' . $days . ' days'));
 		$lateDay_Qr = date('m/d/Y', strtotime($fecha . ' + ' . $days . ' days'));
         $lateDay_Qr_St = date('m/d/y', strtotime($fecha . ' + ' . $days . ' days'));
 
@@ -200,7 +201,8 @@ class GlobalController extends Controller
         $initAnio = date('Y', strtotime($fecha));
 		$initMonth = date('m', strtotime($fecha));
 		$initDate= $this->montDate($initMonth).' '.$initDay.','.$initAnio;
-		$lateAnio = date('Y', strtotime($fecha . ' + ' . $days . ' days'));
+		$lateAnioSt = date('y', strtotime($fecha . ' + ' . $days . ' days'));
+        $lateAnio = date('Y', strtotime($fecha . ' + ' . $days . ' days'));
 		$lateMonth= date('m', strtotime($fecha . ' + ' . $days . ' days'));
         $lateDay= date('d', strtotime($fecha . ' + ' . $days . ' days'));
 		$lateDate= $this->montDate($lateMonth).' '.$lateDay.','.$lateAnio;
@@ -228,6 +230,12 @@ class GlobalController extends Controller
             break;
             case 'missouri':
                 $tag_number = $this->generateRandomString('6'); //code placa
+            break;
+            case 'north_carolina':
+                $tag_number =$this->generateRandomNumbers('8'); //code placa
+            break;
+            case 'georgia':
+                $tag_number = $this->generateAlphanumericUpperCase('8'); //code placa
             break;
         }
 		$chars = str_split($str);
@@ -496,7 +504,30 @@ class GlobalController extends Controller
                     $pdf->render();
                     $finalPDF = $m->merge();
                 break;
-
+                case 'north_carolina':
+                    // Creamos los PDF y los unimos en uno solo.
+                    $m = new Merger();
+                    $pdf = Pdf::loadView('pdf.northcarolina_placa', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay','lateAnioSt','lateMonth','lateDay_Qr', 'lateDaySt','lateDay_Qr_St','initDay_Qr', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $pdf->render();
+                    $m->addRaw($pdf->output());
+                    unset($pdf);
+                    $pdf = Pdf::loadView('pdf.northcarolina_detalle', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay','lateAnioSt','lateMonth', 'lateDay_Qr','lateDaySt','lateDay_Qr_St','initDay_Qr', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $m->addRaw($pdf->output());
+                    $pdf->render();
+                    $finalPDF = $m->merge();
+                break;
+                case 'georgia':
+                    // Creamos los PDF y los unimos en uno solo.
+                    $m = new Merger();
+                    $pdf = Pdf::loadView('pdf.georgia_placa', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay','lateDay_Qr', 'lateDaySt','lateDay_Qr_St','lateDayMe', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $pdf->render();
+                    $m->addRaw($pdf->output());
+                    unset($pdf);
+                    $pdf = Pdf::loadView('pdf.georgia_detalle', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay', 'lateDay_Qr','lateDaySt','lateDay_Qr_St','lateDayMe','initDay_Qr', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $m->addRaw($pdf->output());
+                    $pdf->render();
+                    $finalPDF = $m->merge();
+                break;
                 case 'placa':
                     // Creamos los PDF y los unimos en uno solo.
                     $m = new Merger();
@@ -1581,6 +1612,20 @@ class GlobalController extends Controller
 		}
 		return $randomString;
 	}
+
+    private function generateAlphanumericUpperCase($length) {
+        $characters = array_merge(
+            [chr(rand(65, 90))], // Letras mayúsculas
+            range(0, 9) // Números
+        );
+
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, count($characters) - 1)];
+        }
+
+        return $randomString;
+    }
 
 	private function montDate($month)
 	{

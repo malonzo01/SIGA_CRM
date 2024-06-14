@@ -121,7 +121,7 @@
         <tr style="padding: 2px 0px 2px 0px;">
             <th style="border: 1px solid black;" width="382" height="80">
                 <h4 style="font-size:1.1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;">OWNER INFO</h4>
-                <h4 style="font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:-24px;margin-bottom:8px">{{ $request->name1 }} {{ $request->name2 }} {{ $request->address }} {{ $request->state }}</h4>
+                <h4 style="font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:-24px;margin-bottom:8px">{{ $request->name1 }} {{ $request->name2 }} <br> {{ $request->address }} <br> {{ $request->state }}</h4>
             </th>
             <th style="border: 1px solid black;" width="190" height="80">
                 <h4 style="font-size:1.1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;">DEALERSHIP INFO</h4>
