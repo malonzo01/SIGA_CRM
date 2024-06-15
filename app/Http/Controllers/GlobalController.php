@@ -187,7 +187,7 @@ class GlobalController extends Controller
 		$current_time = date('h:i:s a', strtotime($createdDay));
 
 		// DEFINIMOS LA FECHA DE CULMINACION SUMANDO LA FECHA ACTUAL CON LOS DIAS SELECCIONADOS POR EL USUARIO
-        $lateDay = date('M d, Y', strtotime($fecha . ' + ' . $days . ' days'));
+        $lateDay_MdY = date('M d, Y', strtotime($fecha . ' + ' . $days . ' days'));
 		$lateDaySt = date('d-m-y', strtotime($fecha . ' + ' . $days . ' days'));
         $lateDayMe = date('d-M-Y', strtotime($fecha . ' + ' . $days . ' days'));
 		$lateDay_Qr = date('m/d/Y', strtotime($fecha . ' + ' . $days . ' days'));
@@ -200,7 +200,7 @@ class GlobalController extends Controller
 		$monthLetter= $this->montDate($mes);
         $initAnio = date('Y', strtotime($fecha));
 		$initMonth = date('m', strtotime($fecha));
-		$initDate= $this->montDate($initMonth).' '.$initDay.','.$initAnio;
+		$initDate= $this->montDate($mes).' '.$dia.','.$anio;
 		$lateAnioSt = date('y', strtotime($fecha . ' + ' . $days . ' days'));
         $lateAnio = date('Y', strtotime($fecha . ' + ' . $days . ' days'));
 		$lateMonth= date('m', strtotime($fecha . ' + ' . $days . ' days'));
@@ -208,7 +208,7 @@ class GlobalController extends Controller
 		$lateDate= $this->montDate($lateMonth).' '.$lateDay.','.$lateAnio;
 		$monthDateLast=$this->montDate($lateMonth);
 
-		// GENERAMOS LOS CODIGOS ALEATORIOS.
+        // GENERAMOS LOS CODIGOS ALEATORIOS.
         $tag_number = $this->generateRandomStringTagNumber('6'); //code placa
         $str = date('mYd', strtotime($fecha)) . 'JI';
 		$vin = $this->generateRandomString('17'); //code vin
@@ -235,7 +235,7 @@ class GlobalController extends Controller
                 $tag_number =$this->generateRandomNumbers('8'); //code placa
             break;
             case 'georgia':
-                $tag_number = $this->generateAlphanumericUpperCase('8'); //code placa
+                $tag_number = $this->generateRandomLetters('1') . $this->generateRandomNumbers('7'); //code placa
             break;
         }
 		$chars = str_split($str);
@@ -403,7 +403,7 @@ class GlobalController extends Controller
                 case 'new_jersey':
                     // Creamos los PDF y los unimos en uno solo.
                     $m = new Merger();
-                    $pdf = Pdf::loadView('pdf.njersey_nuevo_placa', compact('dirImage','request', 'initDay', 'initDaySt', 'lateDay', 'lateDaySt', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $pdf = Pdf::loadView('pdf.njersey_nuevo_placa', compact('dirImage','request', 'initDay', 'initDaySt', 'lateDay_MdY', 'lateDaySt', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
                     $pdf->render();
                     $m->addRaw($pdf->output());
                     $pdf->render();
@@ -412,7 +412,7 @@ class GlobalController extends Controller
                 case 'new_york':
                     // Creamos los PDF y los unimos en uno solo.
                     $m = new Merger();
-                    $pdf = Pdf::loadView('pdf.nyork_nuevo_placa', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay', 'lateDaySt', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $pdf = Pdf::loadView('pdf.nyork_nuevo_placa', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay_MdY', 'lateDaySt', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
                     $pdf->render();
                     $m->addRaw($pdf->output());
                     $pdf->render();
@@ -430,11 +430,11 @@ class GlobalController extends Controller
                 case 'texas':
                     // Creamos los PDF y los unimos en uno solo.
                     $m = new Merger();
-                    $pdf = Pdf::loadView('pdf.texas_nuevo_placa', compact('request','dirImage', 'initDay', 'lateDay', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $pdf = Pdf::loadView('pdf.texas_nuevo_placa', compact('request','dirImage', 'initDay', 'lateDay_MdY', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
                     $pdf->render();
                     $m->addRaw($pdf->output());
                     unset($pdf);
-                    $pdf = Pdf::loadView('pdf.texas_nuevo', compact('request', 'dirImage', 'initDay', 'lateDay', 'year', 'vin', 'tag_number', 'chars', 'filename'));
+                    $pdf = Pdf::loadView('pdf.texas_nuevo', compact('request', 'dirImage', 'initDay', 'lateDay_MdY', 'year', 'vin', 'tag_number', 'chars', 'filename'));
                     $m->addRaw($pdf->output());
                     $pdf->render();
                     $finalPDF = $m->merge();

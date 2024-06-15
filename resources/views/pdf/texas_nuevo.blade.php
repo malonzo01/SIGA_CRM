@@ -66,7 +66,7 @@
 					<p style="margin-top:-15px">Expiration Date:</p>
 				</td>
 				<td width="128">
-					<p style="margin-top:-15px">{{ strtoupper($lateDay) }}</p>
+					<p style="margin-top:-15px">{{ strtoupper($lateDay_MdY) }}</p>
 				</td>
 			</tr>
 		</table>
@@ -211,7 +211,7 @@
 					<p style="margin-top:-15px">Expiration Date:</p>
 				</td>
 				<td width="128">
-					<p style="margin-top:-15px">{{ strtoupper($lateDay) }}</p>
+					<p style="margin-top:-15px">{{ strtoupper($lateDay_MdY) }}</p>
 				</td>
 			</tr>
 		</table>

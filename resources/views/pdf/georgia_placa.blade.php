@@ -117,7 +117,7 @@
             </tr>
         </table>
         <!--DATOS DEL VEHICULO -->
-        <table style="border-spacing: 0;margin-bottom:-0px;margin-top:0px;">
+        <table style="border-spacing: 0;margin-bottom:-0px;margin-top:30px;">
             <tr style="padding: 2px 0px 2px 0px;">
                 <th width="700">
                     <h4
