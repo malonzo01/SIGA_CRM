@@ -237,6 +237,9 @@ class GlobalController extends Controller
             case 'georgia':
                 $tag_number = $this->generateRandomLetters('1') . $this->generateRandomNumbers('7'); //code placa
             break;
+            case 'illinois':
+                $tag_number = $this->generateRandomNumbers('3') ."-". $this->generateRandomLetters('2') ."-". $this->generateRandomNumbers('4'); //code placa
+            break;
         }
 		$chars = str_split($str);
 
