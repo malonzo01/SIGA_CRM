@@ -130,18 +130,18 @@
                     </tr>
                 </table>
                 <!--NUMERO DE PLACA -->
-                <table style="text-align:center;margin-top:-50px;margin-left:50px;">
+                <table style="text-align:center;margin-top:-80px;margin-left:50px;">
                     <tr>
                         <td width="700">
                             <h4
-                                style="font-size:3em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:700;transform:scale(4, 4);">
+                                style="font-size:3.8em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:400;transform:scale(4, 4);">
                                 {{ $tag_number }}
                             </h4>
                         </td>
                     </tr>
                 </table>
                 <!--FECHA DE EXPIRACION -->
-                <table style="text-align:center;margin-top:20px;margin-left:10px;">
+                <table style="text-align:center;margin-top:10px;margin-left:10px;">
                     <tr>
                         <th style="font-size:1em;font-family:Arial, Helvetica,sans-serif;font-weight:700;letter-spacing: 0.1em;transform:scale(3, 4);text-align:center;"
                             width="200">
@@ -149,7 +149,7 @@
                         </th>
                         <th style="text-align:center;" width="500">
                             <h4
-                                style="font-size:2em;font-family:Arial, Helvetica,sans-serif;font-weight:700;letter-spacing: 0.1em;transform:scale(3, 4);">
+                                style="font-size:2.5em;font-family:Arial, Helvetica,sans-serif;font-weight:400;letter-spacing: 0.1em;transform:scale(3, 4);margin-left:80px;">
                                 {{ $lateDay_Qr_Me }}</h4>
                         </th>
                     </tr>
