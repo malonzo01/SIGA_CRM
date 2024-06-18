@@ -111,36 +111,36 @@
             </tr>
         </table>
         <!--NUMERO DE PLACA -->
-        <table style="border-spacing: 0;text-align:center;margin-top:0px;margin-left:-180px;">
+        <table style="border-spacing: 0;text-align:center;margin-top:-30px;margin-left:-260px;">
             <tr>
                 <td width="10" >
-                    <p style="margin-top:-110px">
-                        <img src="{{public_path('img/placas/mapa-missouri.png')}}" width="680" height="400" />
+                    <p style="margin-top:-110px;margin-left:10px;">
+                        <img src="{{public_path('img/placas/mapa-missouri.png')}}" width="700" height="450" />
                     </p>
                 </td>
                 <td width="400" >
                     <h4
-                        style="font-size:3em;font-family:Arial, Helvetica, sans-serif;text-align:center;color:black;font-weight:normal;letter-spacing: 0.01em;transform: scale(3,4);margin-top:-50px;margin-left:-400px;">
+                        style="font-size:3.2em;font-family:Arial, Helvetica, sans-serif;text-align:center;color:black;font-weight:700;letter-spacing: 0.02em;transform: scale(3,4);margin-top:-60px;margin-left:-400px;">
                         {{ $tag_number }}</h4>
                 </td>
             </tr>
         </table>
         <!--FECHA DE EXPIRACION -->
-        <table style="border-spacing: 0;margin-top:-45px;margin-left:0px;text-align:center;">
+        <table style="border-spacing: 0;margin-top:-60px;margin-left:0px;text-align:center;">
             <tr>
                 <td width="80" >
-                    <p style="margin-top:-230px;margin-left:-140px;">
-                        <img src="{{public_path('img/placas/missouri-2-1.png')}}" width="450" height="200" />
+                    <p style="margin-top:-250px;margin-left:-140px;">
+                        <img src="{{public_path('img/placas/missouri-2-1.png')}}" width="350" height="150" />
                     </p>
                 </td>
                 <th width="80" >
                     <h4
-                        style="font-size:2em;font-family:Arial, Helvetica,sans-serif;font-weight:900;letter-spacing: 0.1em;transform:scale(1,2);margin-left:-550px;">
+                        style="font-size:2em;font-family:Arial, Helvetica,sans-serif;font-weight:900;letter-spacing: 0.1em;transform:scale(1,2);margin-left:-400px;">
                         EXPIRES:</h4>
                 </th>
                 <th width="540" >
                     <h4
-                        style="font-size:3em;font-family:Arial, Helvetica,sans-serif;font-weight:normal;letter-spacing: 0.1em;transform:scale(3, 4);margin-left:-500px;">
+                        style="font-size:3.5em;font-family:Arial, Helvetica,sans-serif;font-weight:700;letter-spacing: 0.1em;transform:scale(3, 4);margin-left:-230px;margin-top:40px;">
                         {{ $lateDay_Qr_St }}</h4>
                 </th>
             </tr>

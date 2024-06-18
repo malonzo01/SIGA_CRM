@@ -231,7 +231,7 @@ class GlobalController extends Controller
                 $str = 'EXPIRES';
             break;
             case 'missouri':
-                $tag_number = $this->generateRandomString('6'); //code placa
+				$tag_number = $this->generateRandomNumbers('2') . $this->generateRandomLetters('4'); //code placa
                 $control_number =$this->generateRandomNumbers('7');
             break;
             case 'north_carolina':
