@@ -232,6 +232,7 @@ class GlobalController extends Controller
             break;
             case 'missouri':
                 $tag_number = $this->generateRandomString('6'); //code placa
+                $control_number =$this->generateRandomNumbers('7');
             break;
             case 'north_carolina':
                 $tag_number =$this->generateRandomNumbers('8'); //code placa
@@ -510,7 +511,7 @@ class GlobalController extends Controller
                 case 'missouri':
                     // Creamos los PDF y los unimos en uno solo.
                     $m = new Merger();
-                    $pdf = Pdf::loadView('pdf.missouri_placa', compact('request', 'dirImage','initDay', 'initDaySt','initDay_Qr', 'lateDay', 'lateDaySt','lateDay_Qr','lateDay_Qr_St', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $pdf = Pdf::loadView('pdf.missouri_placa', compact('request', 'dirImage','initDay', 'initDaySt','initDay_Qr', 'lateDay', 'lateDaySt','lateDay_Qr','lateDay_Qr_St', 'year', 'vin', 'tag_number', 'chars', 'filename','control_number'))->setPaper('a4', 'landscape');
                     $pdf->render();
                     $m->addRaw($pdf->output());
                     $pdf->render();

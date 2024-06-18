@@ -61,7 +61,7 @@
         .div-master {
             background-image: url('img/placas/missouri-new.png');
             /* The image used */
-            background-size: 1100px 600px;
+            background-size: 1100px 550px;
             /* You must set a specified height */
             background-attachment: fixed;
             background-position: 10px 80px;
@@ -111,16 +111,16 @@
             </tr>
         </table>
         <!--NUMERO DE PLACA -->
-        <table style="border-spacing: 0;text-align:center;margin-top:0px;margin-left:-50px;">
+        <table style="border-spacing: 0;text-align:center;margin-top:0px;margin-left:-180px;">
             <tr>
                 <td width="10" >
                     <p style="margin-top:-110px">
-                        <img src="{{public_path('img/placas/mapa-missouri.png')}}" width="450" height="400" />
+                        <img src="{{public_path('img/placas/mapa-missouri.png')}}" width="680" height="400" />
                     </p>
                 </td>
                 <td width="400" >
                     <h4
-                        style="font-size:3em;font-family:Arial, Helvetica, sans-serif;text-align:center;color:black;font-weight:normal;letter-spacing: 0.01em;transform: scale(3,4);margin-top:-50px;margin-left:-180px;">
+                        style="font-size:3em;font-family:Arial, Helvetica, sans-serif;text-align:center;color:black;font-weight:normal;letter-spacing: 0.01em;transform: scale(3,4);margin-top:-50px;margin-left:-400px;">
                         {{ $tag_number }}</h4>
                 </td>
             </tr>
@@ -135,13 +135,28 @@
                 </td>
                 <th width="80" >
                     <h4
-                        style="font-size:2em0px;font-family:Arial, Helvetica,sans-serif;font-weight:900;letter-spacing: 0.1em;transform:scale(1,2);margin-left:-550px;">
+                        style="font-size:2em;font-family:Arial, Helvetica,sans-serif;font-weight:900;letter-spacing: 0.1em;transform:scale(1,2);margin-left:-550px;">
                         EXPIRES:</h4>
                 </th>
                 <th width="540" >
                     <h4
                         style="font-size:3em;font-family:Arial, Helvetica,sans-serif;font-weight:normal;letter-spacing: 0.1em;transform:scale(3, 4);margin-left:-500px;">
                         {{ $lateDay_Qr_St }}</h4>
+                </th>
+            </tr>
+        </table>
+        <table style="border-spacing: 0;margin-top:-50px;margin-left:80px;text-align:center;">
+            <tr>
+                <th width="600" >
+
+                </th>
+                <th width="100" >
+                    <h4 style="font-size:1em;font-family:Arial, Helvetica,sans-serif;font-weight:400;margin-top:50px;margin-left:20px;">
+                        CONTROL #
+                    </h4>
+                    <h4 style="font-size:1em;font-family:Arial, Helvetica,sans-serif;font-weight:700;color:rgba(255, 0, 0, 0.534);margin-top:-25px;margin-left:20px;">
+                        A {{ $control_number }}
+                    </h4>
                 </th>
             </tr>
         </table>
