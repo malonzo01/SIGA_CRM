@@ -83,5 +83,10 @@ class InsurancesSeeder extends Seeder
             'states_ab' => 'NC',
             'logo_consulta_path' => 'img/placas/northcarolinaConsulta.jpg',
         ]);
+        Insurance::create([
+            'name' => 'ohio',
+            'states_ab' => 'OH',
+            'logo_consulta_path' => 'img/placas/ohioConsulta.jpg',
+        ]);
     }
 }
