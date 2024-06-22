@@ -89,7 +89,7 @@
                                 <div class="col-4"><span style=" font-size:12px; font-weight:bold;">Dealer DBA:</span></div>
                                 <div class="col-8"><span style=" font-size:12px;">{{$nuevo->seller}}</span></div>
                                 <div class="col-4"><span style=" font-size:12px; font-weight:bold;">Address:</span></div>
-                                <div class="col-8"><span style=" font-size:12px; ">{{$nuevo->address.', '.$nuevo->city.', '.$nuevo->state.' '.$nuevo->zip}}</span></div>
+                                <div class="col-8"><span style=" font-size:12px; ">{{$nuevo->insurance->address.' '.$nuevo->insurance->states_ab.' '.$nuevo->insurance->zip}}</span></div>
 
                             </div>
 						</div>

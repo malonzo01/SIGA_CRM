@@ -17,7 +17,7 @@
 				<div class="card-body">
 					<h5 class="card-title">Inicio</h5>
 					<div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
-						Ya se encuentra disponible la nueva placa de Ohio
+						Ya se encuentra disponible la nueva placa de Virginia
 						<button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
 					</div>
 				</div>

@@ -69,9 +69,16 @@
 				</center>
 			</td>
 			<td width="100">
+                <!--
+                <p style="margin-top:0px">
+                    <img src="{{ public_path('/placas/' . $filename) }}" style="margin-right:0px;"
+                        width="200" height="80" />
+                </p>
+                -->
 				<p style="margin-top:0px;">
 					<img src="data:image/png;base64,{{ base64_encode($dirImage)}}" width="130" />
 				</p>
+
 			</td>
 		</tr>
 	</table>

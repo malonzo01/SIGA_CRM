@@ -66,7 +66,7 @@ class GlobalController extends Controller
 		"OH" => "OH:Ohio",
 		"OK" => "OK:Oklahoma",
 		"OR" => "OR:Oregón",
-		"PA" => "PA:Pensilvania",
+		"PA" => "PA:Pennsylvania",
 		"RI" => "RI:Rhode Island",
 		"SC" => "SC:South Carolina",
 		"SD" => "SD:South Dakota",
@@ -246,6 +246,9 @@ class GlobalController extends Controller
             case 'ohio':
                 $tag_number = $this->generateRandomLetters('1') . $this->generateRandomNumbers('6'); //code placa
             break;
+            case 'virginia':
+                $tag_number = $this->generateRandomLetters('1') . $this->generateRandomNumbers('5'); //code placa
+            break;
         }
 		$chars = str_split($str);
 
@@ -386,6 +389,10 @@ class GlobalController extends Controller
             break;
             case 'ohio':
                 file_put_contents(public_path("/placas/$filename"), base64_decode(DNS1D::getBarcodePNG($url,'C128')));
+            break;
+            case 'texas':
+                $dirImage=QrCode::size(200)->backgroundColor(0,0,0,0)->generate($url);
+                //file_put_contents(public_path("/placas/$filename"), base64_decode(DNS1D::getBarcodePNG($url,'QR_ECLEVEL_H')));
             break;
 
         }
@@ -549,6 +556,14 @@ class GlobalController extends Controller
                     $m->addRaw($pdf->output());
                     unset($pdf);
                     $pdf = Pdf::loadView('pdf.ohio_detalle', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay','lateDay_Qr', 'lateDaySt','lateDay_Qr_Me','initDay_Qr_Me', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $m->addRaw($pdf->output());
+                    $pdf->render();
+                    $finalPDF = $m->merge();
+                break;
+                case 'virginia':
+                    // Creamos los PDF y los unimos en uno solo.
+                    $m = new Merger();
+                    $pdf = Pdf::loadView('pdf.virginia_placa', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay','lateDay_Qr_St', 'lateDaySt','lateDay_Qr_Me','initDay_Qr_Me', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
                     $m->addRaw($pdf->output());
                     $pdf->render();
                     $finalPDF = $m->merge();

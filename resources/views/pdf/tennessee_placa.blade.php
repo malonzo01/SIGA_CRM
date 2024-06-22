@@ -69,7 +69,7 @@
 
     <div class="div-master" style="width:100%; margin-bottom:20px;padding:0px 0px 0px 80px;">
             <!--CABECERA 1 -->
-            <table style="border-spacing: 0;margin-top:5px;margin-bottom:-0px">
+            <table style="border-spacing: 0;margin-top:5px;margin-bottom:-0px;">
                 <tr>
                     <td width="70"></td>
                     <td width="600">
