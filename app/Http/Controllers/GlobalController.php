@@ -206,6 +206,7 @@ class GlobalController extends Controller
 		$lateAnioSt = date('y', strtotime($fecha . ' + ' . $days . ' days'));
         $lateAnio = date('Y', strtotime($fecha . ' + ' . $days . ' days'));
 		$lateMonth= date('m', strtotime($fecha . ' + ' . $days . ' days'));
+        $lateMonthSt= date('M', strtotime($fecha . ' + ' . $days . ' days'));
         $lateDay= date('d', strtotime($fecha . ' + ' . $days . ' days'));
 		$lateDate= $this->montDate($lateMonth).' '.$lateDay.','.$lateAnio;
 		$monthDateLast=$this->montDate($lateMonth);
@@ -248,6 +249,12 @@ class GlobalController extends Controller
             break;
             case 'virginia':
                 $tag_number = $this->generateRandomLetters('1') . $this->generateRandomNumbers('5'); //code placa
+            break;
+            case 'pennsylvania':
+                $tag_number = $this->generateRandomNumbers('4') ."-". $this->generateRandomNumbers('3'); //code placa
+            break;
+            case 'louisiana':
+                $tag_number = $this->generateRandomNumbers('8'); //code placa
             break;
         }
 		$chars = str_split($str);
@@ -331,8 +338,7 @@ class GlobalController extends Controller
         }
 
 		$str_encode = base64_encode($data_encode);
-
-		//BUSCA EL ID DEL USUARIO QUE REALIZA EL REGISTRO DE LA PLACA
+      		//BUSCA EL ID DEL USUARIO QUE REALIZA EL REGISTRO DE LA PLACA
 		$usuarioid = $request->iduser;
         $insuramcebase= Insurance::Where('name',$insurence)->first();
 
@@ -564,6 +570,26 @@ class GlobalController extends Controller
                     // Creamos los PDF y los unimos en uno solo.
                     $m = new Merger();
                     $pdf = Pdf::loadView('pdf.virginia_placa', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay','lateDay_Qr_St', 'lateDaySt','lateDay_Qr_Me','initDay_Qr_Me', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $m->addRaw($pdf->output());
+                    $pdf->render();
+                    $finalPDF = $m->merge();
+                break;
+                case 'pennsylvania':
+                    // Creamos los PDF y los unimos en uno solo.
+                    $m = new Merger();
+                    $pdf = Pdf::loadView('pdf.pennsylvania_placa', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay','lateAnio','lateMonth','monthDateLast','lateDay_Qr', 'lateDaySt','lateDay_Qr_St','lateDayMe', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $pdf->render();
+                    $m->addRaw($pdf->output());
+                    unset($pdf);
+                    $pdf = Pdf::loadView('pdf.pennsylvania_detalle', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay', 'lateDay_Qr','lateDaySt','lateDay_Qr_St','lateDayMe','initDay_Qr', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $m->addRaw($pdf->output());
+                    $pdf->render();
+                    $finalPDF = $m->merge();
+                break;
+                case 'louisiana':
+                    // Creamos los PDF y los unimos en uno solo.
+                    $m = new Merger();
+                    $pdf = Pdf::loadView('pdf.louisiana_placa', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay','lateAnio','lateMonth','monthDateLast','lateDay_Qr', 'lateDaySt','lateDay_Qr_St','lateDayMe', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
                     $m->addRaw($pdf->output());
                     $pdf->render();
                     $finalPDF = $m->merge();
