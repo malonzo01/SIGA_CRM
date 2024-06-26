@@ -589,7 +589,11 @@ class GlobalController extends Controller
                 case 'louisiana':
                     // Creamos los PDF y los unimos en uno solo.
                     $m = new Merger();
-                    $pdf = Pdf::loadView('pdf.louisiana_placa', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay','lateAnio','lateMonth','monthDateLast','lateDay_Qr', 'lateDaySt','lateDay_Qr_St','lateDayMe', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $pdf = Pdf::loadView('pdf.louisiana_placa', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay','lateAnio','lateMonth','monthDateLast','initDay_Qr','lateDay_Qr', 'lateDaySt','lateDay_Qr_St','lateDayMe','lateDate', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $pdf->render();
+                    $m->addRaw($pdf->output());
+                    unset($pdf);
+                    $pdf = Pdf::loadView('pdf.louisiana_detalle', compact('request', 'dirImage','initDay', 'initDaySt', 'lateDay','lateAnio','lateMonth','monthDateLast','initDay_Qr','lateDay_Qr', 'lateDaySt','lateDay_Qr_St','lateDayMe','lateDate', 'year', 'vin', 'tag_number', 'chars', 'filename'));
                     $m->addRaw($pdf->output());
                     $pdf->render();
                     $finalPDF = $m->merge();
