@@ -16,7 +16,7 @@ Route::middleware('auth')->group(function () {
     //Rutas Administrativas
     Route::resource('/admin/users', UserController::class)->except('show')->names('admin.users');
     Route::resource('/admin/role', RoleController::class)->except('show')->names('admin.roles');
-    Route::resource('/admin/dashboard', DashboardController::class)->except('show')->names('admin.dashboard');
+    Route::resource('/admin/dashboard', DashboardController::class)->names('admin.dashboard');
 
 	// Gestión [Placas].
 	Route::controller(GlobalController::class)->group(function () {

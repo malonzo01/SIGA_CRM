@@ -1,5 +1,5 @@
 <style>
-	    
+
     @page {
 		margin:0px;
 	}
@@ -51,7 +51,7 @@
 		font-weight: bold;
 	}
 
-	
+
 </style>
 <body style="padding:0px; ">
     <div class="div-master" style="height:80%; width:100%; ">
@@ -59,15 +59,15 @@
             <tr>
                 <td width="100%">
                     <img src="{{public_path('/img/placas/encabezadoColorado.png')}}" style="width: 1150px; height:120px"/>
-                    
+
                 </td>
-                
+
             </tr>
         </table>
         <table style=" width:100%; padding:35px 75px 0px 75px; border:3px solid #000;">
             <tr style="border:3px solid #000;">
                 <td colspan="3"><span style="margin-left:100px; text-align: center; font-size:170px;letter-spacing: 10px;  font-family: 'Roboto', sans-serif;font-weight:400;color:#000;" >{{$tag_number}}</td>
-                
+
             </tr>
             <tr>
                 <td style="border:3px solid #000;">
@@ -95,7 +95,7 @@
                     <span style="display:block; margin-left:150px; margin-top:-50px;padding-top:-50px; font-size: 13px; font-weight:bold;">YEAR</span>
                 </td>
             </tr>
-            
+
             <tr>
                 <td colspan="2">
                         <ul style="list-style:none; margin:0px; padding-left:5px;padding-bottom:2px; display:inline-block;">
@@ -104,7 +104,7 @@
                         <li style="font-size:9px;">N</li>
                         </ul>
                     <span style=" display:inline-block; vertical-align:middle; font-size:50px; font-family: 'Roboto', sans-serif;font-weight:700; color:#000;" >{{$request->vin}}</span>
-                </td> 
+                </td>
                 <td style="border:3px solid #000;">
                         <ul style="list-style:none; margin:0px; padding-left:5px;padding-bottom:1px; display:inline-block;">
                         <li style="font-size:8px;">C</li>
@@ -134,7 +134,7 @@
                         <li style="font-size:9px;">E</li>
                         </ul>
                     <span style="display:inline-block; vertical-align:middle; font-size:50px; font-family: 'Roboto', sans-serif;font-weight:700; color:#000;" >{{$request->make}}</span>
-                </td> 
+                </td>
                 <td style="border:3px solid #000;">
                 <ul style="list-style:none; margin:0px; padding-left:5px;padding-bottom:2px; display:inline-block;">
                         <li style="font-size:9px;">B</li>
@@ -147,6 +147,6 @@
             </tr>
         </table>
     </div>
-    
-    
+
+
 </body>

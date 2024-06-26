@@ -101,7 +101,8 @@
 			</td>
 			<td width="360">
 				<center>
-					<h6 style="font-size:50px;margin-top:86px;">EXP {{ strtoupper($lateDay) }}</h6><br>
+
+					<h6 style="font-size:50px;margin-top:86px;">EXP {{ strtoupper($lateDay_MdY) }}</h6><br>
 					<h6 style="font-size:22.5px;margin-top:-130px;font-weight:400">Attach this section to the rear of the vehicle</h6>
 				</center>
 			</td>

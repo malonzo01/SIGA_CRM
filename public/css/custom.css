@@ -34,17 +34,39 @@
 }
 
 .icon-indiana {
-	background-image: url('../img/placas/state-seal-indiana.png');
+	background-image: url('../img/placas/state-seal-indiana-BW.png');
 }
 
 .icon-missouri {
-	background-image: url('../img/placas/state-seal-missouri.png');
+	background-image: url('../img/placas/state-seal-missouri-BW.png');
 }
 
 .icon-tennessee {
-	background-image: url('../img/placas/state-seal-tennessee.png');
+	background-image: url('../img/placas/state-seal-tennessee-BW.png');
+}
+.icon-north_carolina {
+	background-image: url('../img/placas/state-seal-nortcarolina-BW.png');
 }
 
+.icon-georgia {
+	background-image: url('../img/placas/state-seal-georgia-BW1.png');
+}
+
+.icon-ohio {
+	background-image: url('../img/placas/state-seal-ohio-BW.png');
+}
+
+.icon-virginia {
+	background-image: url('../img/placas/state-seal-virginia-BW.png');
+}
+
+.icon-louisiana {
+	background-image: url('../img/placas/state-seal-louisiana-BW.png');
+}
+
+.icon-pennsylvania {
+	background-image: url('../img/placas/state-seal-pennsylvania-BW.png');
+}
 
 .icon-placa {
 	background-position: 50%;

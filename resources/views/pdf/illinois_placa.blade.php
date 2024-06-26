@@ -1,5 +1,5 @@
 <style>
-	    
+
     @page {
 		margin:0px;
 	}
@@ -84,7 +84,7 @@
             </tr>
             <tr><td colspan="3"><span style="font-size:150px; font-weight: bold; font-family: 'Anton', sans-serif;letter-spacing: 0em;color:#000; text-align:left">{{ $tag_number }}</span></td></tr>
             <tr><td><span style="font-family: 'Roboto', sans-serif;letter-spacing: 0em; font-weight:700; font-size:55px; color:#000;">Exp:</span></td>
-                <td><span style="margin-left:-140px;font-family: 'Roboto', sans-serif;letter-spacing: 0em; font-weight:700; font-size:45px; color:#000;">{{ $initDay_Qr }}</span></td></tr>
+                <td><span style="margin-left:-140px;font-family: 'Roboto', sans-serif;letter-spacing: 0em; font-weight:700; font-size:45px; color:#000;">{{ $lateDay_Qr }}</span></td></tr>
             <tr>
                 <td><span style="text-align: left; font-size:18px; font-family: 'Anton', sans-serif;font-weight:700;color:#000;">DEALER</span></td>
                 <td><span style="text-align: left; font-size:18px; font-family: 'Anton', sans-serif;font-weight:700;color:#000;">DLR#</span></td>
@@ -221,9 +221,9 @@
                     </span>
                 </td>
             </tr>
-        </table>  
-        
-        
+        </table>
+
+
     </div>
-    
+
 </body>

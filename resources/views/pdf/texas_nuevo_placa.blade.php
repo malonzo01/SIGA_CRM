@@ -65,13 +65,20 @@
 			<td width="440">
 				<center>
 					<h6 style="font-size:44px;margin-top:86px;">EXPIRES</h6><br>
-					<h4 style="font-size:5.5em;margin-top:-140px;white-space: pre;">{{ strtoupper($lateDay) }}</h4>
+					<h4 style="font-size:5.5em;margin-top:-140px;white-space: pre;">{{ strtoupper($lateDay_MdY) }}</h4>
 				</center>
 			</td>
 			<td width="100">
+                <!--
+                <p style="margin-top:0px">
+                    <img src="{{ public_path('/placas/' . $filename) }}" style="margin-right:0px;"
+                        width="200" height="80" />
+                </p>
+                -->
 				<p style="margin-top:0px;">
 					<img src="data:image/png;base64,{{ base64_encode($dirImage)}}" width="130" />
 				</p>
+
 			</td>
 		</tr>
 	</table>

@@ -51,10 +51,10 @@
                         <hr class="dropdown-divider">
                     </li>
                     <li><a class="dropdown-item d-flex align-items-center" href="{{ route('admin.dashboard.index') }}">
-                        <i style="width: 20px; font-size: 16px;" class="text-center fas fa-camera-retro"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
+                            <i style="width: 20px; font-size: 16px;" class="text-center fas fa-camera-retro"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>

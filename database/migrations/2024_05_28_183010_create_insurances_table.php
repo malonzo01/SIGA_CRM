@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('states_ab');
             $table->string('logo_consulta_path', 2048)->nullable();
+            $table->string('address',45)->nullable();
+            $table->char('zip',6)->nullable();
             $table->timestamps();
         });
     }
