@@ -3,7 +3,7 @@
         "100": "C:\\laragon\\www\\SIGA_CRM\\storage\\fonts\/montserrat_100_6164641e1084aad4a517246be4e7214d",
         "200": "C:\\laragon\\www\\SIGA_CRM\\storage\\fonts\/montserrat_200_a265b0c8dd3071bb837672a6a3428c47",
         "300": "C:\\laragon\\www\\SIGA_CRM\\storage\\fonts\/montserrat_300_11be3eb1825a588a468235740322e12d",
-        "normal": "montserrat_normal_06915638fb1d4047273b6d446b3980b8",
+        "normal": "montserrat_normal_3090310b9a56dac4dceec1c46649034e",
         "500": "C:\\laragon\\www\\SIGA_CRM\\storage\\fonts\/montserrat_500_1236ec90acb329158f494b3fcb44327e",
         "600": "C:\\laragon\\www\\SIGA_CRM\\storage\\fonts\/montserrat_600_485729d96603ccf9729bf58de2db0851",
         "bold": "C:\\laragon\\www\\SIGA_CRM\\storage\\fonts\/montserrat_bold_5da7810bf4e960efe50d20e94a894069",
@@ -23,12 +23,9 @@
         "bold_italic": "C:\\laragon\\www\\SIGA_CRM\\vendor\\dompdf\\dompdf\/lib\/fonts\/Helvetica-BoldOblique"
     },
     "roboto": {
-        "normal": "roboto_normal_25b05962ab7f94c511244012a3bdbfc5"
+        "normal": "roboto_normal_bd791e7919144e1787677aa27988b8bb"
     },
     "script": {
         "normal": "script_normal_1fb928ea9244d7c72a0864348a8875e3"
-    },
-    "dancingscript": {
-        "normal": "dancingscript_normal_5fdcc9441b4ffe53b0afe2392688e636"
     }
 }
