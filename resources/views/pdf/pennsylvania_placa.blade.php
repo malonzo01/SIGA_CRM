@@ -7,14 +7,23 @@
         }
 
         @font-face {
-            font-family: Arial;
-            src: url('/fonts/Arial.ttf');
+            font-family: "Arial";
+            src: url('{{ storage_path('/fonts/Arial.ttf') }}')format('truetype');
         }
 
-        * {
-            font-family: Arial;
+        @font-face {
+            font-family: "Helvetica";
+            src: url('{{ storage_path('/fonts/Helvetica-Narrow.ttf') }}')format('truetype');
         }
 
+        @font-face {
+            font-family: "Roboto";
+            src: url('{{ storage_path('/fonts/Roboto-Regular.ttf') }}')format('truetype');
+        }
+        @font-face {
+            font-family: "Anton";
+            src: url('{{ storage_path('/fonts/Anton_Regular.ttf') }}')format('truetype');
+        }
 
         table,
         th,
@@ -78,10 +87,10 @@
             <tr>
                 <td width="700">
                     <h4
-                        style="font-size:3em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:700;margin-top:0px;">
+                        style="font-size:3em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:700;margin-top:0px;">
                         PENNSYLVANIA</h4>
                     <h4
-                        style="font-size:1.8em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:700;margin-top:-50px;">
+                        style="font-size:1.8em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:700;margin-top:-50px;">
                         {{ $request->days }} DAY TEMPORARY INTRANSIT</h4>
                 </td>
             </tr>
@@ -91,7 +100,7 @@
             <tr>
                 <td width="700">
                     <h4
-                        style="font-size:2.5em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:700;margin-top:0px;letter-spacing: 0.1em;transform:scale(4, 4);">
+                        style="font-size:2.5em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:700;margin-top:0px;letter-spacing: 0.1em;transform:scale(4, 4);">
                         {{ $tag_number }}</h4>
                 </td>
             </tr>
@@ -104,7 +113,7 @@
                         width="700">
                         <th width="90">
                             <h4
-                                style="padding: 2px 0px 2px 4px;font-size:0.8em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:bold;margin-top:0px;">
+                                style="padding: 2px 0px 2px 4px;font-size:0.8em;font-family: Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:bold;margin-top:0px;">
                                 Place your Plate Number and DIN Sticker Here and completete the additional Vehicle
                                 information
                             </h4>
@@ -117,13 +126,13 @@
                     <tr>
                         <th width="20">
                             <h4
-                                style="padding: 20px 0px 2px 4px;font-size:0.8em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;height:10px">
+                                style="padding: 20px 0px 2px 4px;font-size:0.8em;font-family:Roboto, Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;height:10px">
                                 -->
                             </h4>
                         </th>
                         <th width="50" style="border: 1px solid black;">
                             <h4
-                                style="padding: 0px 0px 0px 4px;font-size:0.8em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;height:10px">
+                                style="padding: 0px 0px 0px 4px;font-size:0.8em;font-family: Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;height:10px">
                             </h4>
                         </th>
                     </tr>
@@ -132,47 +141,47 @@
                     <tr>
                         <th width="180" style="border: 1px solid black;">
                             <h4
-                                style="padding: 2px 0px 2px 4px;font-size:0.8em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;height:15px">
+                                style="padding: 2px 0px 2px 4px;font-size:0.8em;font-family: Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;height:15px">
                                 VEHICLE IDENTIFICATION NUMBER
                             </h4>
                             <h4
-                                style="padding: 0px 0px 0px 4px;font-size:0.8em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-15px;margin-bottom:0px;height:15px">
+                                style="padding: 0px 0px 4px 4px;font-size:0.8em;font-family: Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-20px;margin-bottom:0px;height:15px">
                                 {{ $request->vin }}
                             </h4>
                         </th>
                         <th width="100" style="border: 1px solid black;">
                             <h4
-                                style="padding: 2px 0px 2px 4px;font-size:0.8em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;height:15px">
+                                style="padding: 2px 0px 2px 4px;font-size:0.8em;font-family: Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;height:15px">
                                 MAKE
                             </h4>
                             <h4
-                                style="padding: 0px 0px 0px 4px;font-size:0.8em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-15px;margin-bottom:0px;height:15px">
+                                style="padding: 0px 0px 4px 4px;font-size:0.8em;font-family: Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-15px;margin-bottom:0px;height:15px">
                                 {{ $request->make }}
                             </h4>
                         </th>
                         <th width="80" style="border: 1px solid black;">
                             <h4
-                                style="padding: 2px 0px 2px 4px;font-size:0.8em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;height:15px">
+                                style="padding: 2px 0px 2px 4px;font-size:0.8em;font-family: Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;height:15px">
                                 MODEL
                             </h4>
                             <h4
-                                style="padding: 0px 0px 0px 4px;font-size:0.8em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-15px;margin-bottom:0px;height:15px">
+                                style="padding: 0px 0px 4px 4px;font-size:0.8em;font-family: Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-15px;margin-bottom:0px;height:15px">
                                 {{ $request->model }}
                             </h4>
                         </th>
                         <th width="80" style="border: 1px solid black;">
                             <h4
-                                style="padding: 2px 0px 2px 4px;font-size:0.8em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;height:15px">
+                                style="padding: 2px 0px 2px 4px;font-size:0.8em;font-family: Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;height:15px">
                                 YEAR
                             </h4>
                             <h4
-                                style="padding: 0px 0px 0px 4px;font-size:0.8em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-15px;margin-bottom:0px;height:15px">
+                                style="padding: 0px 0px 4px 4px;font-size:0.8em;font-family: Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-15px;margin-bottom:0px;height:15px">
                                 {{ $request->year }}
                             </h4>
                         </th>
                         <th width="50">
                             <h4
-                                style="padding: 0px 0px 0px 4px;font-size:0.8em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;height:15px">
+                                style="padding: 0px 0px 0px 4px;font-size:0.8em;font-family: Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;height:15px">
 
                             </h4>
                         </th>
@@ -183,37 +192,37 @@
                     <tr>
                         <th width="72">
                             <h4
-                                style="padding: 2px 0px 2px 0px;font-size:0.8em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">
+                                style="padding: 2px 0px 2px 0px;font-size:0.8em;font-family: Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">
 
                             </h4>
                         </th>
                         <th width="5" style="border: 1px solid black;">
                             <h4 class="texto-vertical-3"
-                                style="padding: 0px 4px 0px 4px;font-size:0.6em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:400;letter-spacing:0.1em;margin-top:0px;margin-bottom:0px;">
+                                style="padding: 0px 4px 0px 4px;font-size:0.6em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:400;letter-spacing:0.1em;margin-top:0px;margin-bottom:0px;">
                                 E X P I R E S
                             </h4>
                         </th>
                         <th style="border: 1px solid black;" width="115">
                             <h4
-                                style="font-size:1.5em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:700;transform:scale(2,3);margin-top:-10px;margin-bottom:0px;">
+                                style="font-size:1.5em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:700;transform:scale(2,3);margin-top:-10px;margin-bottom:0px;">
                                 {{ $monthDateLast }}
                             </h4>
                         </th>
                         <th style="border: 1px solid black;" width="115">
                             <h4
-                                style="font-size:1.5em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:700;transform:scale(2,3);margin-top:-10px;margin-bottom:0px;">
+                                style="font-size:1.5em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:700;transform:scale(2,3);margin-top:-10px;margin-bottom:0px;">
                                 {{ $lateDay }}
                             </h4>
                         </th>
                         <th style="border: 1px solid black;" width="115">
                             <h4
-                                style="font-size:1.5em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:700;transform:scale(2,3);margin-top:-10px;margin-bottom:0px;">
+                                style="font-size:1.5em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:700;transform:scale(2,3);margin-top:-10px;margin-bottom:0px;">
                                 {{ $lateAnio }}
                             </h4>
                         </th>
                         <th width="5" style="border: 1px solid black;">
                             <h4 class="texto-vertical-3"
-                                style="padding: 0px 4px 0px 4px;font-size:0.6em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:400;letter-spacing:0.1em;margin-top:-5px;margin-bottom:0px;">
+                                style="padding: 0px 4px 0px 4px;font-size:0.6em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:400;letter-spacing:0.1em;margin-top:-5px;margin-bottom:0px;">
                                 E X P I R E S
                             </h4>
                         </th>
@@ -223,19 +232,19 @@
                     <tr>
                         <th width="80">
                             <h4
-                                style="padding: 2px 0px 2px 0px;font-size:0.8em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">
+                                style="padding: 2px 0px 2px 0px;font-size:0.8em;font-family: Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">
 
                             </h4>
                         </th>
                         <th  width="115">
                             <h4
-                                style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:400;margin-top:0px;margin-bottom:0px;">
+                                style="font-size:0.8em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:400;margin-top:0px;margin-bottom:0px;">
                                 MONTH
                             </h4>
                         </th>
                         <th >
                             <h4
-                                style="font-size:1.5em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:700;transform:scale(2,3);margin-top:-10px;margin-bottom:0px;">
+                                style="font-size:1.5em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:700;transform:scale(2,3);margin-top:-10px;margin-bottom:0px;">
 
                             </h4>
                         </th>

@@ -7,13 +7,20 @@
         }
 
         @font-face {
-            font-family: Arial;
-            src: url('/fonts/Arial.ttf');
+            font-family: "Arial";
+            src: url('{{ storage_path('/fonts/Arial.ttf') }}')format('truetype');
         }
 
-        * {
-            font-family: Arial;
+        @font-face {
+            font-family: "Helvetica";
+            src: url('{{ storage_path('/fonts/Helvetica-Narrow.ttf') }}')format('truetype');
         }
+
+        @font-face {
+            font-family: "Roboto";
+            src: url('{{ storage_path('/fonts/Roboto-Regular.ttf') }}')format('truetype');
+        }
+
 
 
         table,

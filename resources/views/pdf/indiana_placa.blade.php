@@ -5,14 +5,19 @@
             margin-top: 1cm;
             margin-bottom: 0cm;
         }
-
         @font-face {
-            font-family: Arial;
-            src: url('/fonts/Arial.ttf');
+            font-family: "Arial";
+            src: url('{{ storage_path('/fonts/Arial.ttf') }}')format('truetype');
         }
 
-        * {
-            font-family: Arial;
+        @font-face {
+            font-family: "Helvetica";
+            src: url('{{ storage_path('/fonts/Helvetica-Narrow.ttf') }}')format('truetype');
+        }
+
+        @font-face {
+            font-family: "Roboto";
+            src: url('{{ storage_path('/fonts/Roboto-Regular.ttf') }}')format('truetype');
         }
 
         table,
@@ -79,7 +84,9 @@
                 <tr>
                     <td width="60"></td>
                     <td width="600">
-                        <h4 style="font-size:6em;font-family:Arial, Helvetica, sans-serif;text-align:center;color: rgba(66, 75, 153, 0.849);font-weight:bold;letter-spacing: 0.01em;">INDIANA</h4>
+                        <h4 style="font-size:6em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;color: rgba(66, 75, 153, 0.849);font-weight:bold;letter-spacing: 0.01em;">
+                            INDIANA
+                        </h4>
                     </td>
                 </tr>
             </table>
@@ -87,50 +94,68 @@
             <table style="border-spacing: 0;margin-top:-250px;text-align:center;">
                 <tr>
                     <td width="700">
-                        <h4 style="font-size:2.7em;font-family:Arial, Helvetica, sans-serif;text-align:center;color:rgba(66, 75, 153, 0.849);font-weight:normal;margin-left:50px;margin-top:100px;">TEMPORARY REGISTRATION</h4>
+                        <h4 style="font-size:2.7em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;color:rgba(66, 75, 153, 0.849);font-weight:normal;margin-left:50px;margin-top:100px;">
+                            TEMPORARY REGISTRATION
+                        </h4>
                     </td>
                 </tr>
             </table>
             <!--NUMERO DE PLACA -->
-            <table style="border-spacing: 0;margin-top:-70px;text-align:center;">
+            <table style="border-spacing: 0;margin-top:-80px;text-align:center;">
                 <tr>
                     <th width="700">
-                        <h4 style="font-size:4em;font-family:Arial, Helvetica, sans-serif;text-align:center;color:black;font-weight:normal;letter-spacing: 0.01em;transform: scale(3,4);">{{ $tag_number }}</h4>
+                        <h4 style="font-size:2em;font-family:Arial, Helvetica, sans-serif;text-align:center;color:black;font-weight:normal;letter-spacing: 0.01em;transform: scale(6.5,6.5);">
+                            {{ $tag_number }}
+                        </h4>
                     </th>
                 </tr>
             </table>
             <!--VIN AÑO Y MARCA -->
-            <table style="margin-top:-50px;margin-bottom:-0px;">
+            <table style="margin-top:-10px;margin-left:-200px;margin-bottom:0px;">
                 <tr>
                     <td width="30"></td>
-                    <th width="300" >
-                        <h4 style="font-size:20px;font-family:Arial, Helvetica, sans-serif;font-weight:400;text-align:left;color: black;margin-left:60px;white-space:pre;">VIN: {{ $request->vin }}</h4>
+                    <th width="250" >
+                        <h4 style="font-size:20px;font-family:Roboto,Arial, Helvetica, sans-serif;font-weight:400;text-align:left;color: black;margin-left:60px;white-space:pre;">
+                            VIN: {{ $request->vin }}
+                        </h4>
                     </th>
                     <th width="70" >
                     </th>
-                    <th width="300" >
-                        <h4 style="font-size:20px;font-family:Arial, Helvetica, sans-serif;font-weight:400;text-align:left;color:black;margin-left:60px;white-space:pre;">{{ $request->year }}  {{ $request->make }}</h4>
+                    <th width="250" >
+                        <h4 style="font-size:20px;font-family:Arial, Helvetica, sans-serif;font-weight:400;text-align:left;color:black;margin-left:60px;white-space:pre;">
+                            {{ $request->year }}  {{ $request->make }}
+                        </h4>
                     </th>
                 </tr>
             </table>
             <!--DEALER Y EXPIRACION -->
-            <table style="margin-top: 0px;margin-bottom:-0px;">
+            <table style="margin-top: -50px;margin-bottom:0px;">
                 <tr>
                     <th width="20"></th>
                     <th >
-                        <h4 style="font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:bold;color: rgba(66, 75, 153, 0.849);margin-top:-100px;margin-bottom:8px;margin-right:-300px;">Dealer No.</h4>
+                        <h4 style="font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:bold;color: rgba(66, 75, 153, 0.849);margin-top:-100px;margin-bottom:8px;margin-right:-300px;">
+                            Dealer No.
+                        </h4>
                     </th>
                     <th style="border: 1px solid rgba(66, 75, 153, 0.849);" width="225" height="20">
-                        <h4 style="font-size:3em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{$request->deler_number}}</h4>
+                        <h4 style="font-size:3em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:400;margin-top:-24px;margin-bottom:8px;">
+                            {{$request->deler_number}}
+                        </h4>
                     </th>
                     <th width="5">
-                        <h4 class="texto-vertical-3" style="font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:400;letter-spacing:0.1em;margin-top:10px;margin-bottom:8px;padding-left:10px;">E X P I R E S</h4>
+                        <h4 class="texto-vertical-3" style="font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:400;letter-spacing:0.1em;margin-top:10px;margin-bottom:8px;padding-left:10px;">
+                            E X P I R E S
+                        </h4>
                     </th>
                     <th style="border: 1px solid rgba(66, 75, 153, 0.849);" width="400">
-                        <h4 style="font-size:6em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $lateDay_Qr }}</h4>
+                        <h4 style="font-size:6em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:400;margin-top:-24px;margin-bottom:8px;">
+                            {{ $lateDay_Qr }}
+                        </h4>
                     </th>
                     <th width="35">
-                        <h4 class="texto-vertical-3" style="font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:400;letter-spacing:0.1em;margin-top:10px;margin-bottom:8px;">E X P I R E S</h4>
+                        <h4 class="texto-vertical-3" style="font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:400;letter-spacing:0.1em;margin-top:10px;margin-bottom:8px;">
+                            E X P I R E S
+                        </h4>
                     </th>
                 </tr>
             </table>
@@ -138,7 +163,7 @@
                 <tr>
                     <td width="460">
                         <center>
-                            <h4 style="font-size:20px;font-weight:800;margin-top:0px;margin-left:350px;white-space:pre;">Secretary of State - www.in.gov/sos</h4>
+                            <h4 style="font-size:20px;font-weight:800;margin-top:-30px;margin-left:350px;white-space:pre;">Secretary of State - www.in.gov/sos</h4>
                         </center>
                     </td>
                 </tr>

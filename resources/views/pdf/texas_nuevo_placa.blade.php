@@ -99,9 +99,9 @@
 			</td>
 			<td width="100">&nbsp;</td>
 			<td width="100">
-				<h6 style="font-size:26px;margin-top:0px; padding-top:55px">{{ $request->vin }}</h6><br>
-				<h6 style="font-size:26px;margin-top:-84px;">TOMMIE VAUGHN</h6><br>
-				<h6 style="font-size:26px;margin-top:-84px;">MOTORS, INC.</h6>
+				<h6 style="font-size:26px;margin-top:0px; padding-top:50px">{{ $request->vin }}</h6><br>
+				<h6 style="font-size:26px;margin-top:-80px;">TOMMIE VAUGHN</h6><br>
+				<h6 style="font-size:26px;margin-top:-80px;">MOTORS, INC.</h6>
 			</td>
 		</tr>
 	</table>

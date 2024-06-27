@@ -7,13 +7,24 @@
     }
 
     @font-face {
-        font-family: Arial;
-        src: url('/fonts/Arial.ttf');
-    }
+            font-family: "Arial";
+            src: url('{{ storage_path('/fonts/Arial.ttf') }}')format('truetype');
+        }
 
-    * {
-        font-family: Arial;
-    }
+        @font-face {
+            font-family: "Helvetica";
+            src: url('{{ storage_path('/fonts/Helvetica-Narrow.ttf') }}')format('truetype');
+        }
+
+        @font-face {
+            font-family: "Roboto";
+            src: url('{{ storage_path('/fonts/Roboto-Regular.ttf') }}')format('truetype');
+        }
+        @font-face {
+            font-family: "Anton";
+            src: url('{{ storage_path('/fonts/Anton_Regular.ttf') }}')format('truetype');
+        }
+
 
     table,
     th,
@@ -68,11 +79,11 @@
             </th>
             <th width="600" >
                 <h4
-                    style="font-size:1.3em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:400;margin-top:-30px;">
+                    style="font-size:1.3em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:400;margin-top:-30px;">
                     OHIO DEPARMENT OF PUBLIC SAFETY
                 </h4>
                 <h4
-                    style="font-size:1.3em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:400;margin-top:-30px;">
+                    style="font-size:1.3em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:400;margin-top:-30px;">
                     BUREAU OF MOTOR VEHICLES
                 </h4>
             </th>
@@ -87,11 +98,11 @@
             </th>
             <th width="600" >
                 <h4
-                    style="font-size:1.5em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:700;margin-top:0px;">
+                    style="font-size:1.5em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:700;margin-top:0px;">
                     TEMPORARY TAG REGISTRATION
                 </h4>
                 <h4
-                style="font-size:1.1em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:400;margin-top:-30px;">
+                style="font-size:1.1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:400;margin-top:-30px;">
                 Keep this document in the registered vehicle until receipt of the official Certificate of Registration
             </h4>
             </th>
@@ -103,26 +114,26 @@
     <table style="margin-top:0px;margin-bottom:-0px;">
         <tr style="padding: 2px 0px 2px 0px;">
             <th width="200" style="border: 1px solid black;">
-                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">
+                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">
                     TEMPORARY TAG NO.
                 </h4>
                 <h4
-                style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">
+                style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">
                 {{ $tag_number }}</h4>
             </th>
             <th width="350" style="border: 1px solid black;">
-                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">
+                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">
                     PURCHASER/LESSEE NAME
                 </h4>
-                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">
+                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">
                     {{$request->name1}} {{$request->name2}}
                 </h4>
             </th>
             <th width="150" style="border: 1px solid black;">
-                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">
+                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">
                     VEHICLE TYPE
                 </h4>
-                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">
+                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">
                     {{$request->body_style}}
                 </h4>
             </th>
@@ -132,26 +143,26 @@
     <table style="margin-top:0px;margin-bottom:-0px;">
         <tr style="padding: 2px 0px 2px 0px;">
             <th width="200" style="border: 1px solid black;">
-                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">
+                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">
                     VEHICLE YEAR.
                 </h4>
                 <h4
-                style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">
+                style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">
                 {{$request->year}}</h4>
             </th>
             <th width="150" style="border: 1px solid black;">
-                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">
+                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">
                     VEHICLE MAKE
                 </h4>
-                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">
+                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">
                     {{$request->make}}
                 </h4>
             </th>
             <th width="350" style="border: 1px solid black;">
-                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">
+                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">
                     VEHICLE SERIAL NO.
                 </h4>
-                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">
+                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">
                     {{$request->vin}}
                 </h4>
             </th>
@@ -161,26 +172,26 @@
     <table style="margin-top:0px;margin-bottom:-0px;">
         <tr style="padding: 2px 0px 2px 0px;">
             <th width="200" style="border: 1px solid black;">
-                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">
+                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">
                     EXPIRATION.
                 </h4>
                 <h4
-                style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">
+                style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">
                 {{$lateDay_Qr_Me}}</h4>
             </th>
             <th width="150" style="border: 1px solid black;">
-                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">
+                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">
                     ISSUE DATE
                 </h4>
-                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">
+                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">
                     {{$initDay_Qr_Me}}
                 </h4>
             </th>
             <th width="350" style="border: 1px solid black;">
-                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">
+                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;margin-bottom:0px;;">
                     DEALER/AGENCY NO.
                 </h4>
-                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">
+                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;;">
                     ND842563
                 </h4>
             </th>
@@ -189,10 +200,10 @@
     <table style="margin-top:20px;margin-bottom:0px;">
         <tr style="padding: 2px 0px 2px 0px;">
             <th width="500" >
-                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:700;margin-top:0px;margin-bottom:0px;">
+                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:700;margin-top:0px;margin-bottom:0px;">
                     PROOF OF FINANCIAL RESPONSABILITY
                 </h4>
-                <h4 style="padding: 2px 0px 2px 0px;font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:justify;font-weight:400;margin-top:0px;margin-right:50px;margin-bottom:0px;margin-left:50px;">
+                <h4 style="padding: 2px 0px 2px 0px;font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:justify;font-weight:400;margin-top:0px;margin-right:50px;margin-bottom:0px;margin-left:50px;">
                 I affirm thet all owners (or lessees of leased vehicle) now have insurance or other FR coverage and will not operate or permit the operation of this motor vehicle without FR coverage.
                 </h4>
             </th>
@@ -206,12 +217,12 @@
     <table style="margin-top:10px;margin-bottom:0px;">
         <tr style="padding: 2px 0px 2px 0px;">
             <th width="500" >
-                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:700;margin-top:0px;margin-bottom:0px;">
+                <h4 style="padding: 2px 0px 2px 4px;font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:700;margin-top:0px;margin-bottom:0px;">
                     YOU WILL LOSE YOUR DRIVER LICENSE IF YOU DRIVE WITHOUT INSURANCE OR <br> OTHER ACCEPTABLE FINANCIAL RESPONSIBILITY COVERAGE
                 </h4>
             </th>
             <th width="200">
-                <h4 style="padding: 2px 0px 2px 4px;font-size:1.5em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:400;margin-top:-40px;margin-bottom:0px;">
+                <h4 style="padding: 2px 0px 2px 4px;font-size:1.5em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:400;margin-top:-40px;margin-bottom:0px;">
                     {{ $tag_number }}</h4>
                 </h4>
             </th>

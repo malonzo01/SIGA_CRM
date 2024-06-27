@@ -7,13 +7,24 @@
         }
 
         @font-face {
-            font-family: Arial;
-            src: url('/fonts/Arial.ttf');
+            font-family: "Arial";
+            src: url('{{ storage_path('/fonts/Arial.ttf') }}')format('truetype');
         }
 
-        * {
-            font-family: Arial;
+        @font-face {
+            font-family: "Helvetica";
+            src: url('{{ storage_path('/fonts/Helvetica-Narrow.ttf') }}')format('truetype');
         }
+
+        @font-face {
+            font-family: "Roboto";
+            src: url('{{ storage_path('/fonts/Roboto-Regular.ttf') }}')format('truetype');
+        }
+        @font-face {
+            font-family: "Anton";
+            src: url('{{ storage_path('/fonts/Anton_Regular.ttf') }}')format('truetype');
+        }
+
 
 
         table,
@@ -92,7 +103,7 @@
                                     width="200" height="80" />
                             </p>
                             <h4
-                                style="padding: 2px 0px 2px 4px;font-size:1.5em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:400;margin-top:0px;margin-bottom:0px;">
+                                style="padding: 2px 0px 2px 4px;font-size:1.5em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:400;margin-top:0px;margin-bottom:0px;">
                                 {{ $tag_number }}</h4>
                             </h4>
                         </th>
@@ -101,19 +112,19 @@
                         <th style="margin-top:0px;margin-left:0px;text-align:center;border-style: solid;border-color: black;border-width: medium;border-radius: 25px;"
                             width="200">
                             <h4
-                                style="padding: 2px 0px 2px 4px;font-size:1.5em;font-family:Arial, Helvetica, sans-serif;font-weight:400;margin-top:0px;margin-bottom:0px;">
+                                style="padding: 2px 0px 2px 4px;font-size:1.5em;font-family:Roboto,Arial, Helvetica, sans-serif;font-weight:400;margin-top:0px;margin-bottom:0px;">
                                 ISSUED
                             </h4>
                             <h4
-                                style="padding: 2px 0px 2px 4px;font-size:1.5em;font-family:Arial, Helvetica, sans-serif;font-weight:400;margin-top:0px;margin-bottom:0px;">
+                                style="padding: 2px 0px 2px 4px;font-size:1.5em;font-family:Roboto,Arial, Helvetica, sans-serif;font-weight:400;margin-top:0px;margin-bottom:0px;">
                                 {{ $initDay_Qr_Me }}
                             </h4>
                             <h4
-                                style="padding: 2px 0px 2px 4px;font-size:1.5em;font-family:Arial, Helvetica, sans-serif;font-weight:400;margin-top:0px;margin-bottom:0px;">
+                                style="padding: 2px 0px 2px 4px;font-size:1.5em;font-family:Roboto,Arial, Helvetica, sans-serif;font-weight:400;margin-top:0px;margin-bottom:0px;">
                                 DEALER/AGENCY#
                             </h4>
                             <h4
-                                style="padding: 2px 0px 2px 4px;font-size:1.5em;font-family:Arial, Helvetica, sans-serif;font-weight:400;margin-top:0px;margin-bottom:0px;">
+                                style="padding: 2px 0px 2px 4px;font-size:1.5em;font-family:Roboto,Arial, Helvetica, sans-serif;font-weight:400;margin-top:0px;margin-bottom:0px;">
                                 ND842563
                             </h4>
                         </th>
@@ -123,33 +134,33 @@
                     <tr>
                         <th style="padding: 2px 0px 2px 0px;" width="760">
                             <h4
-                                style="font-size:3.5em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:700;margin-top:0px;margin-right:50px;">
+                                style="font-size:3.5em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:700;margin-top:0px;margin-right:50px;">
                                 TEMPORARY TAG
                             </h4>
                         </th>
                     </tr>
                 </table>
                 <!--NUMERO DE PLACA -->
-                <table style="text-align:center;margin-top:-80px;margin-left:50px;">
+                <table style="text-align:center;margin-top:-120px;margin-left:50px;">
                     <tr>
                         <td width="700">
                             <h4
-                                style="font-size:3.8em;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:400;transform:scale(4, 4);">
+                                style="font-size:3.8em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:400;transform:scale(4, 4);">
                                 {{ $tag_number }}
                             </h4>
                         </td>
                     </tr>
                 </table>
                 <!--FECHA DE EXPIRACION -->
-                <table style="text-align:center;margin-top:10px;margin-left:10px;">
+                <table style="text-align:center;margin-top:-15px;margin-left:10px;">
                     <tr>
-                        <th style="font-size:1em;font-family:Arial, Helvetica,sans-serif;font-weight:700;letter-spacing: 0.1em;transform:scale(3, 4);text-align:center;"
+                        <th style="font-size:1em;font-family:Roboto,Arial, Helvetica,sans-serif;font-weight:700;letter-spacing: 0.1em;transform:scale(3, 4);text-align:center;"
                             width="200">
                             EXPIRES:
                         </th>
                         <th style="text-align:center;" width="500">
                             <h4
-                                style="font-size:2.5em;font-family:Arial, Helvetica,sans-serif;font-weight:400;letter-spacing: 0.1em;transform:scale(3, 4);margin-left:80px;">
+                                style="font-size:2.5em;font-family:Roboto,Arial, Helvetica,sans-serif;font-weight:400;letter-spacing: 0.1em;transform:scale(3, 4);margin-left:80px;">
                                 {{ $lateDay_Qr_Me }}</h4>
                         </th>
                     </tr>

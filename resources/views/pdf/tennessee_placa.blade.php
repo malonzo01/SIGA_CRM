@@ -5,14 +5,19 @@
             margin-top: 1cm;
             margin-bottom: 0cm;
         }
-
         @font-face {
-            font-family: Arial;
-            src: url('/fonts/Arial.ttf');
+            font-family: "Arial";
+            src: url('{{ storage_path('/fonts/Arial.ttf') }}')format('truetype');
         }
 
-        * {
-            font-family: Arial;Arial, Helvetica,
+        @font-face {
+            font-family: "Helvetica";
+            src: url('{{ storage_path('/fonts/Helvetica-Narrow.ttf') }}')format('truetype');
+        }
+
+        @font-face {
+            font-family: "Roboto";
+            src: url('{{ storage_path('/fonts/Roboto-Regular.ttf') }}')format('truetype');
         }
 
         table,
@@ -73,7 +78,7 @@
                 <tr>
                     <td width="70"></td>
                     <td width="600">
-                        <h4 style="font-size:3em;font-family:Arial, Helvetica,sans-serif;text-align:center;font-weight:normal;margin-top:0px;">TEMPORARY PLATE</h4>
+                        <h4 style="font-size:3em;font-family:Roboto,Arial, Helvetica,sans-serif;text-align:center;font-weight:normal;margin-top:0px;">TEMPORARY PLATE</h4>
                     </td>
                 </tr>
             </table>
@@ -86,38 +91,79 @@
                         </p>
                     </td>
                     <td width="700">
-                        <h4 style="font-size:5em;font-family:Arial, Helvetica,sans-serif;text-align:center;letter-spacing: 0.01em;font-weight:normal;margin-left:-330px;margin-top:50px;">TENNESSEE</h4>
+                        <h4 style="font-size:5em;font-family:Roboto,Arial, Helvetica,sans-serif;text-align:center;letter-spacing: 0.01em;font-weight:normal;margin-left:-330px;margin-top:50px;">
+                            TENNESSEE
+                        </h4>
                     </td>
                 </tr>
             </table>
             <!--NUMERO DE PLACA -->
-            <table style="border-spacing: 0;margin-top:-110px;margin-left:350px;text-align:center;">
+            <table style="border-spacing: 0;margin-top:-150px;margin-left:350px;text-align:center;">
                 <tr>
                     <td width="130">
-                        <h4 style="font-size:4em;font-family:Arial, Helvetica, sans-serif;text-align:center;color:black;font-weight:normal;letter-spacing: 0.01em;transform: scale(3,4);">{{ $tag_number }}</h4>
+                        <h4 style="font-size:4em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;color:black;font-weight:normal;letter-spacing: 0.01em;transform: scale(3,4);">
+                            {{ $tag_number }}
+                        </h4>
                     </td>
                 </tr>
             </table>
             <!--DATOS DEL VENDEDOR -->
-            <table style="border-spacing: 0;">
+            <table style="border-spacing: 0;margin-top:0px;margin-left:0px;">
                 <tr>
-                    <td width="180">
-                        <h4 style="font-size:30px;font-family:Arial, Helvetica,sans-serif;font-weight:normal;margin-top:0px;margin-left:-24px;white-space:pre;">ISSUE:          {{ $initDaySt }}</h4>
-                        <h4 style="font-size:30px;font-family:Arial, Helvetica,sans-serif;font-weight:normal;margin-top:-38px;margin-left:-24px;white-space:pre;">DEALER:       {{ $request->seller }}</h4>
-                        <h4 style="font-size:30px;font-family:Arial, Helvetica,sans-serif;font-weight:normal;margin-top:-36px;margin-left:-24px;white-space:pre;">PHONE:        {{ $request->phone }} </h4>
+                    <td width="50">
+                        <h4 style="font-size:30px;font-family:Roboto,Arial, Helvetica,sans-serif;font-weight:normal;margin-top:0px;margin-left:0px;">
+                            ISSUE:
+                        </h4>
+                    </td>
+                    <td width="650">
+                        <h4 style="font-size:30px;font-family:Roboto,Arial, Helvetica,sans-serif;font-weight:normal;margin-top:0px;margin-left:100px;">
+                            {{ $initDaySt }}
+                        </h4>
+                    </td>
+                </tr>
+            </table>
+            <table style="border-spacing: 0;margin-top:-50px;margin-left:0px;">
+                <tr>
+                    <td width="50">
+                        <h4 style="font-size:30px;font-family:Roboto,Arial, Helvetica,sans-serif;font-weight:normal;margin-top:0px;margin-left:0px;">
+                            DEALER:
+                        </h4>
+                    </td>
+                    <td width="650">
+                        <h4 style="font-size:30px;font-family:Roboto,Arial, Helvetica,sans-serif;font-weight:normal;margin-top:0px;margin-left:70px;">
+                            {{ $request->seller }}
+                        </h4>
+                    </td>
+                </tr>
+            </table>
+            <table style="border-spacing: 0;margin-top:-50px;margin-left:0px;">
+                <tr>
+                    <td width="50">
+                        <h4 style="font-size:30px;font-family:Roboto,Arial, Helvetica,sans-serif;font-weight:normal;margin-top:0px;margin-left:0px;">
+                            PHONE:
+                        </h4>
+                    </td>
+                    <td width="650">
+                        <h4 style="font-size:30px;font-family:Roboto,Arial, Helvetica,sans-serif;font-weight:normal;margin-top:0px;margin-left:50px;">
+                            {{ $request->phone }}
+                        </h4>
                     </td>
                 </tr>
             </table>
             <!--FECHA DE EXPIRACION -->
-            <table style="border-spacing: 0;margin-top:-50px;margin-left:-50px;text-align:center;">
+            <table style="border-spacing: 0;margin-top:-50px;margin-left:0px;text-align:center;">
                 <tr>
-                    <th width="200">
-                        <h4 style="font-size:40px;font-family:Arial, Helvetica,sans-serif;font-weight:bold;letter-spacing: 0.1em;transform:scale(1,1.5);">EXPIRES:</h4>
+                    <th width="150">
+                        <h4 style="font-size:40px;font-family:Roboto,Arial, Helvetica,sans-serif;font-weight:bold;letter-spacing: 0.1em;transform:scale(1,1.5);">
+                            EXPIRES:
+                        </h4>
                     </th>
                     <th width="50">
                     </th>
                     <th width="500">
-                        <h4 style="font-size:30px;font-family:Arial, Helvetica,sans-serif;font-weight:bold;letter-spacing: 0.1em;transform:scale(3, 4);">{{ $lateDay_Qr }}</h4>
+                        <h4 style="font-size:30px;font-family:Roboto,Arial, Helvetica,sans-serif;font-weight:bold;letter-spacing: 0.1em;transform:scale(3, 4);">
+                            {{ $lateDay_Qr }}
+                        </h4>
                     </th>
                 </tr>
             </table>

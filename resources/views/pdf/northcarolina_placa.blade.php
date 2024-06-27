@@ -7,16 +7,25 @@
         }
 
         @font-face {
-            font-family: 'Anton', sans-serif;
-            src: url('/fonts/Anton_Regular.tff');
+            font-family: "Anton";
+            src: url('{{ storage_path('/fonts/Anton_Regular.ttf') }}')format('truetype');
         }
 
-        * {
-            font-family: 'Anton', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        @font-face {
+            font-family: "Arial";
+            src: url('{{ storage_path('/fonts/Arial.ttf') }}')format('truetype');
         }
+
+        @font-face {
+            font-family: "Helvetica";
+            src: url('{{ storage_path('/fonts/Helvetica-Narrow.ttf') }}')format('truetype');
+        }
+
+        @font-face {
+            font-family: "Roboto";
+            src: url('{{ storage_path('/fonts/Roboto-Regular.ttf') }}')format('truetype');
+        }
+
 
         table,
         th,
@@ -81,9 +90,9 @@
         }
     </style>
     <!--PLACA -->
-    <div class="div-master" style="width:100%; margin-bottom:20px;padding:50px 0px 0px 80px;">
+    <div class="div-master" style="width:100%; margin-bottom:20px;padding:0px 0px 0px 80px;">
         <!--CABECERA PLACA -->
-        <table style="margin-top: 0px;margin-bottom:-0px;">
+        <table style="margin-top:-20px;margin-bottom:0px;">
             <tr style="padding: 2px 0px 2px 0px;">
                 <th width="200">
                     <h4
@@ -100,7 +109,7 @@
             </tr>
         </table>
         <!--DEALER INFO -->
-        <table style="margin-top: 0px;margin-bottom:-0px;border:3px solid #000;">
+        <table style="margin-top:-20px;margin-bottom:-0px;border:3px solid #000;">
             <tr style="padding: 2px 0px 2px 0px;border:3px solid #000;">
                 <th style="padding: 2px 0px 2px 0px;border: 4px solid black;background-color: black;" width="54">
                     <h4
@@ -131,7 +140,7 @@
             </tr>
         </table>
         <!--DATE EXPIRE -->
-        <table style="margin-top: 0px;margin-bottom:-0px;border:4px solid #000;">
+        <table style="margin-top: 0px;margin-bottom:0px;border:4px solid #000;">
             <tr style="padding: 2px 0px 2px 0px;border:4px solid #000;">
                 <th style="border:4px solid #000;" width="54">
                     <h4
@@ -140,26 +149,26 @@
                 </th>
                 <th style="border:4px solid #000;" width="202">
                     <h4
-                        style=" display:inline-block; vertical-align:middle; font-size:140px; font-family:Arial, Helvetica, sans-serif;font-weight:400;color:#000;">
-                        {{ $lateMonth }}</h4>
+                    style=" display:inline-block; vertical-align:middle; font-size:2.8em; font-family:Anton,Arial, Helvetica, sans-serif;font-weight:400;color:#000;letter-spacing: 0.08em;transform: scale(3,4);">
+                    {{ $lateMonth }}</h4>
                     <h4
-                        style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;padding: 0px 0px 0px 5px;">
+                        style="font-size:0.8em;font-family:Anton,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;padding: 0px 0px 0px 5px;">
                         MONT</h4>
                 </th>
                 <th style="border:4px solid #000;" width="202">
                     <h4
-                        style=" display:inline-block; vertical-align:middle; font-size:140px; font-family:Arial, Helvetica, sans-serif;font-weight:400;color:#000;">
+                        style=" display:inline-block; vertical-align:middle; font-size:2.8em; font-family:Anton,Arial, Helvetica, sans-serif;font-weight:400;color:#000;letter-spacing: 0.08em;transform: scale(3,4);">
                         {{ $lateDay }}</h4>
                     <h4
-                        style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;padding: 0px 0px 0px 5px;">
+                        style="font-size:0.8em;font-family:Anton,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;padding: 0px 0px 0px 5px;">
                         DAY</h4>
                 </th>
                 <th style="border:4px solid #000;" width="202">
                     <h4
-                        style=" display:inline-block; vertical-align:middle; font-size:140px; font-family:Arial, Helvetica, sans-serif;font-weight:400;color:#000;">
+                        style=" display:inline-block; vertical-align:middle; font-size:2.8em; font-family:Anton,Arial, Helvetica, sans-serif;font-weight:400;color:#000;letter-spacing: 0.08em;transform: scale(3,4);">
                         {{ $lateAnioSt }}</h4>
                     <h4
-                        style="font-size:0.8em;font-family:Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;padding: 0px 0px 0px 5px;">
+                        style="font-size:0.8em;font-family:Anton,Anton,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:0px;margin-bottom:0px;padding: 0px 0px 0px 5px;">
                         YEAR</h4>
                 </th>
                 <th style="border:4px solid #000;" width="54">
@@ -217,7 +226,7 @@
             </tr>
         </table>
         <!--NUMERO DE PLACA -->
-        <table style="border-spacing: 0;text-align:center;margin-top:80px;margin-left:0px;">
+        <table style="border-spacing: 0;text-align:center;margin-top:20px;margin-left:0px;">
             <tr>
                 <td width="700">
                     <h4
@@ -227,7 +236,7 @@
             </tr>
         </table>
         <!--STATE INFO-->
-        <table style="border-spacing: 0;margin-top:50px;margin-left:0px;text-align:center;">
+        <table style="border-spacing: 0;margin-top:20px;margin-left:0px;text-align:center;">
             <tr style="padding: 2px 0px 2px 0px;">
                 <th width="200">
                     <h4
@@ -236,7 +245,8 @@
                     </h4>
                 </th>
                 <th width="300">
-                    <h4 style="font-size:1.5em;font-family:'Anton', sans-serif;text-align:center;font-weight:800;letter-spacing: 0.1em;transform:scale(2.2, 3.2);">
+                    <h4
+                        style="font-size:1.5em;font-family:'Anton', sans-serif;text-align:center;font-weight:800;letter-spacing: 0.1em;transform:scale(2.2, 3.2);">
                         NORTH CAROLINA
                     </h4>
                 </th>

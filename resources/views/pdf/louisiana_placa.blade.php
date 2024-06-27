@@ -25,12 +25,15 @@
 
         @font-face {
             font-family: "Roboto";
-            src: url('{{ storage_path('/fonts/Roboto-Medium.ttf') }}')format('truetype');
+            src: url('{{ storage_path('/fonts/Roboto-Regular.ttf') }}')format('truetype');
         }
-
+        @font-face {
+            font-family: "Anton";
+            src: url('{{ storage_path('/fonts/Anton_Regular.ttf') }}')format('truetype');
+        }
         @font-face {
             font-family: "Montserrat";
-            src: url('{{ storage_path('/fonts/Montserrat-Bold.ttf') }}')format('truetype');
+            src: url('{{ storage_path('/fonts/Montserrat-Black.ttf') }}')format('truetype');
         }
 
         @font-face {
@@ -87,7 +90,7 @@
                     <tr>
                         <th width="200" style="border: 1px solid  rgba(27, 63, 131, 0.849);">
                             <h4
-                                style="font-size:1.5em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:normal;background-color: rgba(27, 63, 131, 0.849);color:white;letter-spacing:0.1em;margin-top:0px;margin-bottom:0px;">
+                                style="font-size:1.3em;font-family:Montserrat,Arial, Helvetica, sans-serif;text-align:center;font-weight:normal;background-color: rgba(27, 63, 131, 0.849);color:white;letter-spacing:0.1em;margin-top:0px;margin-bottom:0px;">
                                 EXPIRATION DATE
                             </h4>
                         </th>
@@ -97,7 +100,7 @@
                     <tr>
                         <th width="200" style="border: 1px solid  rgba(27, 63, 131, 0.849);">
                             <h4
-                                style="font-size:5em;font-family:DancingScript;text-align:center;font-weight:400;color: rgba(27, 63, 131, 0.849);letter-spacing:0.1em;margin-top:0px;margin-bottom:15px;">
+                                style="display:inline-block; vertical-align:middle;font-size:5em;font-family:DancingScript;text-align:center;font-weight:400;color: rgba(27, 63, 131, 0.849);letter-spacing:0.1em;margin-top:0px;margin-bottom:15px;">
                                 {{ $lateMonth }}
                             </h4>
                         </th>
@@ -107,7 +110,7 @@
                     <tr>
                         <th width="200" style="border: 1px solid rgba(27, 63, 131, 0.849);">
                             <h4
-                                style="font-size:5em;font-family:DancingScript;text-align:center;font-weight:400;color: rgba(27, 63, 131, 0.849);letter-spacing:0.1em;margin-top:0px;margin-bottom:15px;">
+                                style="display:inline-block; vertical-align:middle;font-size:5em;font-family:DancingScript;text-align:center;font-weight:400;color: rgba(27, 63, 131, 0.849);letter-spacing:0.1em;margin-top:0px;margin-bottom:15px;">
                                 {{ $lateDay }}
                             </h4>
                         </th>
@@ -117,7 +120,7 @@
                     <tr>
                         <th width="200" style="border: 1px solid rgba(27, 63, 131, 0.849);">
                             <h4
-                                style="font-size:5em;font-family:DancingScript;text-align:center;font-weight:400;color: rgba(27, 63, 131, 0.849);letter-spacing:0.1em;margin-top:0px;margin-bottom:15px;">
+                                style="display:inline-block; vertical-align:middle;font-size:5em;font-family:DancingScript;text-align:center;font-weight:400;color: rgba(27, 63, 131, 0.849);letter-spacing:0.1em;margin-top:0px;margin-bottom:15px;">
                                 {{ $lateAnio }}
                             </h4>
                         </th>
@@ -140,7 +143,7 @@
                                 {{ $request->days }} DAY TEMPORARY INTRANSIT
                             </h4>
                             <h4
-                                style="font-size:2em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:bold;color: rgba(27, 63, 131, 0.849);transform:scale(3,3);margin-top:-30px;">
+                                style="font-size:2em;font-family:Montserrat,Arial, Helvetica, sans-serif;text-align:center;font-weight:black;color: rgba(27, 63, 131, 0.849);transform:scale(3,3);margin-top:-30px;">
                                 LOUISIANA
                             </h4>
                         </th>
