@@ -48,12 +48,14 @@
                                             @endif
                                         @endcan
                                         @can('admin.users.destroy')
-                                            {!! Form::open(['method' => 'DELETE', 'route' => ['admin.users.destroy', $user], 'style' => 'display:inline']) !!}
-                                            {!! Form::button('<i class="fa fa-lg fa-fw fa-trash"></i>', [
-                                                'type' => 'enviar',
-                                                'class' => 'btn btn-xs btn-default text-danger mx-1 shadow title=Editar',
-                                            ]) !!}
-                                            {!! Form::close() !!}
+                                            @if (auth()->user()->id != $user->id)
+                                                {!! Form::open(['method' => 'DELETE', 'route' => ['admin.users.destroy', $user], 'style' => 'display:inline']) !!}
+                                                {!! Form::button('<i class="fa fa-lg fa-fw fa-trash"></i>', [
+                                                    'type' => 'enviar',
+                                                    'class' => 'btn btn-xs btn-default text-danger mx-1 shadow title=Editar',
+                                                ]) !!}
+                                                {!! Form::close() !!}
+                                            @endif
                                         @endcan
                                     </td>
                                 </tr>

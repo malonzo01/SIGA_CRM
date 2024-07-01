@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GlobalController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\VentaController;
 use iio\libmergepdf\Merger;
 use Barryvdh\DomPDF\Facade\Pdf;
 
@@ -17,6 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/admin/users', UserController::class)->except('show')->names('admin.users');
     Route::resource('/admin/role', RoleController::class)->except('show')->names('admin.roles');
     Route::resource('/admin/dashboard', DashboardController::class)->names('admin.dashboard');
+    Route::resource('/admin/ventas', VentaController::class)->names('admin.ventas');
 
 	// Gestión [Placas].
 	Route::controller(GlobalController::class)->group(function () {

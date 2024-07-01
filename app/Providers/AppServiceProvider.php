@@ -7,6 +7,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades;
 use Illuminate\View\View;
 use Carbon\Carbon;
+use Livewire\Livewire;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,5 +30,7 @@ class AppServiceProvider extends ServiceProvider
 		Facades\View::composer('layouts.includes.aside', function (View $view) use ($insurences) {
 			$view->with('insurences', $insurences);
 		});
+
+
 	}
 }

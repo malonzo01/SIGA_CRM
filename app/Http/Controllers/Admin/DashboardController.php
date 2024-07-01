@@ -45,4 +45,6 @@ class DashboardController extends Controller
 
         return view('admin.dashboard.show', compact('userPlatesPerInsurance','user'));
     }
+
+
 }

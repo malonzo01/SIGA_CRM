@@ -19,6 +19,12 @@
                             <span>Dashboard</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('admin.ventas.index') }}">
+                            <i class="fas fa-circle"></i>
+                            <span>Ventas</span>
+                        </a>
+                    </li>
                     @can('admin.users.index')
                         <li>
                             <a href="{{ route('admin.users.index') }}">

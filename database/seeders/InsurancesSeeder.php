@@ -116,5 +116,35 @@ class InsurancesSeeder extends Seeder
             'address'=>'4886 OH-59, Ravenna,',
             'zip'=>'44266',
         ]);
+        Insurance::create([
+            'name' => 'virginia',
+            'states_ab' => 'VA',
+            'logo_consulta_path' => 'img/placas/virginiaConsulta.jpg',
+            'address'=>'',
+            'zip'=>'',
+        ]);
+        Insurance::create([
+            'name' => 'louisiana',
+            'states_ab' => 'LA',
+            'logo_consulta_path' => 'img/placas/louisianaConsulta.jpg',
+            'address'=>'',
+            'zip'=>'',
+        ]);
+        Insurance::create([
+            'name' => 'pennsylvania',
+            'states_ab' => 'PA',
+            'logo_consulta_path' => 'img/placas/pennsylvaniaConsulta.jpg',
+            'address'=>'',
+            'zip'=>'',
+        ]);
+        /*
+        Insurance::create([
+            'name' => '',
+            'states_ab' => '',
+            'logo_consulta_path' => 'img/placas/.jpg',
+            'address'=>'',
+            'zip'=>'',
+        ]);
+        */
     }
 }

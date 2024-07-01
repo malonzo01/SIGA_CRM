@@ -67,7 +67,7 @@
             background-size:700px 80px;
             /* You must set a specified height */
             background-attachment: fixed;
-            background-position: 200px 290px;
+            background-position: 200px 260px;
             /* Center the image */
             background-repeat: no-repeat;
             /* Do not repeat the image */
@@ -81,32 +81,32 @@
         }
     </style>
     <!--PLACA -->
-    <div class="div-master" style="width:100%; margin-bottom:0px;padding:40px 0px 0px 80px;">
+    <div class="div-master" style="width:100%; margin-bottom:0px;padding:50px 0px 0px 80px;">
         <!--CABECERA PLACA -->
-        <table style="border-spacing: 0;text-align:center;margin-top:100px;margin-bottom:-0px;">
+        <table style="border-spacing: 0;text-align:center;margin-top:50px;margin-bottom:-0px;">
             <tr>
                 <td width="700">
                     <h4
-                        style="font-size:3em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:700;margin-top:0px;">
+                        style="font-size:3em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:700;margin-top:-20px;">
                         PENNSYLVANIA</h4>
                     <h4
-                        style="font-size:1.8em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:700;margin-top:-50px;">
+                        style="font-size:1.8em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:700;margin-top:-60px;">
                         {{ $request->days }} DAY TEMPORARY INTRANSIT</h4>
                 </td>
             </tr>
         </table>
         <!--NUMERO DE PLACA -->
-        <table style="border-spacing: 0;text-align:center;margin-top:20px;margin-left:0px;">
+        <table style="border-spacing: 0;text-align:center;margin-top:40px;margin-left:0px;">
             <tr>
                 <td width="700">
                     <h4
-                        style="font-size:2.5em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:700;margin-top:0px;letter-spacing: 0.1em;transform:scale(4, 4);">
+                        style="font-size:2.5em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:bold;margin-top:0px;letter-spacing: em;transform:scale(5.5, 5.5);">
                         {{ $tag_number }}</h4>
                 </td>
             </tr>
         </table>
         <!-- TABLA VEHICLE DESCRIPTION -->
-        <div class="row">
+        <div class="row" style="margin-top:40px;margin-bottom:-0px;margin-left:0px;">
             <div class="col-2">
                 <table style="margin-top: 0px;margin-bottom:-0px;margin-left:0px;">
                     <tr style="padding: 2px 0px 2px 0px;border-width: 0px 2px 0px 2px; border-style:solid black;"

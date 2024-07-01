@@ -28,8 +28,10 @@ class SesionControlador extends Controller
 
 	public function iniciar_sesion(Request $request)
 	{
+
 		// Consultamos si el usuario consultado existe.
 		$usuario = User::select('*')->where('username', '=', $request->username)->first();
+
 		if (!$usuario)
 			return redirect()->route('session.login')->with('error', '¡El usuario ingresado no se encuentra registrado!');
 
