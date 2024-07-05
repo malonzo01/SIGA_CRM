@@ -6,14 +6,26 @@
         margin-bottom: 0cm;
     }
 
-    @font-face {
-        font-family: Arial;
-        src: url('/fonts/Arial.ttf');
-    }
 
-    * {
-        font-family: Arial;
-    }
+    @font-face {
+            font-family: "Arial";
+            src: url('{{ storage_path('/fonts/Arial.ttf') }}')format('truetype');
+        }
+
+        @font-face {
+            font-family: "Helvetica";
+            src: url('{{ storage_path('/fonts/Helvetica-Narrow.ttf') }}')format('truetype');
+        }
+
+        @font-face {
+            font-family: "Roboto";
+            src: url('{{ storage_path('/fonts/Roboto-Regular.ttf') }}')format('truetype');
+        }
+        @font-face {
+            font-family: "Anton";
+            src: url('{{ storage_path('/fonts/Anton_Regular.ttf') }}')format('truetype');
+        }
+
 
     table,
     th,
@@ -89,28 +101,28 @@
     <table style="margin-top: 0px;margin-bottom:-0px;">
         <tr style="padding: 2px 0px 2px 0px;border-width: 0px 2px 0px 2px; border-style:solid black;" width="760">
             <th width="120">
-                <h4 style="font-size:1.1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">PLATE NUMBER</h4>
-                <h4 style="font-size:1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $tag_number }}</h4>
+                <h4 style="font-size:1.1em;font-family: Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">PLATE NUMBER</h4>
+                <h4 style="font-size:1em;font-family: Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $tag_number }}</h4>
             </th>
             <th width="80">
-                <h4 style="font-size:1.1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">YEAR</h4>
-                <h4 style="font-size:1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $request->year }}</h4>
+                <h4 style="font-size:1.1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">YEAR</h4>
+                <h4 style="font-size:1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $request->year }}</h4>
             </th>
             <th width="80">
-                <h4 style="font-size:1.1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">COLOR</h4>
-                <h4 style="font-size:1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $request->major_color }}</h4>
+                <h4 style="font-size:1.1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">COLOR</h4>
+                <h4 style="font-size:1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $request->major_color }}</h4>
             </th>
             <th width="80">
-                <h4 style="font-size:1.1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">MAKE</h4>
-                <h4 style="font-size:1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $request->make}}</h4>
+                <h4 style="font-size:1.1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">MAKE</h4>
+                <h4 style="font-size:1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $request->make}}</h4>
             </th>
             <th width="150">
-                <h4 style="font-size:1.1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">MODEL</h4>
-                <h4 style="font-size:1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $request->model }}</h4>
+                <h4 style="font-size:1.1em;font-family: Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">MODEL</h4>
+                <h4 style="font-size:1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $request->model }}</h4>
             </th>
             <th width="250">
-                <h4 style="font-size:1.1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">VEHICLE IDENTICATIONNUMBER</h4>
-                <h4 style="font-size:1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $request->vin }}</h4>
+                <h4 style="font-size:1.1em;font-family: Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">VEHICLE IDENTICATIONNUMBER</h4>
+                <h4 style="font-size:1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $request->vin }}</h4>
             </th>
         </tr>
     </table>
@@ -126,24 +138,24 @@
     <table style="margin-top: 0px;margin-bottom:-0px;" width="760">
         <tr style="padding: 2px 0px 2px 0px;border-width: 0px 2px 0px 2px; border-style:solid black;">
             <th  width="160">
-                <h4 style="font-size:1.1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">NAME</h4>
-                <h4 style="font-size:1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $request->name1 }} {{ $request->name2 }}</h4>
+                <h4 style="font-size:1.1em;font-family: Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">NAME</h4>
+                <h4 style="font-size:1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $request->name1 }} {{ $request->name2 }}</h4>
             </th>
             <th width="200">
-                <h4 style="font-size:1.1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">ADDRESS</h4>
-                <h4 style="font-size:1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $request->address }}</h4>
+                <h4 style="font-size:1.1em;font-family: Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">ADDRESS</h4>
+                <h4 style="font-size:1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $request->address }}</h4>
             </th>
             <th width="160">
-                <h4 style="font-size:1.1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">CITY</h4>
-                <h4 style="font-size:1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $request->city }}</h4>
+                <h4 style="font-size:1.1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">CITY</h4>
+                <h4 style="font-size:1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $request->city }}</h4>
             </th>
             <th width="80">
-                <h4 style="font-size:1.1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">STATE</h4>
-                <h4 style="font-size:1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $request->state }}</h4>
+                <h4 style="font-size:1.1em;font-family: Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">STATE</h4>
+                <h4 style="font-size:1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $request->state }}</h4>
             </th>
             <th width="80">
-                <h4 style="font-size:1.1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">ZIP</h4>
-                <h4 style="font-size:1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $request->zip }}</h4>
+                <h4 style="font-size:1.1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">ZIP</h4>
+                <h4 style="font-size:1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $request->zip }}</h4>
             </th>
         </tr>
     </table>
@@ -151,20 +163,20 @@
     <table style="margin-top: 0px;margin-bottom:-0px;" width="760">
         <tr style="padding: 2px 0px 2px 0px;border-width: 0px 2px 1px 2px; border-style:solid black;">
             <th width="150">
-                <h4 style="font-size:1.1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">ISSUE DATE</h4>
-                <h4 style="font-size:1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $initDay_Qr }}</h4>
+                <h4 style="font-size:1.1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">ISSUE DATE</h4>
+                <h4 style="font-size:1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $initDay_Qr }}</h4>
             </th>
             <th width="150">
-                <h4 style="font-size:1.1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">EXPIRES DATE</h4>
-                <h4 style="font-size:1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $lateDay_Qr }}</h4>
+                <h4 style="font-size:1.1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">EXPIRES DATE</h4>
+                <h4 style="font-size:1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{ $lateDay_Qr }}</h4>
             </th>
             <th width="300">
-                <h4 style="font-size:1.1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">BUSSINES OFFICE</h4>
-                <h4 style="font-size:1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{$request->seller}}</h4>
+                <h4 style="font-size:1.1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">BUSSINES OFFICE</h4>
+                <h4 style="font-size:1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{$request->seller}}</h4>
             </th>
             <th  width="160">
-                <h4 style="font-size:1.1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">DEALERS NUMBER</h4>
-                <h4 style="font-size:1em;font-family: Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{$request->deler_number}}</h4>
+                <h4 style="font-size:1.1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:700;margin-top:0px;">DEALERS NUMBER</h4>
+                <h4 style="font-size:1em;font-family:  Roboto,Arial, Helvetica, sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px;">{{$request->deler_number}}</h4>
             </th>
 
         </tr>

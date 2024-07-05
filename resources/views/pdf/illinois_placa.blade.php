@@ -104,7 +104,7 @@
                 <td><span style="text-align: left; font-size:18px; font-family: 'Anton', sans-serif;font-weight:700;color:#000;">DEALER</span></td>
                 <td><span style="text-align: left; font-size:18px; font-family: 'Anton', sans-serif;font-weight:700;color:#000;">DLR#</span></td>
                 <td><span style="margin-left:-200px;text-align: left; font-size:18px; font-family: 'Anton', sans-serif;font-weight:700;color:#000;">Issue Date</span></td>
-                <td rowspan="2"><span><img src="data:image/png;base64,{{ base64_encode($dirImage)}}" style="margin-top: -20px ;margin-left: -350px; width: 70px; height:70px"/></span>
+                <td rowspan="2"><span><img src="data:image/png;base64,{{ base64_encode($dirImage)}}" style="margin-top: -50px ;margin-left: -150px; width: 70px; height:70px"/></span>
 			    </td>
             </tr>
             <tr>

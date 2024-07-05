@@ -131,7 +131,7 @@
             </tr>
             <tr style="border:1px solid #000">
                 <td style="border-left:1px solid #000; width:25%"><span style="font-size:11px; font-family: 'Roboto', sans-serif;font-weight:400; color:#000;">VIN: {{$request->vin}}</span></td>
-                <td style="border-left:1px solid #000; width:25%"><span style="font-size:11px; font-family: 'Roboto', sans-serif;font-weight:400; color:#000;">Odometer: 00000</span></td>
+                <td style="border-left:1px solid #000; width:25%"><span style="font-size:11px; font-family: 'Roboto', sans-serif;font-weight:400; color:#000;">Odometer: {{$request->odometer}}</span></td>
                 <td style="border-left:1px solid #000; width:25%"><span style="font-size:11px; font-family: 'Roboto', sans-serif;font-weight:400; color:#000;">State to be titled: </span></td>
                 <td style="border-left:1px solid #000; width:25%"><span style="font-size:11px; font-family: 'Roboto', sans-serif;font-weight:400; color:#000;">Color: </span></td>
                 <td></td>

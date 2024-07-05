@@ -85,7 +85,7 @@
                                 <div class="col-6"><span style=" font-size:12px; font-weight:bold;">Dealer GDN:</span></div>
                                 <div class="col-6"><span style=" font-size:12px;">{{$nuevo->dealer_number}}</span></div>
                                 <div class="col-6"><span style=" font-size:12px; font-weight:bold;">Dealer Name:</span></div>
-                                <div class="col-6"><span style=" font-size:12px;">{{$nuevo->name1.' '.$nuevo->name2}}</span></div>
+                                <div class="col-6"><span style=" font-size:12px;">{{$nuevo->seller}}</span></div>
                                 <div class="col-4"><span style=" font-size:12px; font-weight:bold;">Dealer DBA:</span></div>
                                 <div class="col-8"><span style=" font-size:12px;">{{$nuevo->seller}}</span></div>
                                 <div class="col-4"><span style=" font-size:12px; font-weight:bold;">Address:</span></div>

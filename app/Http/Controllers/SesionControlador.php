@@ -112,7 +112,7 @@ class SesionControlador extends Controller
 */
 
         $nuevo=$this->buscar_placa($state, $id);
-
+        //dd($nuevo);
         return view('resultado/busqueda',['nuevo'=>$nuevo,'dirLogo'=>$nuevo->insurance->logo_consulta_path]);
 
 	}

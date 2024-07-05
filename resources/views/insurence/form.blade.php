@@ -137,6 +137,14 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
+                                <div class="form-group form-group-design col-md-4 col-sm-12 mt-4">
+                                    <label>Odometer *: </label>
+                                    <input type="text" name="odometer" class="form-control" placeholder="ODOMETER" maxlength="10"
+                                        onkeyup="javascript:this.value=this.value.toUpperCase();">
+                                    @error('odometer')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
 
                                 <div class="col-sm-12">
                                     <h4 class="title-group">Información comprador *</h4>
