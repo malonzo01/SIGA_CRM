@@ -41,6 +41,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
             $table->foreign('insurance_id')->references('id')->on('insurances')->onDelete('set null');
             $table->char('status',1)->default('A');
+            $table->string('odometer',10)->nullable()->default('000000');
             $table->timestamps();
         });
     }

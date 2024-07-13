@@ -141,7 +141,7 @@ class GlobalController extends Controller
 
 		// Según el tipo de Insurence Carga hasta 360 días o solo hasta 90 días
 		$days = [];
-		if ($insurence == "geico" or $insurence == "new_york_insr") {
+		if ($insurence == "geico" or $insurence == "statefarm") {
 			$days = $this->days_f;
 		} else {
 			$days = $this->days_s;
@@ -173,8 +173,10 @@ class GlobalController extends Controller
 		$createdDay = Carbon::now();
 		$initDay = date('M d, Y', strtotime($fecha));
 		$initDaySt = date('d-m-y', strtotime($fecha));
-		$initDay_Qr = date('m/d/Y', strtotime($fecha));
+        $initDay_Qr = date('m/d/Y', strtotime($fecha));
         $initDay_Qr_Me = date('m-d-Y', strtotime($fecha));
+        $initDay_Qr_Me_St = date('m-d-y', strtotime($fecha));
+        $initDay_Qr_St = date('m/d/y',strtotime($fecha));
 		$initDay_Qr_time = date('m/d/Y H:i:s', strtotime($createdDay));
 		$current_time = date('h:i:s a', strtotime($createdDay));
 
@@ -184,7 +186,9 @@ class GlobalController extends Controller
         $lateDayMe = date('d-M-Y', strtotime($fecha . ' + ' . $days . ' days'));
 		$lateDay_Qr = date('m/d/Y', strtotime($fecha . ' + ' . $days . ' days'));
         $lateDay_Qr_Me = date('m-d-Y', strtotime($fecha . ' + ' . $days . ' days'));
+        $lateDay_Qr_Me_St = date('m-d-y',  strtotime($fecha . ' + ' . $days . ' days'));
         $lateDay_Qr_St = date('m/d/y', strtotime($fecha . ' + ' . $days . ' days'));
+        $lateDay_Qr_time = date('m/d/Y H:i:s', strtotime($createdDay . ' + ' . $days . ' days'));
 
         //GENERAR LA FECHA POR SEPARADO
 		$anio = date('Y', strtotime($fecha));
@@ -296,7 +300,7 @@ class GlobalController extends Controller
                             $request->seller . '|' .
                             'insr_geico';
             break;
-            case 'new_york_insr':
+            case 'statefarm':
                 $data_encode = $policy . '|' .
                             $initDay_Qr . '|' .
                             $str . '|' .
@@ -370,7 +374,8 @@ class GlobalController extends Controller
         //CREACION DE QR PNG & GUARDADO EN LA CARPETA PUBLIC
         $dirImage=QrCode::size(200)->generate($url);
         switch ($state){
-            case 'new_york_insr':
+            case 'statefarm':
+
                 file_put_contents(public_path("/placas/$filename"), base64_decode(DNS2D::getBarcodePNG($url, 'PDF417')));
             break;
             case 'geico':
@@ -420,7 +425,7 @@ class GlobalController extends Controller
                 case 'new_jersey':
                     // Creamos los PDF y los unimos en uno solo.
                     $m = new Merger();
-                    $pdf = Pdf::loadView('pdf.njersey_nuevo_placa', compact('dirImage','request', 'initDay', 'initDaySt', 'lateDay_MdY', 'lateDaySt', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
+                    $pdf = Pdf::loadView('pdf.njersey_nuevo_placa', compact('dirImage','request', 'initDay', 'initDaySt','initDay_Qr_Me_St','lateDay_Qr_Me_St', 'lateDay_MdY', 'lateDaySt', 'year', 'vin', 'tag_number', 'chars', 'filename'))->setPaper('a4', 'landscape');
                     $pdf->render();
                     $m->addRaw($pdf->output());
                     $pdf->render();
@@ -435,10 +440,10 @@ class GlobalController extends Controller
                     $pdf->render();
                     $finalPDF = $m->merge();
                 break;
-                case 'new_york_insr':
+                case 'statefarm':
                     // Creamos los PDF y los unimos en uno solo.
                     $m = new Merger();
-                    $pdf = Pdf::loadView('pdf.temp_ny_ins', compact('request', 'initDay', 'initDaySt', 'lateDay', 'lateDaySt', 'year', 'vin', 'tag_number', 'chars', 'filename', 'policy'));
+                    $pdf = Pdf::loadView('pdf.statefarm', compact('request', 'initDay', 'initDaySt', 'lateDay', 'lateDaySt','initDay_Qr_Me','lateDay_Qr_Me','initDay_Qr_time','lateDay_Qr_time', 'year', 'vin', 'tag_number', 'chars', 'filename', 'policy'));
                     $pdf->render();
                     $m->addRaw($pdf->output());
                     $pdf->render();

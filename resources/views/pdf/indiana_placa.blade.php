@@ -80,65 +80,65 @@
 
     <div class="div-master" style="width:100%;margin-bottom:5px;padding:0px 0px 0px 80px;">
             <!--CEBECERA 1 -->
-            <table style="border-spacing: 0;margin-top:-130px;margin-bottom:0px;">
+            <table style="border-spacing: 0;margin-top:-150px;margin-bottom:0px;">
                 <tr>
                     <td width="60"></td>
                     <td width="600">
-                        <h4 style="font-size:6em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;color: rgba(66, 75, 153, 0.849);font-weight:bold;letter-spacing: 0.01em;">
+                        <h4 style="font-size:7em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;color: rgba(66, 75, 153, 0.849);font-weight:bold;letter-spacing: 0.01em;">
                             INDIANA
                         </h4>
                     </td>
                 </tr>
             </table>
             <!--CEBECERA 2 -->
-            <table style="border-spacing: 0;margin-top:-250px;text-align:center;">
+            <table style="border-spacing: 0;margin-top:-270px;text-align:center;">
                 <tr>
                     <td width="700">
-                        <h4 style="font-size:2.7em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;color:rgba(66, 75, 153, 0.849);font-weight:normal;margin-left:50px;margin-top:100px;">
+                        <h4 style="font-size:3em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;color:rgba(66, 75, 153, 0.849);font-weight:bold;margin-left:50px;margin-top:100px;">
                             TEMPORARY REGISTRATION
                         </h4>
                     </td>
                 </tr>
             </table>
             <!--NUMERO DE PLACA -->
-            <table style="border-spacing: 0;margin-top:-80px;text-align:center;">
+            <table style="border-spacing: 0;margin-top:-20px;text-align:center;">
                 <tr>
                     <th width="700">
-                        <h4 style="font-size:2em;font-family:Arial, Helvetica, sans-serif;text-align:center;color:black;font-weight:normal;letter-spacing: 0.01em;transform: scale(6.5,6.5);">
+                        <h4 style="font-size:2em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;color:black;font-weight:bold;letter-spacing: 0.01em;transform: scale(7,7);">
                             {{ $tag_number }}
                         </h4>
                     </th>
                 </tr>
             </table>
             <!--VIN AÑO Y MARCA -->
-            <table style="margin-top:-10px;margin-left:-200px;margin-bottom:0px;">
+            <table style="margin-top:-35px;margin-left:-200px;margin-bottom:0px;">
                 <tr>
                     <td width="30"></td>
                     <th width="250" >
-                        <h4 style="font-size:20px;font-family:Roboto,Arial, Helvetica, sans-serif;font-weight:400;text-align:left;color: black;margin-left:60px;white-space:pre;">
+                        <h4 style="font-size:25px;font-family:Roboto,Arial, Helvetica, sans-serif;font-weight:400;text-align:left;color: black;margin-left:60px;white-space:pre;">
                             VIN: {{ $request->vin }}
                         </h4>
                     </th>
                     <th width="70" >
                     </th>
                     <th width="250" >
-                        <h4 style="font-size:20px;font-family:Arial, Helvetica, sans-serif;font-weight:400;text-align:left;color:black;margin-left:60px;white-space:pre;">
+                        <h4 style="font-size:25px;font-family:Arial, Helvetica, sans-serif;font-weight:400;text-align:left;color:black;margin-left:60px;white-space:pre;">
                             {{ $request->year }}  {{ $request->make }}
                         </h4>
                     </th>
                 </tr>
             </table>
             <!--DEALER Y EXPIRACION -->
-            <table style="margin-top: -50px;margin-bottom:0px;">
+            <table style="margin-top: -70px;;margin-left:-50px;margin-bottom:0px;;margin-right:0px;">
                 <tr>
                     <th width="20"></th>
                     <th >
-                        <h4 style="font-size:1em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:bold;color: rgba(66, 75, 153, 0.849);margin-top:-100px;margin-bottom:8px;margin-right:-300px;">
+                        <h4 style="font-size:1.5em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:bold;color: rgba(66, 75, 153, 0.849);margin-top:-100px;margin-bottom:10px;margin-right:-300px;">
                             Dealer No.
                         </h4>
                     </th>
                     <th style="border: 1px solid rgba(66, 75, 153, 0.849);" width="225" height="20">
-                        <h4 style="font-size:3em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:400;margin-top:-24px;margin-bottom:8px;">
+                        <h4 style="font-size:2em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:bold;transform: scale(2,2);margin-top:-24px;margin-bottom:4px;">
                             {{$request->deler_number}}
                         </h4>
                     </th>
@@ -147,8 +147,8 @@
                             E X P I R E S
                         </h4>
                     </th>
-                    <th style="border: 1px solid rgba(66, 75, 153, 0.849);" width="400">
-                        <h4 style="font-size:6em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:400;margin-top:-24px;margin-bottom:8px;">
+                    <th style="border: 1px solid rgba(66, 75, 153, 0.849);" width="500">
+                        <h4 style="font-size:2.5em;font-family:Roboto,Arial, Helvetica, sans-serif;text-align:center;font-weight:bold;transform: scale(3,3);margin-top:-24px;margin-bottom:8px;">
                             {{ $lateDay_Qr }}
                         </h4>
                     </th>

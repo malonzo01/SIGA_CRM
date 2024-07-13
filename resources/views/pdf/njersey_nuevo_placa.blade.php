@@ -159,7 +159,7 @@
                     Issue date</h4>
                 <h4
                     style="font-size:1em;font-family: 'Roboto', sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px">
-                    {{ $initDaySt }}</h4>
+                    {{ $initDay_Qr_Me_St }}</h4>
             </th>
             <th width="105">
                 <h4
@@ -167,7 +167,7 @@
                     Expiration date</h4>
                 <h4
                     style="font-size:1em;font-family: 'Roboto', sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px">
-                    {{ $lateDaySt }}</h4>
+                    {{ $lateDay_Qr_Me_St }}</h4>
             </th>
             <th width="180">
                 <h4
@@ -243,7 +243,7 @@
                     Issue date</h4>
                 <h4
                     style="font-size:1em;font-family: 'Roboto', sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px">
-                    {{ $initDaySt }}</h4>
+                    {{ $initDay_Qr_Me_St }}</h4>
             </th>
             <th width="140">
                 <h4
@@ -251,7 +251,7 @@
                     Expiration date</h4>
                 <h4
                     style="font-size:1em;font-family: 'Roboto', sans-serif;text-align:left;font-weight:400;margin-top:-24px;margin-bottom:8px">
-                    {{ $lateDaySt }}&nbsp;&nbsp;&nbsp;&nbsp;</h4>
+                    {{ $lateDay_Qr_Me_St }}&nbsp;&nbsp;&nbsp;&nbsp;</h4>
             </th>
         </tr>
     </table>

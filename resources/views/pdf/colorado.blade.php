@@ -78,7 +78,7 @@
 			</tr>
 			<tr>
 				<td width="250">
-					<p style="font-size: 15px;margin-top:-10px">{{ $request->name2 }}, {{ $request->name1 }}</p>
+					<p style="font-size: 15px;margin-top:-10px">{{ $request->name2 }} {{ $request->name1 }}</p>
 				</td>
 				<td width="350">
 					<p style="font-size: 15px;font-weight:bold;margin-top:-10px">None</p>
@@ -109,7 +109,7 @@
 					<p style="font-size: 15px;margin-top:-10px">{{ $request->vin }}</p>
 				</td>
 				<td width="145">
-					<p style="font-size: 15px;margin-top:-10px">{{ $request->city }}, {{ $request->state }}</p>
+					<p style="font-size: 15px;margin-top:-10px">{{ $request->city }} {{ $request->state }}</p>
 				</td>
 				<td width="175">
 					<p style="font-size: 15px;margin-top:-10px"></p>
@@ -171,9 +171,9 @@
 				<td width="240">
 					<div style="width:250px;padding:15px;margin-top:10px;border:1px solid black">
 						<p style="font-size: 15px;">
-							<strong>INSURED</strong><br>{{ $request->name2 }}, {{ $request->name1 }}<br>
+							<strong>INSURED</strong><br>{{ $request->name2 }} {{ $request->name1 }}<br>
 							{{ $request->address }}<br>
-							{{ $request->city }}, {{ $request->state }} {{ $request->zip }}
+							{{ $request->city }} {{ $request->state }} {{ $request->zip }}
 						</p>
 					</div>
 				</td>

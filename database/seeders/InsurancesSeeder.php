@@ -29,8 +29,8 @@ class InsurancesSeeder extends Seeder
             'name' => 'new_jersey',
             'states_ab' => 'NJ',
             'logo_consulta_path' => 'img/placas/newjerseyConsulta.jpg',
-            'address'=>'',
-            'zip'=>'',
+            'address'=>'536 Lyons Ave, Irvington, NJ',
+            'zip'=>'07111',
         ]);
         Insurance::create([
             'name' => 'new_york',
@@ -40,7 +40,7 @@ class InsurancesSeeder extends Seeder
             'zip'=>'',
         ]);
         Insurance::create([
-            'name' => 'new_york_insr',
+            'name' => 'statefarm',
             'states_ab' => 'IL',
             'logo_consulta_path' => 'img/placas/illinoisConsulta.jpg',
             'address'=>'',
